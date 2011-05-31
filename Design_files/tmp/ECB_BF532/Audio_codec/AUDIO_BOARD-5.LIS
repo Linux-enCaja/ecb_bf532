@@ -1,0 +1,197 @@
+Post Processor Report
+OrCAD FILE: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.MAX
+Tue May 31 05:22:43 2011
+
+*********************************************************
+
+Output file: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.TOP
+
+Aperture totals for C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.TOP:
+---------------------------------------------------------
+D10:  0.0350 x 0.0300 RECTANGLE -----      94 Flashes
+D11:  0.0400 x 0.0500 RECTANGLE -----      22 Flashes
+D12:  0.0300 x 0.0350 RECTANGLE -----     180 Flashes
+D13:  0.0500 x 0.0400 RECTANGLE -----       2 Flashes
+D14:  0.0433 ROUND  --       0 Draws,      50 Flashes
+D15:  0.0620 ROUND  --       0 Draws,       1 Flashes
+D16:  0.0620 SQUARE --       0 Draws,       1 Flashes
+D17:  0.1000 x 0.0160 OBLONG    -----      24 Flashes
+D18:  0.1000 x 0.0160 RECTANGLE -----       2 Flashes
+D19:  0.0160 x 0.1000 OBLONG    -----      23 Flashes
+D20:  0.0160 x 0.1000 RECTANGLE -----       3 Flashes
+D21:  0.0750 x 0.0250 RECTANGLE -----      32 Flashes
+D22:  0.0250 x 0.0750 RECTANGLE -----      24 Flashes
+D23:  0.0709 x 0.0787 RECTANGLE -----       4 Flashes
+D24:  0.0236 ROUND  --       0 Draws,     101 Flashes
+D25:  0.0079 ROUND  --     885 Draws,       0 Flashes
+D26:  0.0118 ROUND  --      63 Draws,       0 Flashes
+D27:  0.0236 ROUND  --       0 Draws,       2 Flashes
+D28:  0.0157 ROUND  --      15 Draws,       0 Flashes
+D29:  0.0080 ROUND  --       4 Draws,       0 Flashes
+---------------------------------------------------------
+ 20 D-Codes      -----     967 Draws,     565 Flashes
+
+*********************************************************
+
+Output file: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.BOT
+
+Aperture totals for C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.BOT:
+---------------------------------------------------------
+D25:  0.0079 ROUND  --    8259 Draws,       0 Flashes
+D26:  0.0118 ROUND  --      39 Draws,       0 Flashes
+D27:  0.0236 ROUND  --       0 Draws,       2 Flashes
+D28:  0.0157 ROUND  --      29 Draws,       0 Flashes
+D30:  0.0400 x 0.0500 RECTANGLE -----       4 Flashes
+D31:  0.0433 ROUND  --       0 Draws,      50 Flashes
+D32:  0.0620 ROUND  --       0 Draws,       1 Flashes
+D33:  0.0620 SQUARE --       0 Draws,       1 Flashes
+D34:  0.0236 ROUND  --       0 Draws,     101 Flashes
+D35:  0.0100 ROUND  --     172 Draws,       0 Flashes
+D36:  0.0197 ROUND  --       2 Draws,       0 Flashes
+D37:  0.0126 ROUND  --       8 Draws,       0 Flashes
+---------------------------------------------------------
+ 12 D-Codes      -----    8509 Draws,     159 Flashes
+
+*********************************************************
+
+Output file: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.SMT
+
+Aperture totals for C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.SMT:
+---------------------------------------------------------
+D32:  0.0620 ROUND  --       0 Draws,       1 Flashes
+D33:  0.0620 SQUARE --       0 Draws,       1 Flashes
+D38:  0.0400 x 0.0350 RECTANGLE -----      94 Flashes
+D39:  0.0450 x 0.0550 RECTANGLE -----      22 Flashes
+D40:  0.0350 x 0.0400 RECTANGLE -----     180 Flashes
+D41:  0.0550 x 0.0450 RECTANGLE -----       2 Flashes
+D42:  0.0492 ROUND  --       0 Draws,      50 Flashes
+D43:  0.1000 x 0.0160 OBLONG    -----      24 Flashes
+D44:  0.1000 x 0.0160 RECTANGLE -----       2 Flashes
+D45:  0.0160 x 0.1000 OBLONG    -----      23 Flashes
+D46:  0.0160 x 0.1000 RECTANGLE -----       3 Flashes
+D47:  0.0800 x 0.0300 RECTANGLE -----      32 Flashes
+D48:  0.0300 x 0.0800 RECTANGLE -----      24 Flashes
+D49:  0.0709 x 0.0787 RECTANGLE -----       4 Flashes
+---------------------------------------------------------
+ 14 D-Codes      -----       0 Draws,     462 Flashes
+
+*********************************************************
+
+Output file: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.SMB
+
+Aperture totals for C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.SMB:
+---------------------------------------------------------
+D32:  0.0620 ROUND  --       0 Draws,       1 Flashes
+D33:  0.0620 SQUARE --       0 Draws,       1 Flashes
+D39:  0.0450 x 0.0550 RECTANGLE -----       4 Flashes
+D42:  0.0492 ROUND  --       0 Draws,      50 Flashes
+---------------------------------------------------------
+  4 D-Codes      -----       0 Draws,      56 Flashes
+
+*********************************************************
+
+Output file: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.SST
+
+Aperture totals for C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.SST:
+---------------------------------------------------------
+D29:  0.0080 ROUND  --     148 Draws,       0 Flashes
+D35:  0.0100 ROUND  --       8 Draws,       0 Flashes
+D50:  0.0060 ROUND  --    1324 Draws,       0 Flashes
+D51:  0.0030 ROUND  --       8 Draws,       0 Flashes
+D52:  0.0047 ROUND  --    3093 Draws,       0 Flashes
+D53:  0.0039 ROUND  --      23 Draws,       0 Flashes
+D54:  0.0010 ROUND  --      13 Draws,       0 Flashes
+---------------------------------------------------------
+  7 D-Codes      -----    4617 Draws,       0 Flashes
+
+*********************************************************
+
+Output file: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.SSB
+
+Aperture totals for C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.SSB:
+---------------------------------------------------------
+D50:  0.0060 ROUND  --      12 Draws,       0 Flashes
+D52:  0.0047 ROUND  --      35 Draws,       0 Flashes
+---------------------------------------------------------
+  2 D-Codes      -----      47 Draws,       0 Flashes
+
+*********************************************************
+
+Output file: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.DRD
+
+Aperture totals for C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.DRD:
+---------------------------------------------------------
+D25:  0.0079 ROUND  --       6 Draws,       0 Flashes
+D35:  0.0100 ROUND  --     748 Draws,       0 Flashes
+---------------------------------------------------------
+  2 D-Codes      -----     754 Draws,       0 Flashes
+
+*********************************************************
+
+Output file: C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.FAB
+
+Aperture totals for C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD-5.FAB:
+---------------------------------------------------------
+D25:  0.0079 ROUND  --       6 Draws,       0 Flashes
+D55:  0.0118 ROUND  --       0 Draws,     101 Flashes
+D56:  0.0118 ROUND  --       0 Draws,       2 Flashes
+---------------------------------------------------------
+  3 D-Codes      -----       6 Draws,     103 Flashes
+
+
+*********************************************************
+
+Aperture totals for entire project:
+---------------------------------------------------------
+D10:  0.0350 x 0.0300 RECTANGLE -----      94 Flashes
+D11:  0.0400 x 0.0500 RECTANGLE -----      22 Flashes
+D12:  0.0300 x 0.0350 RECTANGLE -----     180 Flashes
+D13:  0.0500 x 0.0400 RECTANGLE -----       2 Flashes
+D14:  0.0433 ROUND  --       0 Draws,      50 Flashes
+D15:  0.0620 ROUND  --       0 Draws,       1 Flashes
+D16:  0.0620 SQUARE --       0 Draws,       1 Flashes
+D17:  0.1000 x 0.0160 OBLONG    -----      24 Flashes
+D18:  0.1000 x 0.0160 RECTANGLE -----       2 Flashes
+D19:  0.0160 x 0.1000 OBLONG    -----      23 Flashes
+D20:  0.0160 x 0.1000 RECTANGLE -----       3 Flashes
+D21:  0.0750 x 0.0250 RECTANGLE -----      32 Flashes
+D22:  0.0250 x 0.0750 RECTANGLE -----      24 Flashes
+D23:  0.0709 x 0.0787 RECTANGLE -----       4 Flashes
+D24:  0.0236 ROUND  --       0 Draws,     101 Flashes
+D25:  0.0079 ROUND  --    9156 Draws,       0 Flashes
+D26:  0.0118 ROUND  --     102 Draws,       0 Flashes
+D27:  0.0236 ROUND  --       0 Draws,       4 Flashes
+D28:  0.0157 ROUND  --      44 Draws,       0 Flashes
+D29:  0.0080 ROUND  --     152 Draws,       0 Flashes
+D30:  0.0400 x 0.0500 RECTANGLE -----       4 Flashes
+D31:  0.0433 ROUND  --       0 Draws,      50 Flashes
+D32:  0.0620 ROUND  --       0 Draws,       3 Flashes
+D33:  0.0620 SQUARE --       0 Draws,       3 Flashes
+D34:  0.0236 ROUND  --       0 Draws,     101 Flashes
+D35:  0.0100 ROUND  --     928 Draws,       0 Flashes
+D36:  0.0197 ROUND  --       2 Draws,       0 Flashes
+D37:  0.0126 ROUND  --       8 Draws,       0 Flashes
+D38:  0.0400 x 0.0350 RECTANGLE -----      94 Flashes
+D39:  0.0450 x 0.0550 RECTANGLE -----      26 Flashes
+D40:  0.0350 x 0.0400 RECTANGLE -----     180 Flashes
+D41:  0.0550 x 0.0450 RECTANGLE -----       2 Flashes
+D42:  0.0492 ROUND  --       0 Draws,     100 Flashes
+D43:  0.1000 x 0.0160 OBLONG    -----      24 Flashes
+D44:  0.1000 x 0.0160 RECTANGLE -----       2 Flashes
+D45:  0.0160 x 0.1000 OBLONG    -----      23 Flashes
+D46:  0.0160 x 0.1000 RECTANGLE -----       3 Flashes
+D47:  0.0800 x 0.0300 RECTANGLE -----      32 Flashes
+D48:  0.0300 x 0.0800 RECTANGLE -----      24 Flashes
+D49:  0.0709 x 0.0787 RECTANGLE -----       4 Flashes
+D50:  0.0060 ROUND  --    1336 Draws,       0 Flashes
+D51:  0.0030 ROUND  --       8 Draws,       0 Flashes
+D52:  0.0047 ROUND  --    3128 Draws,       0 Flashes
+D53:  0.0039 ROUND  --      23 Draws,       0 Flashes
+D54:  0.0010 ROUND  --      13 Draws,       0 Flashes
+D55:  0.0118 ROUND  --       0 Draws,     101 Flashes
+D56:  0.0118 ROUND  --       0 Draws,       2 Flashes
+---------------------------------------------------------
+ 47 D-Codes      -----   14900 Draws,    1345 Flashes
+
+
+No warnings or errors.

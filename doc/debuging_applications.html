@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" media="screen" type="text/css" href="./style.css" />
+  <link rel="stylesheet" media="screen" type="text/css" href="./design.css" />
+  <link rel="stylesheet" media="print" type="text/css" href="./print.css" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<a href=start.html>start</a></br>
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#application_debugging" class="toc">Application Debugging</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#stack_checking" class="toc">Stack Checking</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#analyzing_traces" class="toc">Analyzing Traces</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#unaligned_data_access" class="toc">Unaligned Data Access</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#bad_pointers" class="toc">Bad Pointers</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#magic_system_request_key" class="toc">Magic System Request Key</a></span></div></li></ul>
+</li></ul>
+</div>
+</div>
+
+
+
+<h1><a name="application_debugging" id="application_debugging">Application Debugging</a></h1>
+<div class="level1">
+
+<p>
+ Sometimes the best way to debug an application is also the easy way. Here are some things to check before firing up gdb.
+</p>
+
+</div>
+<!-- SECTION "Application Debugging" [1-160] -->
+<h2><a name="stack_checking" id="stack_checking">Stack Checking</a></h2>
+<div class="level2">
+
+<p>
+ Many application errors are the result of stack overflows. This is where data normally contained in the stack overflows into data in the bss section, or worse, in executable code space. To help debug this issue, the <code>bfin-uclinux-gcc</code> compiler supports stack checking.
+</p>
+
+<p>
+If the application&rsquo;s stack is overflowed, then an error will be generated and the application will be terminated.
+</p>
+
+</div>
+
+<h5><a name="flat_binaries" id="flat_binaries">FLAT Binaries</a></h5>
+<div class="level5">
+<pre class="code">bfin-uclinux-gcc -fstack-limit-symbol=_stack_start application.c</pre>
+
+<p>
+Using <code>-fstack-limit-symbol</code> has two drawbacks: it only works for flat binaries, and doesn&rsquo;t support threaded programs.  As of the 2006R2 release there is a new option, <code>-mstack-check-l1</code>, which should work in all cases, but has slightly higher overhead.
+</p>
+
+<p>
+Stack sizes can be increased on the target with the <code>flhdr</code> application: 
+</p>
+<pre class="code">flthdr -s 8192 application</pre>
+
+<p>
+ This sets the application stack size to 8k (8192 bytes).
+</p>
+
+<p>
+You can also control the stack size while compiling your application: 
+</p>
+<pre class="code">bfin-uclinux-gcc -Wl,-elf2flt=&quot;-s 8192&quot; application.c</pre>
+
+</div>
+
+<h5><a name="elf_binaries" id="elf_binaries">ELF Binaries</a></h5>
+<div class="level5">
+<pre class="code">bfin-uclinux-gcc -mstack-check-l1 application.c</pre>
+
+<p>
+The algorithm will use a bit of space in L1 scratchpad while doing the checks; this should not conflict with the normal run of the kernel.
+</p>
+
+<p>
+To check the existing stack size of an elf object, use:
+</p>
+<pre class="code">
+rgetz@test:~/checkouts/kernel/uClinux-dist&gt; bfin-uclinux-readelf -l ./romfs/bin/busybox
+
+Elf file type is EXEC (Executable file)
+Entry point 0x7b18
+There are 6 program headers, starting at offset 52
+
+Program Headers:
+  Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align
+  PHDR           0x000034 0x00000034 0x00000034 0x000c0 0x000c0 R E 0x4
+  INTERP         0x0000f4 0x000000f4 0x000000f4 0x0000d 0x0000d R   0x1
+      [Requesting program interpreter: /lib/ld.so.1]
+  LOAD           0x000000 0x00000000 0x00000000 0x47ac4 0x47ac4 R E 0x1000
+  LOAD           0x047ac4 0x0004bac4 0x0004bac4 0x04dcc 0x0b5cc RW  0x1000
+  DYNAMIC        0x0498f4 0x0004d8f4 0x0004d8f4 0x000b8 0x000b8 RW  0x4
+  GNU_STACK      0x000000 0x00000000 0x00000000 0x00000 0x20000 RWE 0x8
+
+ Section to Segment mapping:
+  Segment Sections...
+   00
+   01     .interp
+   02     .interp .hash .dynsym .dynstr .rel.got .rel.plt .init .plt .text .fini .rodata .rofixup
+   03     .data .eh_frame .dynamic .ctors .dtors .jcr .got .bss
+   04     .dynamic
+   05     .interp .hash .dynsym .dynstr .rel.got .rel.plt .init .plt
+</pre>
+
+<p>
+The <code>MemSiz</code> of the <code><acronym title="GNU's Not Unix">GNU</acronym>_STACK</code> is the size of the application stack. To increase it, you can compile things with the option 
+</p>
+<pre class="code">
+-Wl,--defsym,__stacksize=$STKSIZE
+</pre>
+
+<p>
+ , where <code>$STKSIZE</code> is the size of the stack (in bytes). The default stack size is <code>0&times;20000</code> or 128k bytes.
+</p>
+
+</div>
+
+<h5><a name="multi-threaded_applications" id="multi-threaded_applications">Multi-threaded applications</a></h5>
+<div class="level5">
+
+<p>
+ The POSIX standard does not dictate the size of a thread&rsquo;s stack. This is implementation dependent and varies. (<img src="images/smileys/fixme.gif" align="middle" alt="FIXME" />! - What is it on Blackfin/uClibc?). Exceeding the default stack limit is often very easy to do, with the usual results: program termination and/or corrupted data
+</p>
+
+<p>
+Stack checking with <code>-mstack-check-l1</code> will catch application threads which exceed their thread stack, however, to set the size of the stack, it must be done in your code with the standard pthread stack setting functions:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://opengroup.org/onlinepubs/007908799/xsh/pthread_attr_setstacksize.html" class="urlextern" title="http://opengroup.org/onlinepubs/007908799/xsh/pthread_attr_setstacksize.html"  rel="nofollow">pthread_attr_getstacksize</a> (attr, stacksize)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://opengroup.org/onlinepubs/007908799/xsh/pthread_attr_setstacksize.html" class="urlextern" title="http://opengroup.org/onlinepubs/007908799/xsh/pthread_attr_setstacksize.html"  rel="nofollow">pthread_attr_setstacksize</a> (attr, stacksize)</div>
+</li>
+</ul>
+
+<p>
+ If you want to put the stack into a specific location in memory, that can be done with the calls to:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.opengroup.org/onlinepubs/009695399/functions/pthread_attr_getstackaddr.html" class="urlextern" title="http://www.opengroup.org/onlinepubs/009695399/functions/pthread_attr_getstackaddr.html"  rel="nofollow">pthread_attr_getstackaddr</a> (attr, stackaddr)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.opengroup.org/onlinepubs/009695399/functions/pthread_attr_getstackaddr.html" class="urlextern" title="http://www.opengroup.org/onlinepubs/009695399/functions/pthread_attr_getstackaddr.html"  rel="nofollow">pthread_attr_setstackaddr</a> (attr, stackaddr) </div>
+</li>
+</ul>
+
+
+
+</div>
+<!-- SECTION "Stack Checking" [161-4335] -->
+<h2><a name="analyzing_traces" id="analyzing_traces">Analyzing Traces</a></h2>
+<div class="level2">
+
+<p>
+One feature of the Blackfin that comes in handy is the hardware trace buffer. The cpu automatically tracks the last 16 code flow changes in this buffer. When an application crashes and the kernel catches it, the hardware buffer will automatically be displayed.
+</p>
+
+</div>
+<!-- SECTION "Analyzing Traces" [4336-4627] -->
+<h3><a name="unaligned_data_access" id="unaligned_data_access">Unaligned Data Access</a></h3>
+<div class="level3">
+
+<p>
+For example, let&rsquo;s look at a program that uses unaligned data access. 
+</p>
+<pre class="code c"><span class="kw4">int</span> main<span class="br0">&#40;</span><span class="br0">&#41;</span>
+<span class="br0">&#123;</span>
+    <span class="kw4">char</span> c<span class="br0">&#91;</span><span class="nu0">10</span><span class="br0">&#93;</span>;
+    <span class="kw4">int</span> i;
+    i = *<span class="br0">&#40;</span><span class="kw4">int</span>*<span class="br0">&#41;</span><span class="br0">&#40;</span>c<span class="nu0">+1</span><span class="br0">&#41;</span>;
+    <span class="kw1">return</span> <span class="nu0">0</span>;
+<span class="br0">&#125;</span></pre>
+<p>
+Just compile this <code>hello.c</code> (with <code>-O0</code> as optimization can force alignment, and you will not see the crash),  and transfer it to the target. When we run it, the application should crash on us.
+</p>
+<pre class="code">
+root:~&gt; ./hello
+Data access misaligned address violation
+ - Attempted misaligned data memory or data cache access.
+DCPLB_FAULT_ADDR=029aff30
+
+CURRENT PROCESS:
+
+ &lt;removed for readability&gt;
+
+Hardware Trace:
+ 0 Target : &lt;00004358&gt; { _trap_c + 0x0 }
+   Source : &lt;0000710e&gt; { exception_to_level5 + 0x146 }
+ 1 Target : &lt;0000707c&gt; { exception_to_level5 + 0x0 }
+   Source : &lt;00007078&gt; { ex_trap_c + 0x44 }
+ 2 Target : &lt;0000704c&gt; { ex_trap_c + 0x0 }
+   Source : &lt;00007198&gt; { _trap + 0x40 }
+ 3 Target : &lt;00007170&gt; { _trap + 0x0 }
+   Source : &lt;029a0154&gt; [ hello + 0x114 ]
+ 4 Target : &lt;029a0144&gt; [ hello + 0x104 ]
+   Source : &lt;029a0234&gt; [ hello + 0x1f4 ]
+ 5 Target : &lt;029a022e&gt; [ hello + 0x1ee ]
+   Source : &lt;029a0222&gt; [ hello + 0x1e2 ]
+ 6 Target : &lt;029a0212&gt; [ hello + 0x1d2 ]
+   Source : &lt;029a0f88&gt; [ hello + 0xf48 ]
+ 7 Target : &lt;029a0f78&gt; [ hello + 0xf38 ]
+   Source : &lt;029a020e&gt; [ hello + 0x1ce ]
+ 8 Target : &lt;029a0202&gt; [ hello + 0x1c2 ]
+   Source : &lt;029a2cf8&gt; [ hello + 0x2cb8 ]
+ 9 Target : &lt;029a2cf4&gt; [ hello + 0x2cb4 ]
+   Source : &lt;029a2cd4&gt; [ hello + 0x2c94 ]
+10 Target : &lt;029a2cc8&gt; [ hello + 0x2c88 ]
+   Source : &lt;029a01bc&gt; [ hello + 0x17c ]
+11 Target : &lt;029a01b8&gt; [ hello + 0x178 ]
+   Source : &lt;029a0180&gt; [ hello + 0x140 ]
+12 Target : &lt;029a0170&gt; [ hello + 0x130 ]
+   Source : &lt;029a2cc6&gt; [ hello + 0x2c86 ]
+13 Target : &lt;029a2ca8&gt; [ hello + 0x2c68 ]
+   Source : &lt;029a2cf0&gt; [ hello + 0x2cb0 ]
+14 Target : &lt;029a2cf0&gt; [ hello + 0x2cb0 ]
+   Source : &lt;029a0134&gt; [ hello + 0xf4 ]
+15 Target : &lt;029a0130&gt; [ hello + 0xf0 ]
+   Source : &lt;029a0118&gt; [ hello + 0xd8 ]
+
+ &lt;removed for readability&gt;
+</pre>
+
+<p>
+We can take this trace output and combine it with the disassembled output from the application. What we&rsquo;re interested is the last few lines before code in the kernel is executed (trace number 3 and 4 in the above example). To get the disassembled output, we run <code>bfin-uclinux-objdump</code> on the .gdb file produced while compiling the application into a flat binary. Then we check out the offsets in the output that were indicated by the hardware trace. We probably want to look at the code between 0&times;104 and 0&times;114 (taken from trace number 3 and 4). 
+</p>
+<pre class="code">
+host$ bfin-uclinux-objdump -d hello.gdb
+ &lt;removed for readability&gt;
+
+00000104 &lt;_main&gt;:
+ 104:   00 e8 04 00     LINK 0x10;
+ 108:   57 32           P2=FP;
+ 10a:   aa 6f           P2+=-11;
+ 10c:   10 91           R0=[P2];
+ 10e:   c0 bb           [FP-16]=R0;
+ 110:   00 60           R0=0x0(x);
+ 112:   01 e8 00 00     UNLINK;
+ 116:   10 00           RTS;
+
+ &lt;removed for readability&gt;
+</pre>
+
+<p>
+Indeed, we see that the register P2 is set to an unaligned value and then dereferenced.
+</p>
+
+</div>
+<!-- SECTION "Unaligned Data Access" [4628-7649] -->
+<h3><a name="bad_pointers" id="bad_pointers">Bad Pointers</a></h3>
+<div class="level3">
+
+<p>
+ If a pointer in an application gets corrupt (as is known to happen), this can be a little more difficult to find. Sometimes the last 16 change of flow will be in kernel, not telling you where in the application things have gone bad. 
+</p>
+
+<p>
+Think about the case if you have a bad pointer, that points to memory that doesn&rsquo;t exist. Here is a simplistic example, for illustrative purposes: 
+</p>
+<pre class="code">
+main () {
+        char *i = 0x87654321;
+
+        *i = 'a';
+}
+</pre>
+
+<p>
+If we compile this application as <code>bfin-uclinux-gcc -mfdpic -O2 ./foo.c -o foo</code>, and run this application on a kernel, we can get this error message:
+</p>
+<pre class="code">
+root:~&gt; /foo
+DCPLB_FAULT_ADDR=87654321
+ICPLB_FAULT_ADDR=002c0e5c
+Hardware Trace:
+ 0 Target : &lt;0x00004b84&gt; { _dump_stack + 0x0 }
+   Source : &lt;0x00004e84&gt; { _panic_cplb_error + 0x34 }
+ 1 Target : &lt;0x00004e84&gt; { _panic_cplb_error + 0x34 }
+   Source : &lt;0x0000d8bc&gt; { _printk + 0x14 }
+ 2 Target : &lt;0x0000d8b8&gt; { _printk + 0x10 }
+   Source : &lt;0x0000d750&gt; { _vprintk + 0x164 }
+ 3 Target : &lt;0x0000d744&gt; { _vprintk + 0x158 }
+   Source : &lt;0x0000d51c&gt; { _release_console_sem + 0x124 }
+ 4 Target : &lt;0x0000d514&gt; { _release_console_sem + 0x11C }
+   Source : &lt;0x0000d504&gt; { _release_console_sem + 0x10C }
+ 5 Target : &lt;0x0000d47a&gt; { _release_console_sem + 0x82 }
+   Source : &lt;0x0000d322&gt; { __call_console_drivers + 0x5E }
+ 6 Target : &lt;0x0000d31c&gt; { __call_console_drivers + 0x58 }
+   Source : &lt;0x0000d2ec&gt; { __call_console_drivers + 0x28 }
+ 7 Target : &lt;0x0000d2c4&gt; { __call_console_drivers + 0x0 }
+   Source : &lt;0x0000d476&gt; { _release_console_sem + 0x7E }
+ 8 Target : &lt;0x0000d470&gt; { _release_console_sem + 0x78 }
+   Source : &lt;0x0000d53e&gt; { _release_console_sem + 0x146 }
+ 9 Target : &lt;0x0000d536&gt; { _release_console_sem + 0x13E }
+   Source : &lt;0x0000d2c0&gt; { ___call_console_drivers + 0x60 }
+10 Target : &lt;0x0000d2b4&gt; { ___call_console_drivers + 0x54 }
+   Source : &lt;0x0008fc9c&gt; { _bfin_console_write + 0x64 }
+11 Target : &lt;0x0008fc96&gt; { _bfin_console_write + 0x5E }
+   Source : &lt;0x0008fc88&gt; { _bfin_console_write + 0x50 }
+12 Target : &lt;0x0008fc7e&gt; { _bfin_console_write + 0x46 }
+   Source : &lt;0x0008fc34&gt; { _block_put_char + 0x28 }
+13 Target : &lt;0x0008fc1a&gt; { _block_put_char + 0xE }
+   Source : &lt;0x0008fc20&gt; { _block_put_char + 0x14 }
+14 Target : &lt;0x0008fc1a&gt; { _block_put_char + 0xE }
+   Source : &lt;0x0008fc20&gt; { _block_put_char + 0x14 }
+15 Target : &lt;0x0008fc1a&gt; { _block_put_char + 0xE }
+   Source : &lt;0x0008fc20&gt; { _block_put_char + 0x14 }
+</pre>
+
+<p>
+or
+</p>
+<pre class="code">
+Data access CPLB miss
+ - Used by the MMU to signal a CPLB miss on a data access.
+
+CURRENT PROCESS:
+
+return address: 0x0186d21e; contents of [PC-16...PC+8]:
+0c42 17dc 6003 e801 0000 3003 0538 0010
+0000 3212 3209 e800 0000 ad78 3218 0c42 X
+bc48 b08a 1803 b051 2002 9319 0c40 1802
+
+RETE:  00000000  RETN: 00478000  RETX: 0186d21e  RETS: 0186d2e6
+IPEND: 0030  SYSCFG: 0036
+SEQSTAT: 00000026    SP: 00477f24
+R0: 004215cc    R1: 025d439c    R2: 00492f04    R3: 004215cc
+R4: 00000029    R5: 004229e0    R6: 021403a8    R7: 00496550
+P0: 00496550    P1: 025d439c    P2: 00492f04    P3: 004215cc
+P4: 02140214    P5: 025d439c    FP: 003ba804
+A0.w: 00000000    A0.x: 00000000    A1.w: 00000000    A1.x: 00000000
+LB0: 018731a9  LT0: 0187319c  LC0: 00000000
+LB1: 00711d87  LT1: 00711d44  LC1: 00000000
+B0: 0000028c  L0: 00000000  M0: 00000000  I0: 00000283
+B1: a00b4371  L1: 00000000  M1: 84502b1e  I1: 00000270
+B2: fcccba94  L2: 00000000  M2: 6c5b5ef1  I2: 0000029c
+B3: aefc9518  L3: 00000000  M3: 0abe0519  I3: 0000028b
+
+USP: 003ba804   ASTAT: 02003004
+DCPLB_FAULT_ADDR=87654321
+ICPLB_FAULT_ADDR=002c0e5c
+
+
+Hardware Trace:
+ 0 Target : &lt;0x00004e64&gt; { _trap_c + 0x0 }
+   Source : &lt;0x00008868&gt; { _exception_to_level5 + 0xb4 }
+ 1 Target : &lt;0x000087b4&gt; { _exception_to_level5 + 0x0 }
+   Source : &lt;0x000087b2&gt; { _ex_trap_c + 0x4e }
+ 2 Target : &lt;0x0000870c&gt; { _handle_bad_cplb + 0x0 }
+   Source : &lt;0x0000820c&gt; { __cplb_hdr + 0x5c }
+ 3 Target : &lt;0x0000820a&gt; { __cplb_hdr + 0x5a }
+   Source : &lt;0x00004df6&gt; { _panic_cplb_error + 0x16 }
+ 4 Target : &lt;0x00004de0&gt; { _panic_cplb_error + 0x0 }
+   Source : &lt;0x00008206&gt; { __cplb_hdr + 0x56 }
+ 5 Target : &lt;0x00008202&gt; { __cplb_hdr + 0x52 }
+   Source : &lt;0x000081f2&gt; { __cplb_hdr + 0x42 }
+ 6 Target : &lt;0x000081ec&gt; { __cplb_hdr + 0x3c }
+   Source : &lt;0x000081e6&gt; { __cplb_hdr + 0x36 }
+ 7 Target : &lt;0x000081e4&gt; { __cplb_hdr + 0x34 }
+   Source : &lt;0x000081dc&gt; { __cplb_hdr + 0x2c }
+ 8 Target : &lt;0x000081d8&gt; { __cplb_hdr + 0x28 }
+   Source : &lt;0x00008350&gt; { _cplb_mgr + 0x140 }
+ 9 Target : &lt;0x0000834c&gt; { _cplb_mgr + 0x13c }
+   Source : &lt;0x000084b6&gt; { _cplb_mgr + 0x2a6 }
+10 Target : &lt;0x000084ae&gt; { _cplb_mgr + 0x29e }
+   Source : &lt;0x000084ba&gt; { _cplb_mgr + 0x2aa }
+11 Target : &lt;0x000084ae&gt; { _cplb_mgr + 0x29e }
+   Source : &lt;0x000084ca&gt; { _cplb_mgr + 0x2ba }
+12 Target : &lt;0x000084ae&gt; { _cplb_mgr + 0x29e }
+   Source : &lt;0x000084ca&gt; { _cplb_mgr + 0x2ba }
+13 Target : &lt;0x000084ae&gt; { _cplb_mgr + 0x29e }
+   Source : &lt;0x000084ca&gt; { _cplb_mgr + 0x2ba }
+14 Target : &lt;0x000084ae&gt; { _cplb_mgr + 0x29e }
+   Source : &lt;0x000084ca&gt; { _cplb_mgr + 0x2ba }
+15 Target : &lt;0x000084ae&gt; { _cplb_mgr + 0x29e }
+   Source : &lt;0x000084ca&gt; { _cplb_mgr + 0x2ba }
+Stack from 00477f04:
+        00000000 0000886c 0012c790 0012c790 0012c78c 004215cc 00000029 00447e12
+        0186d21e 00000030 00000026 00000000 00478000 0186d21e 0186d21e 0186d2e6
+        004215cc 02003004 00711d87 018731a9 00711d44 0187319c 00000000 00000000
+        00000000 00000000 00000000 00000000 aefc9518 fcccba94 a00b4371 0000028c
+        00000000 00000000 00000000 00000000 0abe0519 6c5b5ef1 84502b1e 00000000
+        0000028b 0000029c 00000270 00000283 003ba804 003ba804 025d439c 02140214
+Call Trace:
+
+Bus error
+</pre>
+
+<p>
+This may lead us to believe that the bad pointer is in kernel space, since the hardware trace is all in kernel space. However, if you think of what happens when you get a good/bad pointer:
+</p>
+<ul>
+<li class="level1"><div class="li"> hardware looks at the data access, and checks to see if it is in one of the 16 hardware CPLB enteries</div>
+<ul>
+<li class="level2"><div class="li"> if it is, it checks permissions (read/write userspace/kernel), and goes on it&rsquo;s way</div>
+</li>
+<li class="level2"><div class="li"> if it is not, it signals a &ldquo;Can&rsquo;t find CPLB table exception&rdquo;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> the exception handler takes the exception, and jumps to the kernel CPLB handler</div>
+</li>
+<li class="level1"><div class="li"> the kernel CPLB handler jumps around looking for the accessed memory location in the software table.</div>
+<ul>
+<li class="level2"><div class="li"> if it finds it, it replaces an entry in the HW table, and jumps back, allowing the HW table to do it&rsquo;s job</div>
+</li>
+<li class="level2"><div class="li"> if it can&rsquo;t find it, it jumps to an error condition</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> the error condition prints out the error.</div>
+</li>
+</ul>
+
+<p>
+ This is the 2nd trace - You can see from here, that by the time the error condition is found, we have been in the kernel for a long time, and the HW trace is full of kernel space things, which don&rsquo;t have errors, and are doing their jobs properly.
+</p>
+
+<p>
+In the trace, you can see the message:
+</p>
+<pre class="code">
+DCPLB_FAULT_ADDR=87654321
+ICPLB_FAULT_ADDR=002c0e5c
+</pre>
+
+<p>
+But, but you don&rsquo;t know why the bad address of <code>0&times;87654321</code> was being accessed, or what was running at the <code>0x2c0e5c</code> in physical memory.
+</p>
+
+<p>
+To reduce this problem, a kernel option of: <code>Linux Kernel Configuration</code> &rarr; <code>Kernel hacking</code> &rarr; <code>[ ]Trace user apps</code> should be selected. The help for this option explains what it does:
+</p>
+<pre class="code">
+Some pieces of the kernel contain a lot of flow changes which can
+quickly fill up the hardware trace buffer.  When debugging crashes,
+the hardware trace may indicate that the problem lies in kernel
+space when in reality an application is buggy.
+
+Say Y here to disable hardware tracing in some known &quot;jumpy&quot; pieces
+of code so that the trace buffer will extend further back.
+</pre>
+
+<p>
+When this option is turned on, and the same application is run: 
+</p>
+<pre class="code">
+root:~&gt; /foo
+DCPLB_FAULT_ADDR=87654321
+ICPLB_FAULT_ADDR=0357e65c
+Hardware Trace:
+ 0 Target : &lt;0x00008108&gt; { _ex_dcplb + 0x0 }
+   Source : &lt;0x00008480&gt; { _trap + 0x28 }
+ 1 Target : &lt;0x00008458&gt; { _trap + 0x0 }
+   Source : &lt;0x00008330&gt; { _ex_single_step + 0x38 }
+ 2 Target : &lt;0x0000832a&gt; { _ex_single_step + 0x32 }
+   Source : &lt;0x00008118&gt; { _ex_dcplb + 0x10 }
+ 3 Target : &lt;0x00008108&gt; { _ex_dcplb + 0x0 }
+   Source : &lt;0x00008480&gt; { _trap + 0x28 }
+ 4 Target : &lt;0x00008458&gt; { _trap + 0x0 }
+   Source : &lt;0x0357e658&gt; [ /foo + 0x658 ]
+ 5 Target : &lt;0x0357e64c&gt; [ /foo + 0x64C ]
+   Source : &lt;0x0035eda0&gt; [ /lib/libuClibc-0.9.27.so + 0x1EDA0 ]
+ 6 Target : &lt;0x0035ed8e&gt; [ /lib/libuClibc-0.9.27.so + 0x1ED8E ]
+   Source : &lt;0x0035f054&gt; [ /lib/libuClibc-0.9.27.so + 0x1F054 ]
+ 7 Target : &lt;0x0035f048&gt; [ /lib/libuClibc-0.9.27.so + 0x1F048 ]
+   Source : &lt;0x002f8c4a&gt; [ /lib/ld-uClibc-0.9.27.so + 0xC4A ]
+ 8 Target : &lt;0x002f8c3a&gt; [ /lib/ld-uClibc-0.9.27.so + 0xC3A ]
+   Source : &lt;0x002fc57c&gt; [ /lib/ld-uClibc-0.9.27.so + 0x457C ]
+ 9 Target : &lt;0x002fc560&gt; [ /lib/ld-uClibc-0.9.27.so + 0x4560 ]
+   Source : &lt;0x002fc514&gt; [ /lib/ld-uClibc-0.9.27.so + 0x4514 ]
+10 Target : &lt;0x002fc510&gt; [ /lib/ld-uClibc-0.9.27.so + 0x4510 ]
+   Source : &lt;0x002f9e1c&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1E1C ]
+11 Target : &lt;0x002f9e16&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1E16 ]
+   Source : &lt;0x002f9dea&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1DEA ]
+12 Target : &lt;0x002f9de6&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1DE6 ]
+   Source : &lt;0x002f9dd8&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1DD8 ]
+13 Target : &lt;0x002f9dca&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1DCA ]
+   Source : &lt;0x002f9df4&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1DF4 ]
+14 Target : &lt;0x002f9df0&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1DF0 ]
+   Source : &lt;0x002f9dc8&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1DC8 ]
+15 Target : &lt;0x002f9dc0&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1DC0 ]
+   Source : &lt;0x002f9bb4&gt; [ /lib/ld-uClibc-0.9.27.so + 0x1BB4 ]
+</pre>
+
+<p>
+We can see that this error message tells us exactly where the error occured:
+</p>
+<pre class="code">
+DCPLB_FAULT_ADDR=87654321
+ICPLB_FAULT_ADDR=0357e65c
+
+ 4 Target : &lt;0x00008458&gt; { _trap + 0x0 }
+   Source : &lt;0x0357e658&gt; [ /foo + 0x658 ]
+</pre>
+
+<p>
+The data <code>0&times;87654321</code> was being accessed around <code>0x0357e65c</code> or <code>0x0357e658</code> or an offset of <code>0&times;658</code> in the file <code>/foo</code>. If we use <code>bfin-uclinux-objdump -d foo | less</code>, and goto the offset of <code>0&times;658</code>, we can see:
+</p>
+<pre class="code">
+0000064c &lt;_main&gt;:
+ 64c:   4a e1 65 87     P2.H=8765 &lt;__end+0x3f5d&gt;;
+ 650:   20 e1 61 00     R0=0x61 (X);
+ 654:   0a e1 21 43     P2.L=4321 &lt;__ROFIXUP_END__+0x3c59&gt;;
+ 658:   00 e8 00 00     LINK 0x0;
+ 65c:   10 9b           B[P2]=R0;
+ 65e:   01 e8 00 00     UNLINK;
+ 662:   10 00           RTS;
+</pre>
+
+<p>
+Here we can understand the differences in the trace buffer address, and the <code>CPLB_FAULT_ADDR</code>. The load instruction at <code>0x65c</code> doesn&rsquo;t get to actually execute - so it is not saved in the trace, but since it is the instruction that caused the fault, it is the one saved in the <code>CPLB_FAULT_ADDR</code>.
+</p>
+
+<p>
+It is in the function main, where we are writing a byte <code>R0</code> or <code>0&times;61</code> into the memory pointed to by <code>P2</code> or <code>0&times;87654321</code> in the instruction:  <code>B[P2]=R0</code>. Now we have a good idea why this code is bad, and exactly where to fix it.
+</p>
+
+</div>
+<!-- SECTION "Bad Pointers" [7650-18530] -->
+<h2><a name="magic_system_request_key" id="magic_system_request_key">Magic System Request Key</a></h2>
+<div class="level2">
+
+<p>
+ The magic system request is a &lsquo;magical&rsquo; key combo you can hit which the kernel will respond to regardless of whatever else it is doing, unless it is completely locked up. To enable the magic SysRq key, you need to say &ldquo;yes&rdquo; to &lsquo;Magic SysRq key (CONFIG_MAGIC_SYSRQ)&rsquo; when configuring the kernel. 
+</p>
+
+<p>
+When running a kernel with SysRq compiled in, <code>/proc/sys/kernel/sysrq</code> controls the functions allowed to be invoked via the System Request key. By default the file contains 1 which means that every possible SysRq request is allowed. Check the <a href="http://blackfin.uclinux.org/gf/project/linux-kernel/scmsvn/trunk/Documentation/?action=browse&amp;path=/*checkout*/trunk/Documentation/sysrq.txt" class="interwiki iw_bf" title="http://blackfin.uclinux.org/gf/project/linux-kernel/scmsvn/trunk/Documentation/?action=browse&amp;path=/*checkout*/trunk/Documentation/sysrq.txt">kernel documentation</a> for more information.
+</p>
+
+<p>
+To use the magic System request key, you send a BREAK, then within 5 seconds a command key. Sending BREAK twice is interpreted as a normal BREAK. To send a BREAK:
+</p>
+<ul>
+<li class="level1"><div class="li"> in minicom, do a Control-A then <code>f</code>; </div>
+</li>
+<li class="level1"><div class="li"> in Kermit, type the escape character (normally Ctrl-\ ) then <code>B</code></div>
+</li>
+</ul>
+
+<p>
+ Common commands are: 
+</p>
+<ul>
+<li class="level1"><div class="li"> <code>b</code> - Will immediately reboot the system without syncing or unmounting your disks.</div>
+</li>
+<li class="level1"><div class="li"> <code>o</code> - Will shut your system off (if configured and supported).</div>
+</li>
+<li class="level1"><div class="li"> <code>s</code> - Will attempt to sync all mounted filesystems.</div>
+</li>
+<li class="level1"><div class="li"> <code>p</code> - Will dump the current registers and flags to your console.</div>
+</li>
+<li class="level1"><div class="li"> <code>t</code> - Will dump a list of current tasks and their information to your console.</div>
+</li>
+<li class="level1"><div class="li"> <code>m</code> - Will dump current memory info to your console.</div>
+</li>
+<li class="level1"><div class="li"> <code>e</code> - Send a SIGTERM to all processes, except for init.</div>
+</li>
+<li class="level1"><div class="li"> <code>i</code> - Send a SIGKILL to all processes, except for init.</div>
+</li>
+<li class="level1"><div class="li"> <code>h</code> - Will display help</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Magic System Request Key" [18531-] --></body>
+</html>

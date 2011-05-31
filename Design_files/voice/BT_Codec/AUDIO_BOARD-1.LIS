@@ -1,0 +1,58 @@
+AutoECO Report
+FILE-A: C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+FILE-B: C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MNL
+If "*EOF*" immediately follows, no changes were made
+Adding component U15
+Adding component JA2
+Adding component JA1
+Net IN2L1 renamed to IN1R+
+Net IN2L2 renamed to IN1R-
+Adding net N13994105
+Adding net N14155117
+Adding U15.8 to net A5V
+Deleting U1.13 from net AD1836_VREF
+Deleting C66.1 from net AD1836_VREF
+Deleting C89.1 from net AD1836_VREF
+Adding U15.5 to net AD1836_VREF
+Adding U15.1 to net AD1836_VREF
+Adding U15.2 to net AD1836_VREF
+Deleting U1.18 from net GND_SIGNAL
+Deleting U1.19 from net GND_SIGNAL
+Adding U15.4 to net GND_SIGNAL
+Adding U1.23 to net GND_SIGNAL
+Adding U1.22 to net GND_SIGNAL
+Deleting U1.22 from net IN1R+
+Adding U1.18 to net IN1R+
+Deleting U1.23 from net IN1R-
+Adding U1.19 to net IN1R-
+Adding R72.2 to net OUT1R
+Adding R63.2 to net OUT1R-
+Deleting R72.2 from net OUT2L
+Deleting R63.2 from net OUT2L-
+Adding JA1.2 to net RFS0
+Adding JA2.1 to net RSCLK0
+Adding JA1.1 to net TFS0
+Adding JA2.2 to net TSCLK0
+Adding J3.7 to net DT1SEC
+Adding J3.8 to net DT1PRI
+Adding J3.5 to net TFS1
+Adding J3.6 to net TSCLK1
+Adding J3.3 to net DR1SEC
+Adding J3.4 to net DR1PRI
+Adding J3.1 to net RFS1
+Adding J3.2 to net RSCLK1
+Adding J1.6 to net PF4
+Adding J1.3 to net PF3
+Adding J1.1 to net PF1
+Adding J1.2 to net PF0
+Adding J1.5 to net PF5
+Adding C89.1 to net N13994105
+Adding U15.3 to net N13994105
+Adding U1.13 to net N13994105
+Adding C66.1 to net N13994105
+Adding U15.6 to net N14155117
+Adding U15.7 to net N14155117
+Adding U1.4 to net OUT3L
+Adding U1.5 to net OUT3L-
+*EOF*
+No errors found

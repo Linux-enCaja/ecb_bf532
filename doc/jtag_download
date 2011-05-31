@@ -1,0 +1,2 @@
+gdbproxy bfin --connect="cable ARM-USB-OCD ftdi-mpsse"
+

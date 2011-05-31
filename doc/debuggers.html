@@ -1,0 +1,779 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" media="screen" type="text/css" href="./style.css" />
+  <link rel="stylesheet" media="screen" type="text/css" href="./design.css" />
+  <link rel="stylesheet" media="print" type="text/css" href="./print.css" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<a href=start.html>start</a></br>
+<div class="toc">
+<div class="tocheader toctoggle" id="toc__header">Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#debuggers" class="toc">Debuggers</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#debugging_single_applications" class="toc">Debugging Single Applications</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#debugging_via_serial_port" class="toc">Debugging Via Serial Port</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#debugging_via_ethernet" class="toc">Debugging Via Ethernet</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#debugging_dynamic_object_libraries" class="toc">Debugging Dynamic Object Libraries</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#debugging_kernel" class="toc">Debugging Kernel</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#debugging_via_ethernet1" class="toc">Debugging Via Ethernet</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#debugging_via_the_second_uart" class="toc">Debugging Via the second UART</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#debugging_via_jtag_gdbproxy" class="toc">Debugging via Jtag (gdbproxy)</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#common_gdb_commands" class="toc">Common gdb Commands</a></span></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><span class="li"><a href="#using_a_graphical_debugger" class="toc">Using a Graphical Debugger</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#ddd" class="toc">DDD</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#eclipse" class="toc">Eclipse</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#the_gnat_programming_studio_gps" class="toc">The GNAT Programming Studio (GPS)</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#insight" class="toc">Insight</a></span></div></li>
+<li class="level2"><div class="li"><span class="li"><a href="#visual_dsp" class="toc">Visual DSP++</a></span></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><span class="li"><a href="#external_resources" class="toc">External Resources</a></span></div></li></ul>
+</div>
+</div>
+
+
+
+<h1><a name="debuggers" id="debuggers">Debuggers</a></h1>
+<div class="level1">
+
+<p>
+<em>gdb</em> is the one and only standard debugger for the <acronym title="GNU's Not Unix">GNU</acronym> toolchain. Learning and understanding gdb will not only help you do source level debugging on kernel, driver, libraries and applications, but will also improve your productivity. While graphical front ends like DDD, insight and eclipse simplify the interface to gdb, understanding gdb at a command line will also help you run the graphical front ends better. 
+</p>
+
+
+
+<p>
+gdb is not the only way to resolve issues -- check out <a href="debuging_applications.html" class="wikilink1" title="debuging_applications.html">debuging applications</a> for other methods.
+</p>
+
+<p>
+gdb is part of the Blackfin toolchain and can be found on the Blackfin Linux website <a href="http://blackfin.uclinux.org/gf/project/toolchain" class="interwiki iw_bf" title="http://blackfin.uclinux.org/gf/project/toolchain">here</a>.  Click on the <em>Files</em> tab to obtain the latest release of gdb. To install gdb (for Ethernet or serial), since it is not packaged separately, check the instructions on <a href="installing_the_blackfin_tool_chain.html" class="wikilink1" title="installing_the_blackfin_tool_chain.html">installing the Blackfin tool chain</a> to either build from source, or use a pre-compiled rpm for your system. If you want gdb for jtag you must install that separately. See the <a href="http://blackfin.uclinux.org/gf/project/jtag" class="interwiki iw_bf" title="http://blackfin.uclinux.org/gf/project/jtag">gdb/jtag site</a> for more information.
+</p>
+
+<p>
+There are two main types of code which need to be debugged:
+</p>
+<ul>
+<li class="level1"><div class="li"> applications (using gdb)</div>
+</li>
+<li class="level1"><div class="li"> drivers or kernel (using <a href="kgdb.html" class="wikilink1" title="kgdb.html">kgdb</a> or an <a href="ice.html" class="wikilink2" title="ice.html">ICE</a>)</div>
+</li>
+</ul>
+
+</div>
+<!-- SECTION "Debuggers" [1-1342] -->
+<h2><a name="debugging_single_applications" id="debugging_single_applications">Debugging Single Applications</a></h2>
+<div class="level2">
+
+<p>
+ <a href="compiling_the_kernel.html" class="wikilink1" title="compiling_the_kernel.html">Compiling the Kernel</a><a href="adding_user_applications.html" class="wikilink1" title="adding_user_applications.html">Adding User Applications</a> 
+</p>
+
+<p>
+To debug your program, the the uClinux kernel must be build in a specific manner:
+</p>
+<ol>
+<li class="level1"><div class="li"> add the program <code>gdbserver</code> as well as the application you wish to debug.  </div>
+<ul>
+<li class="level2"><div class="li"> <code>gdbserver</code> is found in the <code>Application Configuration</code> window (displayed by choosing <code>Customize Vendor/User Settings</code>) under the <code>Miscellaneous Applications</code> category. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> make the bootimage</div>
+</li>
+<li class="level1"><div class="li"> load this kernel&rsquo;s memory image onto the target system and boot the kernel.</div>
+</li>
+<li class="level1"><div class="li"> Load symbols into <acronym title="GNU Debugger">GDB</acronym> from user-app.gdb if user-app is built into FLAT binary.</div>
+</li>
+<li class="level1"><div class="li"> Load symbols into <acronym title="GNU Debugger">GDB</acronym> from user-app directly if user-app is built into ELF binary.</div>
+</li>
+<li class="level1"><div class="li"> since <code>gdbserver</code> can communicate with the host computer through a serial connection or through an Ethernet connection, you must decide which you want to do.</div>
+</li>
+</ol>
+
+</div>
+<!-- SECTION "Debugging Single Applications" [1343-2321] -->
+<h3><a name="debugging_via_serial_port" id="debugging_via_serial_port">Debugging Via Serial Port</a></h3>
+<div class="level3">
+
+<p>
+The following instruction explain how to remotely debug uClinux programs via the serial port. 
+</p>
+<ul>
+<li class="level1"><div class="li"> on the target system enter the following command at the uClinux prompt: <pre class="code">uClinux&gt; gdbserver /dev/ttyS1 &lt;program to debug&gt;</pre>
+</div>
+</li>
+</ul>
+
+<p>
+This assumes you are connecting to <code>gdb</code> through the device ttyS1 on the target system.
+</p>
+<ul>
+<li class="level1"><div class="li"> on the Linux host computer enter the following command:<pre class="code">
+bash$ bfin-uclinux-gdb -b 57600 &lt;program to debug&gt;.gdb
+</pre>
+
+<p>
+ or if you are using fdpic 
+</p>
+<pre class="code">
+bash$ bfin-linux-uclibc-gdb -b 57600 &lt;program to debug&gt;
+</pre>
+
+<p>
+The -b switch specifies the baud rate the program will use with the serial port, 57600 in this example. If you are debugging a flat file, the <code>*.gdb</code> file for your program is generated when your program is compiled.  If you are using fdpic, the file is the unstripped executable. It can be found in your program&rsquo;s directory.  For more information see <a href="adding_user_applications.html" class="wikilink1" title="adding_user_applications.html">Adding User Applications</a>.  If your program complied successfully and the flat <code>*.gdb</code> file does not exist, ensure that you are calling <code>gcc</code> with the <code>-g</code> switch.  This should be done by default when using the procedure described in the <a href="adding_user_applications.html" class="wikilink1" title="adding_user_applications.html">Adding User Applications </a>  section.
+</p>
+</div>
+</li>
+</ul>
+
+<p>
+  <em>gdb</em><em>gdb</em> <code>gdb) target remote /dev/ttyS0</code> <em>gdbserver</em>  
+</p>
+<ul>
+<li class="level1"><div class="li"> You should now be connected to the target system.  To start debugging your program with a breakpoint at the start of the function <em>main</em> enter the following commands at the <code>gdb</code> prompt:<pre class="code">
+gdb) break main
+gdb) continue
+</pre>
+
+<p>
+ You must use the continue command instead of the run command because the program is already running on the remote system.
+</p>
+</div>
+</li>
+</ul>
+
+<p>
+  <em>gdb</em><code>gdb</code> 
+</p>
+
+</div>
+<!-- SECTION "Debugging Via Serial Port" [2322-4366] -->
+<h3><a name="debugging_via_ethernet" id="debugging_via_ethernet">Debugging Via Ethernet</a></h3>
+<div class="level3">
+
+<p>
+The following instruction explain how to remotely debug uClinux programs via an Ethernet connection. 
+</p>
+<ul>
+<li class="level1"><div class="li"> if the target system not already been assigned an IP address this must be done with a command similar to the following: <pre class="code">
+uClinux&gt; ifconfig eth0 &lt;IP address to assign to system&gt;
+OR
+uClinux&gt; dhcpcd &amp;
+</pre>
+
+<p>
+Once this is done you may wish to check if you can communicate with the Linux host by using the <code>ping</code> utility.  
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> start <code>gdbserver</code> on the target system by entering the following commands:<pre class="code">
+uClinux&gt; gdbserver localhost:3456 &lt;program to debug&gt;
+</pre>
+
+<p>
+Any port number (3456) may be used as long as it does not conflict with any port already in use on the system or the Linux host.
+</p>
+</div>
+</li>
+<li class="level1"><div class="li"> on the Linux host computer enter the following command:<pre class="code">
+bash$ bfin-uclinux-gdb &lt;program to debug&gt;.gdb
+</pre>
+
+<p>
+  or 
+</p>
+<pre class="code">
+bash$ bfin-linux-uclibc-gdb &lt;program to debug&gt;
+</pre>
+
+<p>
+The <code>*.gdb</code> file for your program is generated when your program is compiled. If you are debugging a flat file, the <code>*.gdb</code> file for your program is generated when your program is compiled.  If you are using fdpic, the file is the unstripped executable. It can be found in your program&rsquo;s directory.  For more information see <a href="adding_user_applications.html" class="wikilink1" title="adding_user_applications.html">Adding User Applications</a>.  If your program complied successfully and the flat <code>*.gdb</code> file does not exist, ensure that you are calling <code>gcc</code> with the <code>-g</code> switch.  This should be done by default when using the procedure described in the <a href="adding_user_applications.html" class="wikilink1" title="adding_user_applications.html">Adding User Applications </a>  section.
+</p>
+</div>
+</li>
+</ul>
+
+<p>
+  <code>gdb</code><code>gdb</code>
+</p>
+
+<p>
+ <code>gdb) target remote &lt;IP address of target system&gt;:3456</code>
+</p>
+
+<p>
+<code>gdbserver</code>  
+</p>
+<ul>
+<li class="level1"><div class="li"> You should now be connected to the target system.  To start debugging your program with a breakpoint at the start of the function <code>main</code> enter the following commands at the host machine <code>gdb</code> prompt:<pre class="code">
+gdb) break main
+gdb) continue
+</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> You must use the continue command instead of the run command because the program is already running on the remote system.</div>
+</li>
+</ul>
+
+<p>
+  <code>gdb</code><code>gdb</code> 
+</p>
+
+</div>
+<!-- SECTION "Debugging Via Ethernet" [4367-6781] -->
+<h2><a name="debugging_dynamic_object_libraries" id="debugging_dynamic_object_libraries">Debugging Dynamic Object Libraries</a></h2>
+<div class="level2">
+
+<p>
+The way to debug dynamic object library by <acronym title="GNU Debugger">GDB</acronym> is nearly the same as that of application.  Only several differences:
+</p>
+<ol>
+<li class="level1"><div class="li"> User object library libusertest.so should be compiled with flag &ldquo;-shared -mfdpic -g -ldl&rdquo;.</div>
+</li>
+<li class="level1"><div class="li"> User application usertest should be compiled with flag &ldquo;-mfdpic -g&rdquo;.</div>
+</li>
+<li class="level1"><div class="li"> Library libdl.so and libusertest.so should be copied to folder &ldquo;lib&rdquo; in the root file system image first. User application &ldquo;usertest&rdquo; should be copied to a proper position in the same image.</div>
+</li>
+<li class="level1"><div class="li"> Start <acronym title="GNU Debugger">GDB</acronym> on host with the user application. <pre class="code"> /&gt; bfin-uclinux-gdb usertest</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Don&rsquo;t forget to set <acronym title="GNU Debugger">GDB</acronym> environment variable solib-search-path to the library folders, where libdl.so and libusertest.so can be found. <pre class="code">(gdb) set solib-search-path /library-directory/</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Run application on target board and connect gdb to it.</div>
+</li>
+</ol>
+
+</div>
+<!-- SECTION "Debugging Dynamic Object Libraries" [6782-7660] -->
+<h2><a name="debugging_kernel" id="debugging_kernel">Debugging Kernel</a></h2>
+<div class="level2">
+
+<p>
+Kernel debugging can be done similar to application debugging. The host based tools are exactly the same, and are installed in the same manner. However, the choice is to do kernel level debugging over ethernet or <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym>.
+</p>
+
+</div>
+<!-- SECTION "Debugging Kernel" [7661-7907] -->
+<h3><a name="debugging_via_ethernet1" id="debugging_via_ethernet1">Debugging Via Ethernet</a></h3>
+<div class="level3">
+
+<p>
+Rather than compiling and installing <code>gdbserver</code> as a user application are done previously, kgdb can be added to the kernel. Bellow steps shows how to do source code debugging of Linux kernel:
+</p>
+<ul>
+<li class="level1"><div class="li"> To add kgdb to the kernel, the kgdb patch must be applied to the uClinux kernel. <pre class="code">
+patch &lt; kgdb_bfin_linux-2.6.x.patch
+</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Select menuconfig option under <code>kernel hacking</code> &rarr; <code>kernel debugging</code> &rarr; <code>KGDB: kernel debug with remote gdb</code>. </div>
+</li>
+<li class="level1"><div class="li"> Ensure the following options are enabled (normally when you select KGDB, these options will be select by default):</div>
+<ul>
+<li class="level2"><div class="li"> <code>Full Symbolic/Source Debugging support</code> </div>
+</li>
+<li class="level2"><div class="li"> <code>Compile the kernel with frame pointers</code></div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Select option <code>KGDB: connect over (Ethernet)</code>.</div>
+</li>
+<li class="level1"><div class="li"> Select option <code>Compiled-in Kernel Boot Parameter</code> option.</div>
+</li>
+<li class="level1"><div class="li"> Add <code>kgdboe=@target-IP/,@host-IP/</code> to the <code>Kernel Boot Parameter</code> option and make the kernel.  </div>
+</li>
+</ul>
+
+<p>
+<code>Compiled-in Kernel Boot Parameter</code><code>bootargs</code>
+</p>
+<ul>
+<li class="level1"><div class="li"> Connect minicom to the serial port and boot the kernel image.</div>
+</li>
+<li class="level1"><div class="li"> Configure the IP number on the target. This must be the same IP number as the <code>kgdboe</code> setting<pre class="code">
+/&gt; ifconfig eth0 target-IP </pre>
+</div>
+</li>
+<li class="level1"><div class="li"> On the host, start <acronym title="GNU Debugger">GDB</acronym> client <pre class="code">bfin-uclinux-gdb vmlinux</pre>
+</div>
+</li>
+</ul>
+
+<p>
+&lsquo;&rsquo;  
+</p>
+<ul>
+<li class="level1"><div class="li"> On the host, connect to the target <pre class="code">(gdb) target remote udp:target-IP:6443</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> On the host, set software breakpoint, and continue <pre class="code">
+(gdb) break sys_open
+(gdb) c</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> run <code>ls</code> in the target console <pre class="code">/&gt; ls</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> The Breakpoint should be hit <pre class="code">Breakpoint 1: sys_open(...&quot;</pre>
+</div>
+</li>
+</ul>
+
+<p>
+ You can continue and set breakpoints anywhere in the kernel, including driver code.
+</p>
+
+</div>
+<!-- SECTION "Debugging Via Ethernet" [7908-9841] -->
+<h3><a name="debugging_via_the_second_uart" id="debugging_via_the_second_uart">Debugging Via the second UART</a></h3>
+<div class="level3">
+
+<p>
+Only bf537 has a second <acronym title="universal asynchronous receiver/transmitter">UART</acronym>. So you can only debug over the second <acronym title="universal asynchronous receiver/transmitter">UART</acronym> on bf537 stamp board. 
+</p>
+<ol>
+<li class="level1"><div class="li"> Compile and install the cross platform version of gdb for Blackfin, which can be found as $(BINROOT)/bfin-elf-gdb.</div>
+</li>
+<li class="level1"><div class="li"> Apply this patch to 2.6.x kernel. Select menuconfig option under &ldquo;kernel hacking&rdquo; &rarr; &ldquo;kernel debugging&rdquo; &rarr; &ldquo;KGDB: kernel debug with remote gdb&rdquo;. With this seledted, option &ldquo;Full Symbolic/Source Debugging support&rdquo; and &ldquo;Compile the kernel with frame pointers&rdquo; are also selected.</div>
+</li>
+<li class="level1"><div class="li"> Select option &ldquo;KGDB: connect over <acronym title="universal asynchronous receiver/transmitter">UART</acronym>&ldquo;. Set &ldquo;KGDB: <acronym title="universal asynchronous receiver/transmitter">UART</acronym> port number&rdquo; to be a different one from the console. </div>
+</li>
+<li class="level1"><div class="li"> If you want connect to kgdb when kernel booting, enable &ldquo;KGDB: Wait for gdb connection early&rdquo; </div>
+</li>
+<li class="level1"><div class="li"> Compile kernel.</div>
+</li>
+<li class="level1"><div class="li"> Connect minicom to the serial port of the console and boot the kernel image.</div>
+</li>
+<li class="level1"><div class="li"> Start <acronym title="GNU Debugger">GDB</acronym> client &ldquo;bfin-elf-gdb vmlinux&rdquo;.</div>
+</li>
+<li class="level1"><div class="li"> Set the baud rate in <acronym title="GNU Debugger">GDB</acronym>. <pre class="code">(gdb) set remotebaud 57600</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Connect to the target on the second serial port. <pre class="code">(gdb) target remote /dev/ttyS1</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Set software breakpoint. <pre class="code">(gdb) break sys_open</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Continue. <pre class="code">(gdb) c</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Run ls in the target console. <pre class="code">/&gt; ls</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> A breakpoint is hit. <pre class="code">Breakpoint 1: sys_open(...</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> All other operations are the same as that in KGDB over Ethernet. </div>
+</li>
+</ol>
+
+<p>
+ <acronym title="universal asynchronous receiver/transmitter">UART</acronym> 
+</p>
+
+</div>
+<!-- SECTION "Debugging Via the second UART" [9842-11310] -->
+<h3><a name="debugging_via_jtag_gdbproxy" id="debugging_via_jtag_gdbproxy">Debugging via Jtag (gdbproxy)</a></h3>
+<div class="level3">
+
+<p>
+ Normally, most people are satisfied with debugging with gdb via Ethernet or serial as described above, but in some circumstances (debugging some kernel drivers, or debugging boot loaders), lower level debugging is required. <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> debugging supports this need. The <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> debuggers interface with the processor using a 14-pin <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> header. The header provides a connection interface for the <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> emulator pods. The header can also be used to route an optional local boundary scan controller to the DSP when the <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> pod is not attached.
+</p>
+
+<p>
+ <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym>&rsquo;<a href="http://www.analog.com/ee-notes/" class="urlextern" title="http://www.analog.com/ee-notes/"  rel="nofollow">ADI’s web site</a> 
+</p>
+
+<p>
+<acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> pods use a super set of the <a href="http://webstore.ansi.org/ansidocstore/product.asp?sku=IEEE+Std+1149%2E1%2D2001" class="urlextern" title="http://webstore.ansi.org/ansidocstore/product.asp?sku=IEEE+Std+1149%2E1%2D2001"  rel="nofollow">IEEE 1149.1</a> standard to send and receive data from the processor <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> emulation port. The <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> pod sometimes use an additional signal called EMU~ as a emulation status flag from the processor. This signal is a vendor specific signal, which is not part of the IEEE 1149.1 specification.
+</p>
+
+<p>
+<acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> pods which are supported by gdb include:
+</p>
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.section5.ch/icebear" class="urlextern" title="http://www.section5.ch/icebear"  rel="nofollow">Section 5's ICEBEAR</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.excelpoint.com/news03.html" class="urlextern" title="http://www.excelpoint.com/news03.html"  rel="nofollow">ExcelPoint's IGLOO</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="buy_stuff.html" class="wikilink1" title="buy_stuff.html">JTAG Blue</a></div>
+</li>
+</ul>
+
+<p>
+ These use the same gdb that is used to debug via Ethernet or serial. So the instructions below only describe how to get and install gdbproxy.
+</p>
+
+</div>
+
+<h4><a name="install_gdbproxy" id="install_gdbproxy">Install gdbproxy</a></h4>
+<div class="level4">
+
+<p>
+Currently you can get source code of gdbproxy only from <acronym title="Concurrent Versions System">CVS</acronym>. Please follow the below instructions on your host
+</p>
+<pre class="code">
+host$&gt; svn checkout svn://sources.blackfin.uclinux.org/jtag/trunk jtag-source
+host$&gt; cd jtag
+host$&gt; vi bfemu/jtag.c
+</pre>
+
+<p>
+You may need to modify the <code>char * const cable_params[]</code> in this file to match the cable you have. The default is WIGGLER, which is compatible with IGLOO.
+</p>
+<pre class="code">
+host$&gt; ./configure --prefix=/path/to/the/install/directory
+host$&gt; make
+host$&gt; cd ../gdbproxy
+host$&gt; bfemu_path=/path/to/the/jtag-source/jtag/bfemu ./configure --prefix=/path/to/the/install/directory
+host$&gt; make
+host$&gt; make install
+</pre>
+
+<p>
+You can add <code>/path/to/the/install/directory</code> to the <code>PATH</code> environment variable.
+</p>
+
+<p>
+When debugging under the <code>gdb</code> environment, the debugger needs to know what target to connect to. This target is a tiny server daemon, typically running on the host computer. It is equivalent to a gdbserver, although it does not run on the target hardware. This server is called gdbproxy and is derived from rproxy-0.7. This is the procedure you normally start with:
+</p>
+<ol>
+<li class="level1"><div class="li"> Start up gdbproxy:<pre class="code">sudo gdbproxy bfin [special options]</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Start bfin-uclinux-gdb or bfin-elf-gdb</div>
+</li>
+<li class="level1"><div class="li"> Connect to the gdbproxy via:<pre class="code"> (gdb) target remote :2000 </pre>
+</div>
+</li>
+</ol>
+
+<p>
+ The Blackfin will now halt and you can:
+</p>
+<ol>
+<li class="level1"><div class="li"> Set software breakpoints with &lsquo;b&rsquo;</div>
+</li>
+<li class="level1"><div class="li"> Set hardware breakpoints with &lsquo;hb&rsquo;</div>
+</li>
+<li class="level1"><div class="li"> Source line single step with &lsquo;s&rsquo; or &lsquo;n&rsquo;</div>
+</li>
+<li class="level1"><div class="li"> Instruction single step with &lsquo;ni&rsquo; or &lsquo;si&rsquo;</div>
+</li>
+<li class="level1"><div class="li"> Disassemble using &lsquo;disassemble $pc $pc+20&rsquo; or &lsquo;x/10i $pc&rsquo; </div>
+</li>
+<li class="level1"><div class="li"> Print core register values &lsquo;print $r0&rsquo; or &lsquo;info registers&rsquo; etc. </div>
+</li>
+<li class="level1"><div class="li"> Continue program operation with &lsquo;c&rsquo; </div>
+</li>
+<li class="level1"><div class="li"> Stop program with Ctrl-C </div>
+</li>
+</ol>
+
+<p>
+ <strong>Example 1.</strong> Debugging kernel routine 
+</p>
+<ol>
+<li class="level1"><div class="li"> Compile kernel with debug info and frame pointer</div>
+</li>
+<li class="level1"><div class="li"> Download linux image to the board and boot it</div>
+</li>
+<li class="level1"><div class="li"> Start gdbproxy<pre class="code">
+host$&gt; sudo gdbproxy bfin</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Connect gdb to gdbproxy<pre class="code">
+host$&gt; bfin-elf-gdb vmlinux
+(gdb) target remote :2000</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Now the kernel should be stopped in idle loop.</div>
+</li>
+<li class="level1"><div class="li"> Set software breakpoint<pre class="code">
+(gdb) b cpuinfo_open
+(gdb) c</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> When you do <code>cat /proc/cpuinfo</code> on the target board, it should stopped at <code>cpuinfo_open ()</code>.</div>
+</li>
+</ol>
+
+<p>
+ <strong>Example 2.</strong> Debugging the kernel boot process from the first instruction at 0&times;1000 
+</p>
+<ol>
+<li class="level1"><div class="li"> Run u-boot and tftp the kernel image</div>
+</li>
+<li class="level1"><div class="li"> Set a <strong>hardware</strong> breakpoint at 0&times;1000, the address of the first instruction the kernel executes when it boots<pre class="code">
+(gdb) hb *0x1000</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Boot the kernel<pre class="code">
+stamp&gt; boote</pre>
+</div>
+</li>
+<li class="level1"><div class="li"> Just after u-boot jumps to the first instruction of kernel, the kernel will stop, gdb will print out that the kernel has stopped at 0&times;1000</div>
+</li>
+</ol>
+
+<p>
+ <strong>Example 3.</strong> To load an ELF binary into memory and execute
+</p>
+<pre class="code">
+(gdb) load blink.dxe
+Loading section .text, size 0x1b8 lma 0xffa00000
+Start address 0xffa00000, load size 440
+Transfer rate: 3520 bits in &lt;1 sec, 440 bytes/write.
+(gdb) c
+Continuing.
+</pre>
+
+<p>
+More commands: see <a href="http://sources.redhat.com/gdb/current/onlinedocs/gdb_toc.html" class="urlextern" title="http://sources.redhat.com/gdb/current/onlinedocs/gdb_toc.html"  rel="nofollow">GDB help</a>
+</p>
+
+<p>
+Note that the above examples assume, that the peripheral hardware has been properly initialized. <acronym title="GNU Debugger">GDB</acronym> does not initialize anything on start, since it has no knowledge about the current state of the system. Before you load a program into the Blackfin, make sure you have done the correct initialization - read more hints below.
+</p>
+
+<p>
+For different system configurations, <acronym title="GNU Debugger">GDB</acronym> scripts are used. <acronym title="GNU Debugger">GDB</acronym> scripting is a very powerful feature and helps to automatize different system configurations.
+</p>
+
+<p>
+ <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym>   
+</p>
+
+</div>
+<!-- SECTION "Debugging via Jtag (gdbproxy)" [11311-16615] -->
+<h2><a name="common_gdb_commands" id="common_gdb_commands">Common gdb Commands</a></h2>
+<div class="level2">
+
+<p>
+A summary of some common <em>gdb</em> commands are given below: 
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>break &lt;function or </strong><strong>filename:line#&gt;</strong> - This command sets a breakpoint at the specified function or line number.  (e.g. break main, break myprog.c:7).</div>
+</li>
+<li class="level1"><div class="li"> <strong>continue</strong> - This command continues program execution from the point where it was last stopped.</div>
+</li>
+<li class="level1"><div class="li"> <strong>delete &lt;breakpoint# or </strong><strong>watchpoint</strong><strong>#&gt;</strong> - This command deletes the breakpoint or watchpoint specified by the breakpoint or watchpoint number.  The watchpoint / breakpoint number is given when the watchpoint / breakpoint is first set.</div>
+</li>
+<li class="level1"><div class="li"> <strong>disable &lt;breakpoint#&gt;</strong> - This command disables the breakpoint specified by the breakpoint number.  The breakpoint number is given when the breakpoint is first set.</div>
+</li>
+<li class="level1"><div class="li"> <strong>run</strong> - This command starts the program being debugged.  The <em>continue</em> command is used instead of <em>run</em> when debugging a program on a remote target.</div>
+</li>
+<li class="level1"><div class="li"> <strong>set variable &lt;symbol&gt; = &lt;value&gt;</strong> - This commands sets a variable specified by <em>symbol</em> to the given value. (e.g. set variable x = 3).</div>
+</li>
+<li class="level1"><div class="li"> <strong>step</strong> - This command executes the next line of code given in the source file.</div>
+</li>
+<li class="level1"><div class="li"> <strong>watch &lt;symbol&gt;</strong> - This command sets a watchpoint for the variable specified by the given symbol.  Whenever the value of the variable is changed <em>gdb</em> will alert you to the old value and the new value of the variable.  (e.g. To watch the value of a variable called <em>X</em> enter the command watch <em>X</em>).</div>
+</li>
+</ul>
+
+<p>
+<em>gdb</em> provides much more functionality that cannot be covered here.  Click <a href="http://www.gnu.org/software/gdb/documentation" class="urlextern" title="http://www.gnu.org/software/gdb/documentation"  rel="nofollow">here</a> for the gdb manual.
+</p>
+
+<p>
+There are some advanced time saving gdb scripts, which can be used with kgdb and gdb. Check out the <a href="gdb_snippets.html" class="wikilink1" title="gdb_snippets.html">gdb snippets</a> section.
+</p>
+
+</div>
+<!-- SECTION "Common gdb Commands" [16616-18365] -->
+<h1><a name="using_a_graphical_debugger" id="using_a_graphical_debugger">Using a Graphical Debugger</a></h1>
+<div class="level1">
+
+</div>
+<!-- SECTION "Using a Graphical Debugger" [18366-18407] -->
+<h2><a name="ddd" id="ddd">DDD</a></h2>
+<div class="level2">
+
+<p>
+Data Display Debugger (<code>ddd</code>) is a graphical front-end for command-line debuggers such as <code>bfin-uclinux-gdb</code>.  For most distributions of Linux, <code>ddd</code> can be installed through the host package manager; alternately, the source code for <code>ddd</code> is available <a href="http://www.gnu.org/software/ddd" class="urlextern" title="http://www.gnu.org/software/ddd"  rel="nofollow">here</a> for you to compile yourself. The complete ddd manual can be found formatted in <a href="http://www.gnu.org/manual/ddd/html_mono/ddd.html" class="urlextern" title="http://www.gnu.org/manual/ddd/html_mono/ddd.html"  rel="nofollow">html</a> or as a <a href="http://www.gnu.org/manual/ddd/pdf/ddd.pdf" class="urlextern" title="http://www.gnu.org/manual/ddd/pdf/ddd.pdf"  rel="nofollow">pdf</a>. The problem with DDD is that the upstream development is not terribly active. However, it is usable, especially for people who are not familiar with <acronym title="GNU Debugger">GDB</acronym> commands. 
+</p>
+
+<p>
+Once <code>ddd</code> is installed you must ensure that the correct <code>gdb</code> program will be used. To remotely debug uClinux programs, the Blackfin <code>bfin-uclinux-gdb</code> program described earlier must be used. To remotely debug the kernel, the Blackfin <code>bfin-elf-gdb</code> program should be used. To use <code>ddd</code> with either, invoke <code>ddd</code> with the <code>-debugger</code> option. 
+</p>
+<pre class="code">
+ddd –debugger bfin-uclinux-gdb
+</pre>
+
+<p>
+An overview of the main <code>ddd</code> window is given below. It&rsquo;s also an example of the beginning of a typical debugging session. See the the command line window of <code>ddd</code> in the following screen shot for using <code>file</code> and <code>target remote</code> to connect to the target board:
+</p>
+
+</div>
+
+<h5><a name="source_text_window" id="source_text_window">Source Text Window</a></h5>
+<div class="level5">
+
+<p>
+<a href="media/debuggers1.png" class="media" target="_blank" title="debuggers1.png"><img src="media/debuggers1.png" class="medialeft" alt="" /></a>
+</p>
+
+<p>
+This window shows your source code along with any breakpoints you have inserted.  The arrow indicates the next line of source code to be executed.
+</p>
+
+</div>
+
+<h5><a name="gdb_console" id="gdb_console">GDB Console</a></h5>
+<div class="level5">
+
+<p>
+<a href="media/debuggers2.png" class="media" target="_blank" title="debuggers2.png"><img src="media/debuggers2.png" class="media" alt="" /></a>
+</p>
+
+<p>
+This window shows the output from the <code>gdb</code> program.  You can also enter <code>gdb</code> commands in this window.
+</p>
+
+</div>
+
+<h5><a name="command_buttons" id="command_buttons">Command Buttons</a></h5>
+<div class="level5">
+
+<p>
+<a href="media/debuggers3.png" class="media" target="_blank" title="debuggers3.png"><img src="media/debuggers3.png" class="media" alt="" /></a>
+</p>
+
+<p>
+These buttons execute some common <code>ddd</code> and <code>gdb</code> commands.
+</p>
+
+</div>
+
+<h5><a name="argument_field" id="argument_field">Argument Field</a></h5>
+<div class="level5">
+
+<p>
+<a href="media/debuggers4.png" class="media" target="_blank" title="debuggers4.png"><img src="media/debuggers4.png" class="media" alt="" /></a>
+</p>
+
+<p>
+This text field sets the value for the argument <strong>()</strong> which is passed to the commands executed by the command buttons.  In this example clicking on the the breakpoint command button would clear the breakpoint at <code>myprog.c:5</code> (myprog.c line 5) as this is the value in the argument field.  The current line or text selection in the source text window is written to this field.  You may also type a value into this field.
+</p>
+
+</div>
+<!-- SECTION "DDD" [18408-20669] -->
+<h2><a name="eclipse" id="eclipse">Eclipse</a></h2>
+<div class="level2">
+
+<p>
+Eclipse is an excellent IDE framework. It supports a lot of plug-ins and the eclipse community keeps growing. In another page <a href="using_eclipse.html#debugging_using_eclipse" class="wikilink1" title="using_eclipse.html">debugging_using_eclipse</a>, we introduced how to set up eclipse for debugging on Blackfin uClinux. Since Eclipse is written in Java, it requires more memory for development system. Eclipse talks with <acronym title="GNU Debugger">GDB</acronym> using Machine Interface, while DDD is using command interface. Machine Interface is considered to be more stable.
+</p>
+
+</div>
+<!-- SECTION "Eclipse" [20670-21149] -->
+<h2><a name="the_gnat_programming_studio_gps" id="the_gnat_programming_studio_gps">The GNAT Programming Studio (GPS)</a></h2>
+<div class="level2">
+
+<p>
+ <a href="https://libre2.adacore.com/gps/" class="urlextern" title="https://libre2.adacore.com/gps/"  rel="nofollow">https://libre2.adacore.com/gps/</a> GPS, the GNAT Programming Studio, is a Free Software IDE. With its intuitive interface, GPS is easy to use, simplifying source navigation and highlighting the fundamental ideas in the program.
+</p>
+
+<p>
+Compared the DDD, the debugging interface looks much like modern IDEs.
+</p>
+
+<p>
+GPS is invoked the same way as DDD: 
+</p>
+<pre class="code">
+ddd –debugger bfin-uclinux-gdb
+</pre>
+
+<p>
+And here is a snap shot: <a href="media/gps_debuggers_1.png" class="media" target="_blank" title="gps_debuggers_1.png"><img src="media/gps_debuggers_1.png" class="medialeft" alt="" /></a>
+</p>
+
+</div>
+<!-- SECTION "The GNAT Programming Studio (GPS)" [21150-21634] -->
+<h2><a name="insight" id="insight">Insight</a></h2>
+<div class="level2">
+
+<p>
+ <a href="http://www.sourceware.org/insight/" class="urlextern" title="http://www.sourceware.org/insight/"  rel="nofollow">http://www.sourceware.org/insight/</a> Insight is a graphical user interface to <acronym title="GNU Debugger">GDB</acronym>, the <acronym title="GNU's Not Unix">GNU</acronym> Debugger written in TCL/Tk by people working at Red Hat, Inc. and Cygnus Solutions.  It is combined together with <acronym title="GNU Debugger">GDB</acronym>, and built together with <acronym title="GNU Debugger">GDB</acronym>.
+</p>
+
+<p>
+Starting with the 2007R2 toolchain, insight has been integrated into the normal toolchain build.
+</p>
+
+<p>
+For older releases, follow these directions:
+</p>
+<ol>
+<li class="level1"><div class="li"> Get the source code for the Blackfin toolchain</div>
+</li>
+<li class="level1"><div class="li"> Get the source code of Insight 6.6</div>
+</li>
+<li class="level1"><div class="li"> cd insight-6.6</div>
+</li>
+<li class="level1"><div class="li"> cp -a gdb/gdbtk blackfin_toolchain_source/binutils/binutils-2.17/gdb</div>
+</li>
+<li class="level1"><div class="li"> cp -a itcl/ libgui/ tcl/ tk/ blackfin_toolchain_source/binutils/binutils-2.17/</div>
+</li>
+<li class="level1"><div class="li"> cd ..</div>
+</li>
+<li class="level1"><div class="li"> mkdir build-insight</div>
+</li>
+<li class="level1"><div class="li"> cd build-insight</div>
+</li>
+<li class="level1"><div class="li"> blackfin_toolchain_source/binutils/binutils-2.17/configure --target=bfin-elf</div>
+</li>
+<li class="level1"><div class="li"> make all-gdb</div>
+</li>
+<li class="level1"><div class="li"> make install-gdb </div>
+</li>
+</ol>
+
+<p>
+This will install bfin-elf-insight to /usr/local/bin
+</p>
+
+</div>
+<!-- SECTION "Insight" [21635-22534] -->
+<h2><a name="visual_dsp" id="visual_dsp">Visual DSP++</a></h2>
+<div class="level2">
+
+<p>
+ While it is possible to debug assembly code (uboot, kernel, application) using the VDSP++ ICE, it is not recommended since VDSP++ does not understand the debugging information in the gcc elf file.
+</p>
+
+</div>
+<!-- SECTION "Visual DSP++" [22535-22759] -->
+<h1><a name="external_resources" id="external_resources">External Resources</a></h1>
+<div class="level1">
+<ol>
+<li class="level1"><div class="li"> <a href="http://sourceware.org/gdb/" class="urlextern" title="http://sourceware.org/gdb/"  rel="nofollow">GDB Homepage</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://sourceware.org/gdb/documentation/" class="urlextern" title="http://sourceware.org/gdb/documentation/"  rel="nofollow">GDB Manual</a></div>
+</li>
+</ol>
+
+</div>
+<!-- SECTION "External Resources" [22760-] --></body>
+</html>

@@ -1,0 +1,31 @@
+AutoECO Report
+FILE-A: C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+FILE-B: C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MNL
+If "*EOF*" immediately follows, no changes were made
+Adding component C90
+Adding component R20
+Adding net RESET
+Adding R20.1 to net 3.3V
+Adding C90.2 to net GND
+Adding J3.7 to net DT1SEC
+Adding J3.8 to net DT1PRI
+Adding J3.5 to net TFS1
+Adding J3.6 to net TSCLK1
+Adding J3.3 to net DR1SEC
+Adding J3.4 to net DR1PRI
+Adding J3.1 to net RFS1
+Adding J3.2 to net RSCLK1
+Adding J1.6 to net PF4
+Adding J1.3 to net PF3
+Adding J1.1 to net PF1
+Adding J1.2 to net PF0
+Adding J1.5 to net PF5
+Adding U1.3 to net RESET
+Adding R20.2 to net RESET
+Adding C90.1 to net RESET
+Adding U1.7 to net OUT2L-
+Adding U1.4 to net OUT3L
+Adding U1.6 to net OUT2L
+Adding U1.5 to net OUT3L-
+*EOF*
+No errors found

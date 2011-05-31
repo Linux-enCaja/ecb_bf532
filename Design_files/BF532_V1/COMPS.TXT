@@ -1,0 +1,132 @@
+*************************************
+*                                   *
+* Component List (Generic)          *
+*                                   *
+* C:\CAINPCB\ECB_BF532\ECB_532.MAX  *
+* Sun Feb 15 10:59:01 2009          *
+*                                   *
+*************************************
+
+ REF DES    VALUE            PACKAGE          FOOTPRINT                      X LOC      Y LOC      ROTATION
+------------------------------------------------------------------------------------------------------------
+C1         1nF              C_1              C_0603                          90.39 mm   269.31 mm 0       
+C2         10pF             C_1              C_0603                          93.30 mm   295.00 mm 180     
+C3         10pF             C_1              C_0603                          93.10 mm   289.51 mm 180     
+C4         10pF             C_1              C_0603                          93.09 mm   283.99 mm 180     
+C5         10pF             C_1              C_0603                          93.08 mm   278.48 mm 180     
+C6         33pF             C_1              C_0603                          72.61 mm   265.56 mm 0       
+C7         33pF             C_1              C_0603                          74.89 mm   271.53 mm 180     
+C8         33pF             C_1              C_0603                          60.33 mm   265.42 mm 180     
+C9         33pF             C_1              C_0603                          66.84 mm   265.40 mm 180     
+C10        0.1uF            C_1              C_0603                          56.18 mm   286.11 mm 180     
+C11        0.1uF            C_1              C_0603                          56.12 mm   278.84 mm 180     
+C12        0.1uF            C_1              C_0603                          63.47 mm   276.87 mm 270     
+C13        0.1uF            C_1              C_0603                          65.68 mm   276.84 mm 270     
+C14        0.1uF            C_1              C_0603                          70.48 mm   276.85 mm 270     
+C15        0.1uF            C_1              C_0603                          75.97 mm   276.87 mm 270     
+C16        0.1uF            C_1              C_0603                          87.51 mm   281.92 mm 180     
+C17        0.1uF            C_1              C_0603                          84.46 mm   274.16 mm 90      
+C18        0.1uF            C_1              C_0603                          87.00 mm   289.06 mm 180     
+C19        0.1uF            C_1              C_0603                          81.30 mm   297.61 mm 180     
+C20        0.1uF            C_1              C_0603                          72.66 mm   297.64 mm 0       
+C21        0.1uF            C_1              C_0603                          67.14 mm   297.57 mm 0       
+C22        0.1uF            C_1              C_0603                          56.21 mm   291.83 mm 180     
+C23        0.1uF            C_1              C_0603                          56.18 mm   297.31 mm 180     
+C24        100uF            CAP              AL_SMB_R228                     44.74 mm   289.53 mm 0       
+C25        100uF            CAP              AL_SMB_R228                     44.01 mm   302.97 mm 0       
+C26        0.1uF            C_1              C_0603                          69.99 mm   299.20 mm 180     
+C27        0.1uF            C_1              C_0603                          84.66 mm   293.04 mm 180     
+C28        0.1uF            C_1              C_0603                          84.40 mm   285.62 mm 90      
+C29        0.1uF            C_1              C_0603                          84.73 mm   278.40 mm 90      
+C30        0.1uF            C_1              C_0603                          73.22 mm   275.77 mm 270     
+C31        0.01uF           C_1              C_0603                          56.16 mm   280.23 mm 180     
+C32        0.1uF            C_1              C_0603                          56.19 mm   284.57 mm 180     
+C33        0.1uF            C_1              C_0603                          56.10 mm   294.57 mm 180     
+C34        1uF              CAP              AL_SMB_R228                     52.73 mm   291.54 mm 90      
+C36        10nF             C_1              C_0603                          49.67 mm   264.58 mm 90      
+C37        10nF             C_1              C_0603                          50.85 mm   274.02 mm 180     
+C38        100uF            CAP              AL_SMB_R228                     55.64 mm   274.03 mm 0       
+C39        100uF            CAP              AL_SMB_R228                     54.20 mm   265.40 mm 0       
+C40        GRM39-100NF-16V  GRM39-100NF-16V  SM_C_0603                       46.82 mm   274.78 mm 0       
+C41        GRM39-100NF-16V  GRM39-100NF-16V  SM_C_0603                       48.50 mm   293.65 mm 0       
+C42        GRM39-100NF-16V  GRM39-100NF-16V  C_0603                          74.78 mm   279.17 mm 0       
+C43        GRM39-100NF-16V  GRM39-100NF-16V  C_0603                          77.98 mm   294.71 mm 270     
+C44        GRM39-100NF-16V  GRM39-100NF-16V  C_0603                          73.18 mm   294.78 mm 270     
+C45        GRM39-100NF-16V  GRM39-100NF-16V  C_0603                          79.33 mm   278.75 mm 0       
+C46        GRM39-100NF-16V  GRM39-100NF-16V  C_0603                          70.72 mm   279.16 mm 0       
+C47        GRM39-100NF-16V  GRM39-100NF-16V  C_0603                          82.03 mm   278.18 mm 90      
+C48        GRM39-100NF-16V  GRM39-100NF-16V  C_0603                          61.41 mm   278.29 mm 90      
+C50        0.1uF            C_1              C_0603                          58.20 mm   306.82 mm 180     
+C52        0.1uF            C_1              C_0603                          59.82 mm   316.43 mm 180     
+C53        100n             CAP_NP           C_0603                          87.11 mm   315.34 mm 180     
+C54        100n             CAP_NP           C_0603                          86.13 mm   309.54 mm 0       
+C55        100n             CAP_NP           C_0603                          84.91 mm   305.82 mm 0       
+C56        100n             CAP_NP           C_0603                          91.72 mm   305.81 mm 180     
+C57        100n             CAP_NP           C_0603                          89.16 mm   309.57 mm 0       
+C58        0.1uF            C_1              C_0603                          90.40 mm   270.72 mm 0       
+C59        10uF             CAP              AL_SMD_R213                     80.02 mm   311.60 mm 90      
+D1         1N5819           1N5814_0         SOD_123_CA                      49.54 mm   269.60 mm 270     
+D3         Red LED          LED_0            C_0603                          94.43 mm   315.15 mm 0       
+D4         Red LED          LED_0            SM/C_0603                       77.07 mm   271.02 mm 90      
+D5         Red LED          LED_0            SM/C_0603                       84.34 mm   311.05 mm 270     
+H1         PLATE_HOLE       PLATE_HOLE_1     TH_COMPACT                      42.42 mm   319.75 mm 0       
+H2         PLATE_HOLE       PLATE_HOLE_1     TH_COMPACT                      42.13 mm   260.24 mm 0       
+H3         PLATE_HOLE       PLATE_HOLE_1     TH_COMPACT                      98.89 mm   260.17 mm 0       
+H4         PLATE_HOLE       PLATE_HOLE_1     TH_COMPACT                      98.37 mm   319.75 mm 0       
+J1         RESET            RESET_0          E-SWITCH                        98.73 mm   265.38 mm 90      
+J2         HEADER 7         HEADER_7         SIP/TM/L.700/7                  98.20 mm   303.94 mm 180     
+J3         B2S              B2S              SIP/TM/L.200/2                  74.88 mm   304.03 mm 180     
+J4         B2S              B2S              SIP/TM/L.200/2                  77.55 mm   304.02 mm 0       
+J5         POWER            RCA_JACK         POWER                           47.44 mm   311.38 mm 270     
+J6         HEADER 4         HEADER_4         SIP/TM/L.400/4                  98.41 mm   307.25 mm 90      
+J7         FPGA_GPIOs       HEADER_6X2       MOLEX_71850_12P_2MM             97.15 mm   296.04 mm 270     
+J8         FPGA_GPIOs       HEADER_6X2       MOLEX_71850_12P_2MM             97.15 mm   284.04 mm 270     
+J23        FPGA_GPIOs       HEADER_6X2       MOLEX_71850_12P_2MM             85.31 mm   264.23 mm 180     
+L4 10UH1   PULSE-P1172-22.. PULSE-P1172-22.. COILTRONICS_UP1                 45.15 mm   267.81 mm 270     
+MN1        MT48LC4M16A2TG   MT48LC8M16A2TG_0 TSOP54_R464W_R720L_R0315PTCH    73.60 mm   286.52 mm 0       
+R1         10K              RESISTOR         R_0603                          89.67 mm   266.27 mm 0       
+R2         10K              RESISTOR         R_0603                          56.14 mm   283.12 mm 0       
+R3         10K              RESISTOR         R_0603                          56.14 mm   281.61 mm 0       
+R4         22               RESISTOR/SM      R_0603                          64.13 mm   279.21 mm 180     
+R5         100              RESISTOR         R_0603                          92.05 mm   296.35 mm 180     
+R6         0                RESISTOR         R_0603                          90.51 mm   294.97 mm 180     
+R7         0                RESISTOR         R_0603                          92.04 mm   293.59 mm 180     
+R8         0                RESISTOR         R_0603                          90.50 mm   292.24 mm 180     
+R9         100              RESISTOR         R_0603                          92.02 mm   290.87 mm 180     
+R10        0                RESISTOR         R_0603                          90.47 mm   289.49 mm 180     
+R11        0                RESISTOR         R_0603                          91.99 mm   288.13 mm 180     
+R12        0                RESISTOR         R_0603                          90.44 mm   286.74 mm 180     
+R13        100              RESISTOR         R_0603                          92.00 mm   285.34 mm 180     
+R14        10K              RESISTOR         R_0603                          96.00 mm   298.84 mm 270     
+R15        0                RESISTOR         R_0603                          90.47 mm   283.98 mm 180     
+R16        10K              RESISTOR         R_0603                          88.04 mm   300.72 mm 90      
+R17        10K              RESISTOR         R_0603                          85.37 mm   300.69 mm 90      
+R18        10K              RESISTOR         R_0603                          89.56 mm   300.72 mm 90      
+R19        4.7K             RESISTOR         R_0603                          94.55 mm   298.85 mm 90      
+R20        0                RESISTOR         R_0603                          91.99 mm   282.61 mm 180     
+R21        0                RESISTOR         R_0603                          90.48 mm   281.24 mm 180     
+R22        100              RESISTOR         R_0603                          92.03 mm   279.86 mm 180     
+R23        0                RESISTOR         R_0603                          92.02 mm   277.09 mm 180     
+R24        0                RESISTOR         R_0603                          90.50 mm   275.70 mm 180     
+R25        0                RESISTOR         R_0603                          90.48 mm   278.47 mm 180     
+R26        4.7K             RESISTOR         R_0603                          91.44 mm   300.73 mm 270     
+R27        10K              RESISTOR         R_0603                          67.45 mm   276.83 mm 270     
+R28        10M              RESISTOR         R_0603                          74.14 mm   269.26 mm 270     
+R29        10k              RESISTOR         R_0603                          77.80 mm   301.84 mm 180     
+R30        10k              RESISTOR         R_0603                          80.68 mm   301.84 mm 0       
+R31        10M / DNP        RESISTOR         R_0603                          63.58 mm   265.41 mm 180     
+R32        10k              R                SM_R_0603                       52.86 mm   279.30 mm 180     
+R33        1K               R                C_0603                          91.68 mm   315.15 mm 0       
+R34        100k             R                C_0603                          94.43 mm   313.64 mm 180     
+R35        1K               R                SM/C_0603                       84.35 mm   314.03 mm 270     
+R36        1K               R                SM/C_0603                       75.81 mm   269.28 mm 0       
+U1         TPS3808G25       TPS3808G25_0     SOT23-6                         91.52 mm   264.14 mm 0       
+U2         TPS3808G25       TPS3808G25_0     SOT23-6                         87.69 mm   264.16 mm 0       
+U3         ADSP-BF533SKBC.. ADSP-BF533SKBC.. QUAD.50M/176/WG26.00            60.96 mm   274.32 mm 0       
+U4         ZXM64P02X        IRF7421_1        MSOP8_R19W_R125L_R0256PTCH      54.09 mm   269.85 mm 90      
+U5         MT29F2G08AABWP   NAND256W3A2AN6.. TSOP48_R78W_R49L_R0196PTCH      47.90 mm   286.79 mm 0       
+U6         M25Pxx           M25PXX           SOIC8_R31W_R21L_R050PTCH        89.86 mm   269.70 mm 90      
+U7         LMS1585-3.3      LM140A-15/TO_1   TO263_3P                        59.14 mm   311.54 mm 270     
+U8         MAX3223ECAP      MAX3223_0        TSSOP20_R25W_R275L_R0256PTCH    88.63 mm   309.99 mm 0       
+Y1         32.768kHz        CRYSTAL_2        ABS10                           71.81 mm   271.38 mm 270     
+Y2         11.0592MHz       CRYSTAL_3        HC49S                           63.56 mm   269.05 mm 180     

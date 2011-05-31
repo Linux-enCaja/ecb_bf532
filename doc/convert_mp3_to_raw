@@ -1,0 +1,3 @@
+mpg123 -s xxxxx.mp3 > xxxx.raw
+dd if=Beatiful.raw of=test.raw count=2048 bs=1024
+

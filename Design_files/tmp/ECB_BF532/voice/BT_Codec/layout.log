@@ -1,0 +1,1212 @@
+Tue Jul 07 16:28:52 Saved as file BACKUP1.MAX
+Tue Jul 07 16:28:52 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Tue Jul 07 16:29:01 UserDiv from Layout.INI for AutoECO: 60
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\AT91.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ECBOT.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_BATTERY.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_CONN.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_FUSE.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_HARDWARE.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_MODULE.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_PRTDEV.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_RELAY.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_CAP.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_DIODE.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IC.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IND.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_RES.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_SWX.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XFMR.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XISTR.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XTAL.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SOCKETS.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_CAP.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_DIODE.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IC.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IND.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_RES1.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_SWX.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XFMR.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XISTR.LLB
+Tue Jul 07 16:29:01 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XTAL.LLB
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON100T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON156T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BGA.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\CLCC.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON050T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON085T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050F.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIN.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100B.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT_HD.LLB
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ECON100T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\FBUS.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ISA.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\JUMPER.LLB
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LAYOUT.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LCON100T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PC104.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCI.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON100T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON156T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PGA.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PLCC.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUAD.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUADB.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RELAY.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RF.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SBUS.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050F.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100F.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIP.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SM.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOG.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOJ.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\STIFF.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TELE.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_AXIAL.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CAP_P.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CYLND.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DIODE.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DISC.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_RAD.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TO.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TRAINING.LLB
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\VRES.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\WCON100T.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\XT.llb
+Tue Jul 07 16:29:01 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ZIGZAG.llb
+Tue Jul 07 16:29:03 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 07 16:29:03 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 07 16:30:11 Saved as file ~undo.max
+Tue Jul 07 16:30:49 Saved as file ~undo.max
+Tue Jul 07 16:31:03 Saved as file ~undo.max
+Tue Jul 07 16:31:46 Saved as file ~undo.max
+Tue Jul 07 16:32:02 Saved as file ~undo.max
+Tue Jul 07 16:32:27 Saved as file ~undo.max
+Tue Jul 07 16:32:38 Saved as file ~undo.max
+Tue Jul 07 16:32:55 Saved as file ~undo.max
+Tue Jul 07 16:33:05 Saved as file ~undo.max
+Tue Jul 07 16:34:04 Saved as file ~undo.max
+Tue Jul 07 16:34:06 Saved as file ~undo.max
+Tue Jul 07 16:34:22 Saved as file ~undo.max
+Tue Jul 07 16:34:24 Saved as file ~undo.max
+Tue Jul 07 16:37:46 Saved as file ~undo.max
+Tue Jul 07 16:38:30 Saved as file ~undo.max
+Tue Jul 07 16:39:16 Saved as file BACKUP1.MAX
+Tue Jul 07 16:39:43 Saved as file ~undo.max
+Tue Jul 07 16:39:53 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 07 16:40:40 Saved as file ~undo.max
+Tue Jul 07 16:40:41 Saved as file ~undo2.max
+Tue Jul 07 16:40:41 Loaded file ~undo.max
+Tue Jul 07 16:40:59 Saved as file ~undo.max
+Tue Jul 07 16:41:04 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 07 16:41:04 Saved as file ~undo.max
+Tue Jul 07 16:42:06 Saved as file ~undo.max
+Tue Jul 07 16:42:20 Saved as file ~undo.max
+Tue Jul 07 16:42:24 Saved as file ~undo.max
+Tue Jul 07 16:43:06 Saved as file ~undo.max
+Tue Jul 07 16:43:34 Saved as file ~undo.max
+Tue Jul 07 16:43:37 Saved as file ~undo.max
+Tue Jul 07 16:43:39 Saved as file ~undo.max
+Tue Jul 07 16:44:22 Saved as file ~undo.max
+Tue Jul 07 16:44:35 Saved as file ~undo.max
+Tue Jul 07 16:45:18 Saved as file ~undo.max
+Tue Jul 07 16:45:19 Saved as file ~undo.max
+Tue Jul 07 16:45:33 Saved as file ~undo.max
+Tue Jul 07 16:45:55 Saved as file ~undo.max
+Tue Jul 07 16:47:58 Saved as file ~undo.max
+Tue Jul 07 16:48:25 Saved as file ~undo.max
+Tue Jul 07 16:48:28 Saved as file ~undo2.max
+Tue Jul 07 16:48:28 Loaded file ~undo.max
+Tue Jul 07 16:48:35 Saved as file ~undo.max
+Tue Jul 07 16:49:05 Saved as file ~undo.max
+Tue Jul 07 16:49:12 Saved as file ~undo.max
+Tue Jul 07 16:49:16 Saved as file BACKUP1.MAX
+Tue Jul 07 16:49:19 Saved as file ~undo.max
+Tue Jul 07 16:49:32 Saved as file ~undo.max
+Tue Jul 07 16:49:33 Saved as file ~undo.max
+Tue Jul 07 16:58:58 Saved as file ~undo.max
+Tue Jul 07 16:58:59 Saved as file ~undo.max
+Tue Jul 07 16:59:46 Saved as file BACKUP1.MAX
+Tue Jul 07 17:00:35 Saved as file ~undo.max
+Tue Jul 07 17:00:36 Saved as file ~undo.max
+Tue Jul 07 17:01:15 Saved as file ~undo.max
+Tue Jul 07 17:01:39 Saved as file ~undo.max
+Tue Jul 07 17:01:43 Saved as file ~undo.max
+Tue Jul 07 17:01:52 Saved as file ~undo.max
+Tue Jul 07 17:01:58 Saved as file ~undo.max
+Tue Jul 07 17:02:07 Saved as file ~undo.max
+Tue Jul 07 17:02:13 Saved as file ~undo.max
+Tue Jul 07 17:02:16 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 07 17:02:41 Saved as file ~undo.max
+Tue Jul 07 17:02:53 Saved as file ~undo.max
+Tue Jul 07 17:04:55 Saved as file ~undo.max
+Tue Jul 07 17:06:00 Saved as file ~undo.max
+Tue Jul 07 17:06:00 Saved as file ~undo.max
+Tue Jul 07 17:06:08 Saved as file ~undo.max
+Tue Jul 07 17:08:53 Saved as file ~undo.max
+Tue Jul 07 17:09:01 Saved as file ~undo.max
+Tue Jul 07 17:09:01 Saved as file ~undo.max
+Tue Jul 07 17:09:12 Saved as file ~undo.max
+Tue Jul 07 17:09:13 Saved as file ~undo.max
+Tue Jul 07 17:10:16 Saved as file BACKUP1.MAX
+Tue Jul 07 17:12:10 Saved as file ~undo.max
+Tue Jul 07 17:12:31 Saved as file ~undo.max
+Tue Jul 07 17:12:58 Saved as file ~undo.max
+Tue Jul 07 17:13:22 Saved as file ~undo.max
+Tue Jul 07 17:13:22 Saved as file ~undo2.max
+Tue Jul 07 17:13:22 Loaded file ~undo.max
+Tue Jul 07 17:13:39 Saved as file ~undo.max
+Tue Jul 07 17:13:47 Saved as file ~undo.max
+Tue Jul 07 17:13:49 Saved as file ~undo.max
+Tue Jul 07 17:14:12 Saved as file ~undo.max
+Tue Jul 07 17:14:13 Saved as file ~undo.max
+Tue Jul 07 17:18:11 Saved as file ~undo.max
+Tue Jul 07 17:18:20 Saved as file ~undo.max
+Tue Jul 07 17:18:26 Saved as file ~undo.max
+Tue Jul 07 17:19:01 Saved as file ~undo.max
+Tue Jul 07 17:20:46 Saved as file BACKUP1.MAX
+Tue Jul 07 17:31:16 Saved as file BACKUP1.MAX
+Tue Jul 07 17:32:21 Saved as file ~undo.max
+Tue Jul 07 17:32:23 Saved as file ~undo.max
+Tue Jul 07 17:33:33 Saved as file ~undo.max
+Tue Jul 07 17:33:41 Saved as file ~undo.max
+Tue Jul 07 17:33:50 Saved as file ~undo.max
+Tue Jul 07 17:34:00 Saved as file ~undo.max
+Tue Jul 07 17:34:03 Saved as file ~undo.max
+Tue Jul 07 17:34:42 Saved as file ~undo.max
+Tue Jul 07 17:34:44 Saved as file ~undo.max
+Tue Jul 07 17:35:07 Saved as file ~undo.max
+Tue Jul 07 17:35:09 Saved as file ~undo.max
+Tue Jul 07 17:35:59 Saved as file ~undo.max
+Tue Jul 07 17:36:00 Saved as file ~undo.max
+Tue Jul 07 17:41:46 Saved as file BACKUP1.MAX
+Tue Jul 07 17:52:16 Saved as file BACKUP1.MAX
+Tue Jul 07 18:02:16 Saved as file BACKUP1.MAX
+Tue Jul 07 18:12:46 Saved as file BACKUP1.MAX
+Tue Jul 07 18:23:16 Saved as file BACKUP1.MAX
+Tue Jul 07 18:33:46 Saved as file BACKUP1.MAX
+Tue Jul 07 18:37:59 Saved as file ~undo.max
+Tue Jul 07 18:38:06 Saved as file ~undo.max
+Tue Jul 07 18:38:08 Saved as file ~undo.max
+Tue Jul 07 18:38:30 Saved as file ~undo.max
+Tue Jul 07 18:38:31 Saved as file ~undo.max
+Tue Jul 07 18:38:32 Saved as file ~undo.max
+Tue Jul 07 18:38:33 Saved as file ~undo.max
+Tue Jul 07 18:38:37 Saved as file ~undo.max
+Tue Jul 07 18:44:16 Saved as file BACKUP1.MAX
+Tue Jul 07 18:54:46 Saved as file BACKUP1.MAX
+Tue Jul 07 19:05:16 Saved as file BACKUP1.MAX
+Tue Jul 07 19:15:46 Saved as file BACKUP1.MAX
+Tue Jul 07 19:26:16 Saved as file BACKUP1.MAX
+Tue Jul 07 19:36:16 Saved as file BACKUP1.MAX
+Tue Jul 07 19:36:41 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 12:06:17 Saved as file BACKUP1.MAX
+Mon Jul 13 12:06:17 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Mon Jul 13 12:06:23 UserDiv from Layout.INI for AutoECO: 60
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\AT91.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ECBOT.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_BATTERY.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_CONN.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_FUSE.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_HARDWARE.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_MODULE.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_PRTDEV.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_RELAY.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_CAP.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_DIODE.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IC.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IND.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_RES.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_SWX.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XFMR.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XISTR.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XTAL.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SOCKETS.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_CAP.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_DIODE.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IC.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IND.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_RES1.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_SWX.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XFMR.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XISTR.LLB
+Mon Jul 13 12:06:23 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XTAL.LLB
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON100T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON156T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BGA.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\CLCC.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON050T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON085T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050F.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIN.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100B.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT_HD.LLB
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ECON100T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\FBUS.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ISA.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\JUMPER.LLB
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LAYOUT.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LCON100T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PC104.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCI.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON100T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON156T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PGA.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PLCC.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUAD.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUADB.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RELAY.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RF.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SBUS.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050F.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100F.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIP.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SM.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOG.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOJ.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\STIFF.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TELE.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_AXIAL.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CAP_P.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CYLND.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DIODE.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DISC.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_RAD.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TO.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TRAINING.LLB
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\VRES.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\WCON100T.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\XT.llb
+Mon Jul 13 12:06:23 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ZIGZAG.llb
+Mon Jul 13 12:06:26 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Mon Jul 13 12:06:26 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Mon Jul 13 12:18:01 Saved as file BACKUP1.MAX
+Mon Jul 13 12:28:01 Saved as file BACKUP1.MAX
+Mon Jul 13 12:38:31 Saved as file BACKUP1.MAX
+Mon Jul 13 12:49:01 Saved as file BACKUP1.MAX
+Mon Jul 13 12:59:31 Saved as file BACKUP1.MAX
+Mon Jul 13 13:10:01 Saved as file BACKUP1.MAX
+Mon Jul 13 13:20:31 Saved as file BACKUP1.MAX
+Mon Jul 13 13:31:01 Saved as file BACKUP1.MAX
+Mon Jul 13 13:41:31 Saved as file BACKUP1.MAX
+Mon Jul 13 13:52:01 Saved as file BACKUP1.MAX
+Mon Jul 13 14:02:31 Saved as file BACKUP1.MAX
+Mon Jul 13 14:13:01 Saved as file BACKUP1.MAX
+Mon Jul 13 14:23:31 Saved as file BACKUP1.MAX
+Mon Jul 13 14:34:01 Saved as file BACKUP1.MAX
+Mon Jul 13 14:44:31 Saved as file BACKUP1.MAX
+Mon Jul 13 14:55:01 Saved as file BACKUP1.MAX
+Mon Jul 13 15:05:31 Saved as file BACKUP1.MAX
+Mon Jul 13 15:16:01 Saved as file BACKUP1.MAX
+Mon Jul 13 15:26:31 Saved as file BACKUP1.MAX
+Mon Jul 13 15:37:01 Saved as file BACKUP1.MAX
+Mon Jul 13 15:47:31 Saved as file BACKUP1.MAX
+Mon Jul 13 15:58:01 Saved as file BACKUP1.MAX
+Mon Jul 13 16:08:31 Saved as file BACKUP1.MAX
+Mon Jul 13 16:19:01 Saved as file BACKUP1.MAX
+Mon Jul 13 16:29:31 Saved as file BACKUP1.MAX
+Mon Jul 13 16:40:01 Saved as file BACKUP1.MAX
+Mon Jul 13 16:50:31 Saved as file BACKUP1.MAX
+Mon Jul 13 17:01:01 Saved as file BACKUP1.MAX
+Mon Jul 13 17:11:31 Saved as file BACKUP1.MAX
+Mon Jul 13 17:22:01 Saved as file BACKUP1.MAX
+Mon Jul 13 17:32:31 Saved as file BACKUP1.MAX
+Mon Jul 13 17:43:01 Saved as file BACKUP1.MAX
+Mon Jul 13 17:53:31 Saved as file BACKUP1.MAX
+Mon Jul 13 18:04:01 Saved as file BACKUP1.MAX
+Mon Jul 13 18:14:31 Saved as file BACKUP1.MAX
+Mon Jul 13 18:25:01 Saved as file BACKUP1.MAX
+Mon Jul 13 18:35:31 Saved as file BACKUP1.MAX
+Mon Jul 13 18:46:01 Saved as file BACKUP1.MAX
+Mon Jul 13 18:56:31 Saved as file BACKUP1.MAX
+Mon Jul 13 19:07:01 Saved as file BACKUP1.MAX
+Mon Jul 13 19:17:31 Saved as file BACKUP1.MAX
+Mon Jul 13 19:28:01 Saved as file BACKUP1.MAX
+Mon Jul 13 19:30:54 Saved as file ~undo.max
+Mon Jul 13 19:31:20 Saved as file ~undo.max
+Mon Jul 13 19:31:21 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:32:16 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:32:16 Saved as file ~undo.max
+Mon Jul 13 19:33:06 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:33:07 Saved as file ~undo.max
+Mon Jul 13 19:33:22 Saved as file ~undo.max
+Mon Jul 13 19:33:34 Saved as file ~undo.max
+Mon Jul 13 19:33:45 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:33:45 Saved as file ~undo.max
+Mon Jul 13 19:34:03 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:34:04 Saved as file ~undo.max
+Mon Jul 13 19:34:41 Saved as file ~undo.max
+Mon Jul 13 19:34:57 Saved as file ~undo.max
+Mon Jul 13 19:35:09 Saved as file ~undo.max
+Mon Jul 13 19:35:11 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:35:57 Saved as file ~undo.max
+Mon Jul 13 19:36:39 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:36:41 Saved as file ~undo.max
+Mon Jul 13 19:38:31 Saved as file BACKUP1.MAX
+Mon Jul 13 19:46:31 Saved as file ~undo.max
+Mon Jul 13 19:46:36 Saved as file ~undo.max
+Mon Jul 13 19:47:33 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:48:44 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:49:01 Saved as file BACKUP1.MAX
+Mon Jul 13 19:49:36 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:50:27 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:52:09 Saved as file ~undo.max
+Mon Jul 13 19:53:52 Saved as file ~undo.max
+Mon Jul 13 19:55:01 Saved as file ~undo.max
+Mon Jul 13 19:55:18 Saved as file ~undo.max
+Mon Jul 13 19:55:29 Saved as file ~undo.max
+Mon Jul 13 19:55:38 Saved as file ~undo.max
+Mon Jul 13 19:55:50 Saved as file ~undo.max
+Mon Jul 13 19:56:00 Saved as file ~undo.max
+Mon Jul 13 19:56:05 Saved as file ~undo.max
+Mon Jul 13 19:56:10 Saved as file ~undo.max
+Mon Jul 13 19:56:13 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:56:35 Saved as file ~undo.max
+Mon Jul 13 19:56:46 Saved as file ~undo.max
+Mon Jul 13 19:57:07 Saved as file ~undo.max
+Mon Jul 13 19:57:34 Saved as file ~undo.max
+Mon Jul 13 19:59:16 Saved as file ~undo.max
+Mon Jul 13 19:59:31 Saved as file BACKUP1.MAX
+Mon Jul 13 19:59:39 Saved as file ~undo.max
+Mon Jul 13 19:59:52 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 19:59:56 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:10:01 Saved as file BACKUP1.MAX
+Mon Jul 13 20:20:31 Saved as file BACKUP1.MAX
+Mon Jul 13 20:31:01 Saved as file BACKUP1.MAX
+Mon Jul 13 20:34:22 Saved as file ~undo.max
+Mon Jul 13 20:34:36 Saved as file ~undo.max
+Mon Jul 13 20:35:09 Saved as file ~undo.max
+Mon Jul 13 20:35:17 Saved as file ~undo.max
+Mon Jul 13 20:35:34 Saved as file ~undo.max
+Mon Jul 13 20:35:44 Saved as file ~undo.max
+Mon Jul 13 20:36:11 Saved as file ~undo.max
+Mon Jul 13 20:36:31 Saved as file ~undo.max
+Mon Jul 13 20:37:06 Saved as file ~undo.max
+Mon Jul 13 20:37:31 Saved as file ~undo.max
+Mon Jul 13 20:37:42 Saved as file ~undo.max
+Mon Jul 13 20:37:52 Saved as file ~undo.max
+Mon Jul 13 20:39:33 Saved as file ~undo.max
+Mon Jul 13 20:40:21 Saved as file ~undo.max
+Mon Jul 13 20:40:35 Saved as file ~undo.max
+Mon Jul 13 20:40:46 Saved as file ~undo.max
+Mon Jul 13 20:40:49 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:41:01 Saved as file BACKUP1.MAX
+Mon Jul 13 20:43:29 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:43:57 Saved as file ~undo.max
+Mon Jul 13 20:44:33 Saved as file ~undo.max
+Mon Jul 13 20:45:08 Saved as file ~undo.max
+Mon Jul 13 20:45:49 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:45:50 Saved as file ~undo.max
+Mon Jul 13 20:46:16 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:47:14 Saved as file ~undo.max
+Mon Jul 13 20:47:17 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:47:18 Saved as file ~undo.max
+Mon Jul 13 20:47:40 Saved as file ~undo.max
+Mon Jul 13 20:47:50 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:47:50 Saved as file ~undo.max
+Mon Jul 13 20:47:51 Saved as file ~undo.max
+Mon Jul 13 20:48:21 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:48:22 Saved as file ~undo.max
+Mon Jul 13 20:48:46 Saved as file ~undo.max
+Mon Jul 13 20:48:48 Saved as file ~undo.max
+Mon Jul 13 20:48:50 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:48:51 Saved as file ~undo.max
+Mon Jul 13 20:48:58 Saved as file ~undo.max
+Mon Jul 13 20:49:06 Saved as file ~undo.max
+Mon Jul 13 20:49:59 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:49:59 Saved as file ~undo.max
+Mon Jul 13 20:50:24 Saved as file ~undo.max
+Mon Jul 13 20:50:33 Saved as file ~undo.max
+Mon Jul 13 20:50:40 Saved as file ~undo.max
+Mon Jul 13 20:50:53 Saved as file ~undo.max
+Mon Jul 13 20:51:01 Saved as file BACKUP1.MAX
+Mon Jul 13 20:51:12 Saved as file ~undo.max
+Mon Jul 13 20:52:32 Saved as file ~undo.max
+Mon Jul 13 20:52:45 Saved as file ~undo.max
+Mon Jul 13 20:52:54 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:52:54 Saved as file ~undo.max
+Mon Jul 13 20:53:16 Saved as file ~undo.max
+Mon Jul 13 20:53:24 Saved as file ~undo.max
+Mon Jul 13 20:53:25 Saved as file ~undo.max
+Mon Jul 13 20:53:58 Saved as file ~undo.max
+Mon Jul 13 20:54:49 Saved as file ~undo.max
+Mon Jul 13 20:54:50 Saved as file ~undo.max
+Mon Jul 13 20:54:58 Saved as file ~undo.max
+Mon Jul 13 20:55:04 Saved as file ~undo.max
+Mon Jul 13 20:55:12 Saved as file ~undo.max
+Mon Jul 13 20:55:30 Saved as file ~undo.max
+Mon Jul 13 20:56:06 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:56:30 Saved as file ~undo.max
+Mon Jul 13 20:56:32 Saved as file ~undo.max
+Mon Jul 13 20:58:27 Saved as file ~undo.max
+Mon Jul 13 20:58:29 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:58:30 Saved as file ~undo.max
+Mon Jul 13 20:58:59 Saved as file ~undo.max
+Mon Jul 13 20:59:06 Saved as file ~undo.max
+Mon Jul 13 20:59:13 Saved as file ~undo.max
+Mon Jul 13 20:59:18 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 20:59:19 Saved as file ~undo.max
+Mon Jul 13 20:59:21 Saved as file ~undo.max
+Mon Jul 13 21:00:03 Saved as file ~undo.max
+Mon Jul 13 21:01:31 Saved as file BACKUP1.MAX
+Mon Jul 13 21:01:49 Saved as file ~undo.max
+Mon Jul 13 21:02:09 Saved as file ~undo.max
+Mon Jul 13 21:02:10 Saved as file ~undo.max
+Mon Jul 13 21:02:14 Saved as file ~undo.max
+Mon Jul 13 21:02:15 Saved as file ~undo.max
+Mon Jul 13 21:02:38 Saved as file ~undo.max
+Mon Jul 13 21:02:39 Saved as file ~undo.max
+Mon Jul 13 21:03:12 Saved as file ~undo.max
+Mon Jul 13 21:03:15 Saved as file ~undo.max
+Mon Jul 13 21:03:16 Saved as file ~undo.max
+Mon Jul 13 21:03:46 Saved as file ~undo.max
+Mon Jul 13 21:03:47 Saved as file ~undo.max
+Mon Jul 13 21:03:50 Saved as file ~undo.max
+Mon Jul 13 21:03:52 Saved as file ~undo.max
+Mon Jul 13 21:05:20 Saved as file ~undo.max
+Mon Jul 13 21:05:23 Saved as file ~undo.max
+Mon Jul 13 21:05:45 Saved as file ~undo.max
+Mon Jul 13 21:05:51 Saved as file ~undo.max
+Mon Jul 13 21:05:59 Saved as file ~undo.max
+Mon Jul 13 21:06:09 Saved as file ~undo.max
+Mon Jul 13 21:06:22 Saved as file ~undo.max
+Mon Jul 13 21:06:43 Saved as file ~undo.max
+Mon Jul 13 21:06:55 Saved as file ~undo.max
+Mon Jul 13 21:07:07 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 21:08:35 Saved as file ~undo.max
+Mon Jul 13 21:10:35 Saved as file ~undo.max
+Mon Jul 13 21:10:36 Saved as file ~undo.max
+Mon Jul 13 21:10:43 Saved as file ~undo.max
+Mon Jul 13 21:10:49 Saved as file ~undo.max
+Mon Jul 13 21:12:01 Saved as file BACKUP1.MAX
+Mon Jul 13 21:13:21 Saved as file ~undo.max
+Mon Jul 13 21:14:02 Saved as file ~undo.max
+Mon Jul 13 21:14:05 Saved as file ~undo.max
+Mon Jul 13 21:14:08 Saved as file ~undo.max
+Mon Jul 13 21:14:09 Saved as file ~undo.max
+Mon Jul 13 21:14:14 Saved as file ~undo.max
+Mon Jul 13 21:14:24 Saved as file ~undo.max
+Mon Jul 13 21:14:32 Saved as file ~undo.max
+Mon Jul 13 21:14:32 Saved as file ~undo.max
+Mon Jul 13 21:14:49 Saved as file ~undo.max
+Mon Jul 13 21:15:04 Saved as file ~undo.max
+Mon Jul 13 21:15:09 Saved as file ~undo.max
+Mon Jul 13 21:15:10 Saved as file ~undo.max
+Mon Jul 13 21:18:43 Saved as file ~undo.max
+Mon Jul 13 21:18:50 Saved as file ~undo.max
+Mon Jul 13 21:18:54 Saved as file ~undo.max
+Mon Jul 13 21:19:00 Saved as file ~undo.max
+Mon Jul 13 21:19:00 Saved as file ~undo.max
+Mon Jul 13 21:19:02 Saved as file ~undo.max
+Mon Jul 13 21:19:09 Saved as file ~undo.max
+Mon Jul 13 21:19:11 Saved as file ~undo.max
+Mon Jul 13 21:19:16 Saved as file ~undo.max
+Mon Jul 13 21:19:20 Saved as file ~undo.max
+Mon Jul 13 21:19:35 Saved as file ~undo.max
+Mon Jul 13 21:19:42 Saved as file ~undo.max
+Mon Jul 13 21:19:43 Saved as file ~undo.max
+Mon Jul 13 21:19:49 Saved as file ~undo.max
+Mon Jul 13 21:19:51 Saved as file ~undo.max
+Mon Jul 13 21:19:58 Saved as file ~undo.max
+Mon Jul 13 21:19:59 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Mon Jul 13 21:19:59 Saved as file ~undo.max
+Mon Jul 13 21:20:09 Saved as file ~undo.max
+Mon Jul 13 21:20:09 Saved as file ~undo.max
+Mon Jul 13 21:20:28 Saved as file ~undo.max
+Mon Jul 13 21:20:30 Saved as file ~undo.max
+Mon Jul 13 21:20:38 Saved as file ~undo.max
+Mon Jul 13 21:20:47 Saved as file ~undo.max
+Mon Jul 13 21:20:48 Saved as file ~undo.max
+Mon Jul 13 21:20:53 Saved as file ~undo.max
+Mon Jul 13 21:20:54 Saved as file ~undo.max
+Mon Jul 13 21:21:15 Saved as file ~undo.max
+Mon Jul 13 21:21:21 Saved as file ~undo.max
+Mon Jul 13 21:21:22 Saved as file ~undo.max
+Mon Jul 13 21:21:26 Saved as file ~undo.max
+Mon Jul 13 21:21:27 Saved as file ~undo.max
+Mon Jul 13 21:21:29 Saved as file ~undo.max
+Mon Jul 13 21:21:39 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 08:42:58 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 08:43:38 Saved as file ~undo.max
+Tue Jul 14 08:43:53 Saved as file ~undo.max
+Tue Jul 14 08:43:54 Saved as file ~undo.max
+Tue Jul 14 08:43:56 Saved as file ~undo.max
+Tue Jul 14 08:44:27 Saved as file ~undo.max
+Tue Jul 14 08:44:28 Saved as file ~undo.max
+Tue Jul 14 08:44:36 Saved as file ~undo.max
+Tue Jul 14 08:44:37 Saved as file ~undo.max
+Tue Jul 14 08:44:45 Saved as file ~undo.max
+Tue Jul 14 08:45:16 Saved as file ~undo.max
+Tue Jul 14 08:45:17 Saved as file ~undo.max
+Tue Jul 14 08:46:08 Saved as file ~undo.max
+Tue Jul 14 08:46:10 Saved as file ~undo.max
+Tue Jul 14 08:46:20 Saved as file ~undo.max
+Tue Jul 14 08:46:28 Saved as file ~undo.max
+Tue Jul 14 08:46:30 Saved as file ~undo.max
+Tue Jul 14 08:47:16 Saved as file ~undo.max
+Tue Jul 14 08:47:17 Saved as file ~undo.max
+Tue Jul 14 08:47:38 Saved as file ~undo.max
+Tue Jul 14 08:47:48 Saved as file ~undo.max
+Tue Jul 14 08:47:49 Saved as file ~undo.max
+Tue Jul 14 08:48:11 Saved as file ~undo.max
+Tue Jul 14 08:48:46 Saved as file ~undo.max
+Tue Jul 14 08:49:47 Saved as file ~undo.max
+Tue Jul 14 08:49:59 Saved as file ~undo.max
+Tue Jul 14 08:50:12 Saved as file ~undo.max
+Tue Jul 14 08:50:38 Saved as file ~undo.max
+Tue Jul 14 08:50:38 Saved as file ~undo.max
+Tue Jul 14 08:50:40 Saved as file ~undo.max
+Tue Jul 14 08:50:47 Saved as file ~undo.max
+Tue Jul 14 08:51:45 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 08:52:38 Saved as file ~undo.max
+Tue Jul 14 08:53:06 Saved as file ~undo.max
+Tue Jul 14 08:53:15 Saved as file ~undo.max
+Tue Jul 14 08:53:16 Saved as file BACKUP1.MAX
+Tue Jul 14 08:53:58 Saved as file ~undo.max
+Tue Jul 14 08:53:59 Saved as file ~undo.max
+Tue Jul 14 08:54:01 Saved as file ~undo.max
+Tue Jul 14 08:54:05 Saved as file ~undo.max
+Tue Jul 14 08:54:08 Saved as file ~undo.max
+Tue Jul 14 08:54:26 Saved as file ~undo.max
+Tue Jul 14 08:54:26 Saved as file ~undo.max
+Tue Jul 14 08:54:32 Saved as file ~undo.max
+Tue Jul 14 08:54:47 Saved as file ~undo.max
+Tue Jul 14 08:54:51 Saved as file ~undo.max
+Tue Jul 14 08:56:24 Saved as file ~undo.max
+Tue Jul 14 08:56:27 Saved as file ~undo.max
+Tue Jul 14 08:56:31 Saved as file ~undo.max
+Tue Jul 14 08:56:33 Saved as file ~undo.max
+Tue Jul 14 08:57:01 Saved as file ~undo.max
+Tue Jul 14 08:57:02 Saved as file ~undo.max
+Tue Jul 14 08:57:06 Saved as file ~undo.max
+Tue Jul 14 08:57:11 Saved as file ~undo.max
+Tue Jul 14 08:57:12 Saved as file ~undo.max
+Tue Jul 14 08:57:23 Saved as file ~undo.max
+Tue Jul 14 08:57:26 Saved as file ~undo.max
+Tue Jul 14 08:57:33 Saved as file ~undo.max
+Tue Jul 14 08:57:41 Saved as file ~undo.max
+Tue Jul 14 08:57:49 Saved as file ~undo.max
+Tue Jul 14 08:57:51 Saved as file ~undo.max
+Tue Jul 14 08:58:06 Saved as file ~undo.max
+Tue Jul 14 08:58:13 Saved as file ~undo.max
+Tue Jul 14 08:58:22 Saved as file ~undo.max
+Tue Jul 14 08:58:27 Saved as file ~undo.max
+Tue Jul 14 08:58:30 Saved as file ~undo.max
+Tue Jul 14 08:58:50 Saved as file ~undo.max
+Tue Jul 14 08:59:00 Saved as file ~undo.max
+Tue Jul 14 08:59:07 Saved as file ~undo.max
+Tue Jul 14 08:59:10 Saved as file ~undo.max
+Tue Jul 14 08:59:12 Saved as file ~undo.max
+Tue Jul 14 08:59:25 Saved as file ~undo.max
+Tue Jul 14 08:59:33 Saved as file ~undo.max
+Tue Jul 14 08:59:34 Saved as file ~undo.max
+Tue Jul 14 09:00:38 Saved as file ~undo.max
+Tue Jul 14 09:00:52 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:00:56 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:00:56 Saved as file ~undo.max
+Tue Jul 14 09:01:09 Saved as file ~undo.max
+Tue Jul 14 09:01:19 Saved as file ~undo.max
+Tue Jul 14 09:01:42 Saved as file ~undo.max
+Tue Jul 14 09:01:43 Saved as file ~undo.max
+Tue Jul 14 09:01:57 Saved as file ~undo.max
+Tue Jul 14 09:01:58 Saved as file ~undo.max
+Tue Jul 14 09:01:59 Saved as file ~undo.max
+Tue Jul 14 09:02:14 Saved as file ~undo.max
+Tue Jul 14 09:02:26 Saved as file ~undo.max
+Tue Jul 14 09:02:27 Saved as file ~undo.max
+Tue Jul 14 09:02:43 Saved as file ~undo.max
+Tue Jul 14 09:03:04 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:03:06 Saved as file ~undo.max
+Tue Jul 14 09:03:16 Saved as file BACKUP1.MAX
+Tue Jul 14 09:03:39 Saved as file ~undo.max
+Tue Jul 14 09:03:43 Saved as file ~undo.max
+Tue Jul 14 09:03:50 Saved as file ~undo.max
+Tue Jul 14 09:03:52 Saved as file ~undo.max
+Tue Jul 14 09:04:17 Saved as file ~undo.max
+Tue Jul 14 09:04:18 Saved as file ~undo2.max
+Tue Jul 14 09:04:18 Loaded file ~undo.max
+Tue Jul 14 09:04:33 Saved as file ~undo.max
+Tue Jul 14 09:04:35 Saved as file ~undo.max
+Tue Jul 14 09:04:47 Saved as file ~undo.max
+Tue Jul 14 09:04:51 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:05:11 Saved as file ~undo.max
+Tue Jul 14 09:05:12 Saved as file ~undo.max
+Tue Jul 14 09:05:52 Saved as file ~undo.max
+Tue Jul 14 09:06:22 Saved as file ~undo.max
+Tue Jul 14 09:07:17 Saved as file ~undo.max
+Tue Jul 14 09:07:30 Saved as file ~undo.max
+Tue Jul 14 09:07:32 Saved as file ~undo.max
+Tue Jul 14 09:07:36 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:08:12 Saved as file ~undo.max
+Tue Jul 14 09:08:13 Saved as file ~undo.max
+Tue Jul 14 09:08:43 Saved as file ~undo.max
+Tue Jul 14 09:09:00 Saved as file ~undo.max
+Tue Jul 14 09:09:05 Saved as file ~undo.max
+Tue Jul 14 09:09:40 Saved as file ~undo.max
+Tue Jul 14 09:10:03 Saved as file ~undo.max
+Tue Jul 14 09:10:09 Saved as file ~undo.max
+Tue Jul 14 09:10:28 Saved as file ~undo.max
+Tue Jul 14 09:10:31 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:11:09 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:11:32 Saved as file ~undo.max
+Tue Jul 14 09:11:34 Saved as file ~undo.max
+Tue Jul 14 09:11:38 Saved as file ~undo.max
+Tue Jul 14 09:11:46 Saved as file ~undo.max
+Tue Jul 14 09:11:50 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:11:51 Saved as file ~undo.max
+Tue Jul 14 09:13:23 Saved as file ~undo.max
+Tue Jul 14 09:13:46 Saved as file BACKUP1.MAX
+Tue Jul 14 09:13:59 Saved as file ~undo.max
+Tue Jul 14 09:14:00 Saved as file ~undo.max
+Tue Jul 14 09:14:37 Saved as file ~undo.max
+Tue Jul 14 09:14:41 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:14:50 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:15:18 Saved as file ~undo.max
+Tue Jul 14 09:15:19 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:15:19 Saved as file ~undo.max
+Tue Jul 14 09:16:05 Saved as file ~undo.max
+Tue Jul 14 09:16:41 Saved as file ~undo.max
+Tue Jul 14 09:16:59 Saved as file ~undo.max
+Tue Jul 14 09:17:16 Saved as file ~undo.max
+Tue Jul 14 09:17:46 Saved as file ~undo.max
+Tue Jul 14 09:17:58 Saved as file ~undo.max
+Tue Jul 14 09:18:14 Saved as file ~undo.max
+Tue Jul 14 09:18:57 Saved as file ~undo.max
+Tue Jul 14 09:19:34 Saved as file ~undo.max
+Tue Jul 14 09:20:12 Saved as file ~undo.max
+Tue Jul 14 09:20:33 Saved as file ~undo.max
+Tue Jul 14 09:21:35 Saved as file ~undo.max
+Tue Jul 14 09:21:36 Saved as file ~undo.max
+Tue Jul 14 09:21:38 Saved as file ~undo.max
+Tue Jul 14 09:21:49 Saved as file ~undo.max
+Tue Jul 14 09:21:50 Saved as file ~undo.max
+Tue Jul 14 09:21:55 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:22:42 Saved as file ~undo.max
+Tue Jul 14 09:22:52 Saved as file ~undo.max
+Tue Jul 14 09:23:00 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:23:00 Saved as file ~undo.max
+Tue Jul 14 09:24:01 Saved as file ~undo.max
+Tue Jul 14 09:24:16 Saved as file BACKUP1.MAX
+Tue Jul 14 09:24:20 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:24:22 Saved as file ~undo.max
+Tue Jul 14 09:26:31 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:26:32 Saved as file ~undo.max
+Tue Jul 14 09:27:04 Saved as file ~undo.max
+Tue Jul 14 09:27:12 Saved as file ~undo.max
+Tue Jul 14 09:27:22 Saved as file ~undo.max
+Tue Jul 14 09:27:25 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:28:25 Saved as file ~undo.max
+Tue Jul 14 09:29:27 Saved as file ~undo.max
+Tue Jul 14 09:30:18 Saved as file ~undo.max
+Tue Jul 14 09:30:25 Saved as file ~undo.max
+Tue Jul 14 09:30:32 Saved as file ~undo.max
+Tue Jul 14 09:30:52 Saved as file ~undo.max
+Tue Jul 14 09:30:53 Saved as file ~undo.max
+Tue Jul 14 09:31:25 Saved as file ~undo.max
+Tue Jul 14 09:31:44 Saved as file ~undo.max
+Tue Jul 14 09:31:46 Saved as file ~undo.max
+Tue Jul 14 09:32:45 Saved as file ~undo.max
+Tue Jul 14 09:32:48 Saved as file ~undo.max
+Tue Jul 14 09:33:43 Saved as file ~undo.max
+Tue Jul 14 09:33:45 Saved as file ~undo.max
+Tue Jul 14 09:33:48 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:33:48 Saved as file ~undo.max
+Tue Jul 14 09:34:37 Saved as file ~undo.max
+Tue Jul 14 09:34:46 Saved as file BACKUP1.MAX
+Tue Jul 14 09:34:49 Saved as file ~undo.max
+Tue Jul 14 09:35:15 Saved as file ~undo.max
+Tue Jul 14 09:35:31 Saved as file ~undo.max
+Tue Jul 14 09:35:33 Saved as file ~undo.max
+Tue Jul 14 09:35:35 Saved as file ~undo.max
+Tue Jul 14 09:35:37 Saved as file ~undo.max
+Tue Jul 14 09:36:17 Saved as file ~undo.max
+Tue Jul 14 09:37:46 Saved as file ~undo.max
+Tue Jul 14 09:39:22 Saved as file ~undo.max
+Tue Jul 14 09:39:25 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:39:54 Saved as file ~undo.max
+Tue Jul 14 09:41:41 Saved as file ~undo.max
+Tue Jul 14 09:41:49 Saved as file ~undo.max
+Tue Jul 14 09:42:13 Saved as file ~undo.max
+Tue Jul 14 09:42:22 Saved as file ~undo.max
+Tue Jul 14 09:44:36 Saved as file ~undo.max
+Tue Jul 14 09:45:04 Saved as file ~undo.max
+Tue Jul 14 09:45:16 Saved as file BACKUP1.MAX
+Tue Jul 14 09:45:26 Saved as file ~undo.max
+Tue Jul 14 09:45:59 Saved as file ~undo.max
+Tue Jul 14 09:46:08 Saved as file ~undo.max
+Tue Jul 14 09:46:32 Saved as file ~undo.max
+Tue Jul 14 09:46:43 Saved as file ~undo.max
+Tue Jul 14 09:47:20 Saved as file ~undo.max
+Tue Jul 14 09:47:22 Saved as file ~undo.max
+Tue Jul 14 09:47:55 Saved as file ~undo.max
+Tue Jul 14 09:47:58 Saved as file ~undo.max
+Tue Jul 14 09:48:15 Saved as file ~undo.max
+Tue Jul 14 09:48:54 Saved as file ~undo.max
+Tue Jul 14 09:48:56 Saved as file ~undo.max
+Tue Jul 14 09:49:26 Saved as file ~undo.max
+Tue Jul 14 09:49:38 Saved as file ~undo.max
+Tue Jul 14 09:49:51 Saved as file ~undo.max
+Tue Jul 14 09:49:53 Saved as file ~undo.max
+Tue Jul 14 09:50:02 Saved as file ~undo.max
+Tue Jul 14 09:50:18 Saved as file ~undo.max
+Tue Jul 14 09:50:20 Saved as file ~undo.max
+Tue Jul 14 09:50:41 Saved as file ~undo.max
+Tue Jul 14 09:50:50 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:50:50 Saved as file ~undo.max
+Tue Jul 14 09:51:24 Saved as file ~undo.max
+Tue Jul 14 09:51:26 Saved as file ~undo.max
+Tue Jul 14 09:51:43 Saved as file ~undo.max
+Tue Jul 14 09:51:51 Saved as file ~undo.max
+Tue Jul 14 09:52:11 Saved as file ~undo.max
+Tue Jul 14 09:52:25 Saved as file ~undo.max
+Tue Jul 14 09:52:29 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 09:52:29 Saved as file ~undo.max
+Tue Jul 14 09:52:42 Saved as file ~undo.max
+Tue Jul 14 09:52:58 Saved as file ~undo.max
+Tue Jul 14 09:53:09 Saved as file ~undo.max
+Tue Jul 14 09:55:16 Saved as file BACKUP1.MAX
+Tue Jul 14 09:55:50 Saved as file ~undo.max
+Tue Jul 14 10:05:16 Saved as file BACKUP1.MAX
+Tue Jul 14 10:12:27 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 10:13:55 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Jul 14 11:50:59 Saved as file BACKUP1.MAX
+Tue Jul 14 12:01:29 Saved as file BACKUP1.MAX
+Tue Jul 14 12:12:01 Saved as file BACKUP1.MAX
+Tue Jul 14 12:22:31 Saved as file BACKUP1.MAX
+Tue Jul 14 12:33:01 Saved as file BACKUP1.MAX
+Tue Jul 14 12:40:08 Saved as file BACKUP1.MAX
+Tue Jul 14 12:40:08 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Tue Jul 14 12:50:33 Saved as file BACKUP1.MAX
+Tue Jul 14 12:54:30 UserDiv from Layout.INI for AutoECO: 60
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\AT91.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ECBOT.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_BATTERY.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_CONN.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_FUSE.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_HARDWARE.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_MODULE.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_PRTDEV.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_RELAY.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_CAP.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_DIODE.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IC.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IND.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_RES.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_SWX.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XFMR.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XISTR.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XTAL.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SOCKETS.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_CAP.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_DIODE.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IC.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IND.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_RES1.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_SWX.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XFMR.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XISTR.LLB
+Tue Jul 14 12:54:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XTAL.LLB
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON100T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON156T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BGA.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\CLCC.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON050T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON085T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050F.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIN.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100B.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT_HD.LLB
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ECON100T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\FBUS.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ISA.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\JUMPER.LLB
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LAYOUT.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LCON100T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PC104.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCI.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON100T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON156T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PGA.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PLCC.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUAD.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUADB.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RELAY.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RF.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SBUS.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050F.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100F.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIP.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SM.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOG.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOJ.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\STIFF.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TELE.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_AXIAL.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CAP_P.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CYLND.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DIODE.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DISC.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_RAD.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TO.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TRAINING.LLB
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\VRES.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\WCON100T.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\XT.llb
+Tue Jul 14 12:54:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ZIGZAG.llb
+Tue Jul 14 12:54:35 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Jul 14 12:54:35 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Jul 14 12:56:33 Saved as file ~undo.max
+Tue Jul 14 12:56:59 Saved as file ~undo.max
+Tue Jul 14 12:58:09 Saved as file ~undo.max
+Tue Jul 14 12:58:20 Saved as file ~undo.max
+Tue Jul 14 13:00:13 Saved as file ~undo.max
+Tue Jul 14 13:01:03 Saved as file BACKUP1.MAX
+Tue Jul 14 13:04:34 Saved as file ~undo.max
+Tue Jul 14 13:04:38 Saved as file ~undo.max
+Tue Jul 14 13:05:38 Saved as file ~undo.max
+Tue Jul 14 13:05:47 Saved as file ~undo.max
+Tue Jul 14 13:05:51 Saved as file ~undo.max
+Tue Jul 14 13:05:52 Saved as file ~undo.max
+Tue Jul 14 13:06:11 Saved as file ~undo.max
+Tue Jul 14 13:06:31 Saved as file ~undo.max
+Tue Jul 14 13:06:45 Saved as file ~undo.max
+Tue Jul 14 13:07:38 Saved as file ~undo.max
+Tue Jul 14 13:07:56 Saved as file ~undo.max
+Tue Jul 14 13:08:23 Saved as file ~undo.max
+Tue Jul 14 13:08:24 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Jul 14 13:08:30 Saved as file ~undo.max
+Tue Jul 14 13:08:36 Saved as file ~undo.max
+Tue Jul 14 13:09:34 Saved as file ~undo.max
+Tue Jul 14 13:09:35 Saved as file ~undo.max
+Tue Jul 14 13:10:03 Saved as file ~undo.max
+Tue Jul 14 13:10:12 Saved as file ~undo.max
+Tue Jul 14 13:11:21 Saved as file ~undo.max
+Tue Jul 14 13:11:33 Saved as file BACKUP1.MAX
+Tue Jul 14 13:11:59 Saved as file ~undo.max
+Tue Jul 14 13:12:00 Saved as file ~undo.max
+Tue Jul 14 13:12:07 Saved as file ~undo.max
+Tue Jul 14 13:12:48 Saved as file ~undo.max
+Tue Jul 14 13:13:04 Saved as file ~undo.max
+Tue Jul 14 13:13:06 Saved as file ~undo.max
+Tue Jul 14 13:13:29 Saved as file ~undo.max
+Tue Jul 14 13:14:09 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Jul 14 13:15:59 Saved as file ~undo.max
+Tue Jul 14 13:16:08 Saved as file ~undo.max
+Tue Jul 14 13:17:20 Saved as file ~undo.max
+Tue Jul 14 13:17:32 Saved as file ~undo.max
+Tue Jul 14 13:18:00 Saved as file ~undo.max
+Tue Jul 14 13:18:08 Saved as file ~undo.max
+Tue Jul 14 13:18:31 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Jul 14 13:18:56 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Jul 14 13:20:21 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Jul 14 13:20:50 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Wed Jul 29 21:04:43 Saved as file BACKUP1.MAX
+Wed Jul 29 21:15:13 Saved as file BACKUP1.MAX
+Wed Jul 29 21:25:43 Saved as file BACKUP1.MAX
+Wed Jul 29 21:36:13 Saved as file BACKUP1.MAX
+Wed Jul 29 21:46:43 Saved as file BACKUP1.MAX
+Wed Jul 29 21:57:13 Saved as file BACKUP1.MAX
+Wed Jul 29 22:07:13 Saved as file BACKUP1.MAX
+Wed Jul 29 22:17:13 Saved as file BACKUP1.MAX
+Wed Jul 29 22:27:43 Saved as file BACKUP1.MAX
+Wed Jul 29 22:37:43 Saved as file BACKUP1.MAX
+Tue Aug 04 19:33:10 Saved as file BACKUP1.MAX
+Tue Aug 04 19:43:40 Saved as file BACKUP1.MAX
+Tue Aug 04 19:47:09 Saved as file BACKUP1.MAX
+Tue Aug 04 19:47:09 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Tue Aug 04 19:47:30 UserDiv from Layout.INI for AutoECO: 60
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.MAX
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\AT91.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ECBOT.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_BATTERY.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_CONN.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_FUSE.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_HARDWARE.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_MODULE.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_PRTDEV.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_RELAY.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_CAP.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_DIODE.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IC.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IND.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_RES.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_SWX.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XFMR.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XISTR.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XTAL.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SOCKETS.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_CAP.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_DIODE.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IC.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IND.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_RES1.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_SWX.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XFMR.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XISTR.LLB
+Tue Aug 04 19:47:30 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XTAL.LLB
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON100T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON156T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BGA.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\CLCC.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON050T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON085T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050F.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIN.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100B.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT_HD.LLB
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ECON100T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\FBUS.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ISA.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\JUMPER.LLB
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LAYOUT.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LCON100T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PC104.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCI.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON100T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON156T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PGA.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PLCC.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUAD.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUADB.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RELAY.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RF.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SBUS.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050F.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100F.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIP.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SM.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOG.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOJ.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\STIFF.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TELE.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_AXIAL.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CAP_P.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CYLND.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DIODE.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DISC.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_RAD.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TO.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TRAINING.LLB
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\VRES.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\WCON100T.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\XT.llb
+Tue Aug 04 19:47:30 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ZIGZAG.llb
+Tue Aug 04 19:47:33 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Aug 04 19:47:34 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Aug 04 19:47:41 Saved as file ~undo.max
+Tue Aug 04 19:47:42 Saved as file ~undo.max
+Tue Aug 04 19:47:46 Saved as file ~undo.max
+Tue Aug 04 19:48:50 Saved as file ~undo.max
+Tue Aug 04 19:48:51 Saved as file ~undo.max
+Tue Aug 04 19:49:01 Saved as file ~undo.max
+Tue Aug 04 19:49:17 Saved as file ~undo.max
+Tue Aug 04 19:49:47 Saved as file ~undo.max
+Tue Aug 04 19:49:49 Saved as file ~undo.max
+Tue Aug 04 19:50:26 Saved as file ~undo.max
+Tue Aug 04 19:50:34 Saved as file ~undo.max
+Tue Aug 04 19:50:41 Saved as file ~undo.max
+Tue Aug 04 19:51:24 Saved as file ~undo.max
+Tue Aug 04 19:51:29 Saved as file ~undo.max
+Tue Aug 04 19:51:45 Saved as file ~undo.max
+Tue Aug 04 19:52:10 Saved as file ~undo.max
+Tue Aug 04 19:52:22 Saved as file ~undo.max
+Tue Aug 04 19:52:23 Saved as file ~undo.max
+Tue Aug 04 19:52:31 Saved as file ~undo.max
+Tue Aug 04 19:52:51 Saved as file ~undo.max
+Tue Aug 04 19:53:23 Saved as file ~undo.max
+Tue Aug 04 19:53:40 Saved as file ~undo.max
+Tue Aug 04 19:53:52 Saved as file ~undo.max
+Tue Aug 04 19:53:53 Saved as file ~undo.max
+Tue Aug 04 19:54:10 Saved as file BACKUP1.MAX
+Tue Aug 04 19:56:09 Saved as file ~undo.max
+Tue Aug 04 19:56:18 Saved as file ~undo.max
+Tue Aug 04 19:56:38 Saved as file ~undo.max
+Tue Aug 04 19:56:54 Saved as file ~undo.max
+Tue Aug 04 19:56:58 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Aug 04 19:56:58 Saved as file ~undo.max
+Tue Aug 04 19:58:27 Saved as file ~undo.max
+Tue Aug 04 19:58:48 Saved as file ~undo.max
+Tue Aug 04 19:58:49 Saved as file ~undo.max
+Tue Aug 04 19:59:36 Saved as file ~undo.max
+Tue Aug 04 19:59:37 Saved as file ~undo.max
+Tue Aug 04 19:59:43 Saved as file ~undo.max
+Tue Aug 04 19:59:45 Saved as file ~undo.max
+Tue Aug 04 19:59:52 Saved as file ~undo.max
+Tue Aug 04 19:59:57 Saved as file ~undo.max
+Tue Aug 04 20:00:01 Saved as file ~undo.max
+Tue Aug 04 20:00:03 Saved as file ~undo.max
+Tue Aug 04 20:00:04 Saved as file ~undo.max
+Tue Aug 04 20:00:24 Saved as file ~undo.max
+Tue Aug 04 20:00:26 Saved as file ~undo.max
+Tue Aug 04 20:00:34 Saved as file ~undo.max
+Tue Aug 04 20:00:47 Saved as file ~undo.max
+Tue Aug 04 20:02:12 Saved as file ~undo.max
+Tue Aug 04 20:02:29 Saved as file ~undo.max
+Tue Aug 04 20:02:34 Saved as file ~undo.max
+Tue Aug 04 20:02:43 Saved as file ~undo.max
+Tue Aug 04 20:03:31 Saved as file ~undo.max
+Tue Aug 04 20:03:39 Saved as file ~undo.max
+Tue Aug 04 20:03:43 Saved as file ~undo.max
+Tue Aug 04 20:03:44 Saved as file ~undo.max
+Tue Aug 04 20:03:48 Saved as file ~undo.max
+Tue Aug 04 20:03:50 Saved as file ~undo.max
+Tue Aug 04 20:04:03 Saved as file ~undo.max
+Tue Aug 04 20:04:27 Saved as file ~undo.max
+Tue Aug 04 20:04:40 Saved as file BACKUP1.MAX
+Tue Aug 04 20:04:52 Saved as file ~undo.max
+Tue Aug 04 20:05:12 Saved as file ~undo.max
+Tue Aug 04 20:06:41 Saved as file ~undo.max
+Tue Aug 04 20:10:54 Saved as file ~undo.max
+Tue Aug 04 20:11:09 Saved as file ~undo.max
+Tue Aug 04 20:11:10 Saved as file ~undo.max
+Tue Aug 04 20:11:13 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Aug 04 20:14:41 Saved as file BACKUP1.MAX
+Tue Aug 04 20:22:23 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Aug 04 20:25:10 Saved as file BACKUP1.MAX
+Tue Aug 04 20:25:16 Saved as file BACKUP1.MAX
+Tue Aug 04 20:25:16 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Aug 04 20:25:20 UserDiv from Layout.INI for AutoECO: 60
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-1.MAX
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\AT91.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ECBOT.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_BATTERY.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_CONN.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_FUSE.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_HARDWARE.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_MODULE.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_PRTDEV.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_RELAY.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_CAP.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_DIODE.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IC.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_IND.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_RES.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_SWX.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XFMR.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XISTR.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SM_XTAL.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_SOCKETS.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_CAP.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_DIODE.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IC.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_IND.LLB
+Tue Aug 04 20:25:20 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_RES1.LLB
+Tue Aug 04 20:25:21 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_SWX.LLB
+Tue Aug 04 20:25:21 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XFMR.LLB
+Tue Aug 04 20:25:21 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XISTR.LLB
+Tue Aug 04 20:25:21 Loaded file C:\CAINPCB\FOOTPRINT\ESP_TH_XTAL.LLB
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON100T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BCON156T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\BGA.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\CLCC.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON050T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DCON085T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050F.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIMM050T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIN.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100B.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DIP100T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\DSUBT_HD.LLB
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ECON100T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\FBUS.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ISA.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\JUMPER.LLB
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LAYOUT.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\LCON100T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PC104.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCI.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON100T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PCON156T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PGA.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\PLCC.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUAD.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\QUADB.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RELAY.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\RF.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SBUS.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050F.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM050T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100F.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIMM100T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SIP.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SM.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOG.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\SOJ.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\STIFF.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TELE.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_AXIAL.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CAP_P.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_CYLND.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DIODE.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_DISC.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TM_RAD.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TO.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\TRAINING.LLB
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\VRES.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\WCON100T.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\XT.llb
+Tue Aug 04 20:25:21 Loaded file C:\Cadence\SPB_15.5\tools\Layout_Plus\library\ZIGZAG.llb
+Tue Aug 04 20:25:24 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Aug 04 20:25:24 Loaded file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Aug 04 20:25:31 Saved as file ~undo.max
+Tue Aug 04 20:25:31 Saved as file ~undo.max
+Tue Aug 04 20:26:52 Saved as file ~undo.max
+Tue Aug 04 20:27:18 Saved as file ~undo.max
+Tue Aug 04 20:27:51 Saved as file ~undo.max
+Tue Aug 04 20:27:54 Saved as file ~undo.max
+Tue Aug 04 20:28:21 Saved as file ~undo.max
+Tue Aug 04 20:28:23 Saved as file ~undo.max
+Tue Aug 04 20:28:36 Saved as file ~undo.max
+Tue Aug 04 20:28:46 Saved as file ~undo.max
+Tue Aug 04 20:29:26 Saved as file ~undo.max
+Tue Aug 04 20:29:34 Saved as file ~undo.max
+Tue Aug 04 20:29:41 Saved as file ~undo.max
+Tue Aug 04 20:30:07 Saved as file ~undo.max
+Tue Aug 04 20:30:33 Saved as file ~undo.max
+Tue Aug 04 20:30:34 Saved as file ~undo.max
+Tue Aug 04 20:30:44 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Aug 04 20:30:44 Saved as file ~undo.max
+Tue Aug 04 20:30:47 Saved as file ~undo.max
+Tue Aug 04 20:31:08 Saved as file ~undo.max
+Tue Aug 04 20:31:17 Saved as file ~undo.max
+Tue Aug 04 20:31:19 Saved as file ~undo.max
+Tue Aug 04 20:31:41 Saved as file ~undo.max
+Tue Aug 04 20:31:43 Saved as file ~undo.max
+Tue Aug 04 20:32:28 Saved as file ~undo.max
+Tue Aug 04 20:32:30 Saved as file ~undo.max
+Tue Aug 04 20:32:33 Saved as file ~undo.max
+Tue Aug 04 20:32:43 Saved as file ~undo.max
+Tue Aug 04 20:33:26 Saved as file ~undo.max
+Tue Aug 04 20:33:35 Saved as file ~undo.max
+Tue Aug 04 20:33:48 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Aug 04 20:35:15 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Aug 04 20:35:23 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Aug 04 20:35:40 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Aug 04 20:36:08 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX
+Tue Aug 04 20:36:08 Saved as file C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD-2.MAX

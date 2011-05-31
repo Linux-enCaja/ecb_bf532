@@ -1,0 +1,119 @@
+(ExpressProject "audio_board"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "..\bf532_v2\bf532.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (File ".\audio_board.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (GATE_&_PIN_SWAP_Scope "0")
+    (GATE_&_PIN_SWAP_File_Name
+       "C:\CAINPCB\ECB_BF532\AUDIO_CODEC\AUDIO_BOARD.SWP")
+    (Backannotation_TAB "1")
+    (ANNOTATE_Scope "0")
+    (ANNOTATE_Mode "1")
+    (ANNOTATE_Action "1")
+    (Annotate_Page_Order "0")
+    (ANNOTATE_Reset_References_to_1 "FALSE")
+    (ANNOTATE_No_Page_Number_Change "FALSE")
+    (ANNOTATE_IncludeNonPrimitive "FALSE")
+    (Netlist_TAB "3")
+    (LAYOUT_Netlist_File "AUDIO_BOARD.MNL")
+    (LAYOUT_PCB_Footprint "{PCB Footprint}")
+    (FALSE)
+    (LAYOUT_Units "0")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}{POWER_GROUP}")
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE))
+  (Folder "Outputs"
+    (File ".\audio_board.mnl"
+      (Type "LAYOUT Netlist File")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    (OFFPAGELEFT-L
+      (LibraryName "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (INDUCTOR
+      (FullPartName "INDUCTOR.Normal")
+      (LibraryName "C:\CADENCE\SPB_16.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (VCC
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (AD8606ARZ
+      (FullPartName "AD8606ARZ.Normal")
+      (LibraryName "C:\CAINPCB\ECB_BF532\BF532_V2\BF532.OLB")
+      (DeviceIndex "0"))
+    (14528
+      (FullPartName "14528.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\MISC.OLB")
+      (DeviceIndex "0"))
+    (AD8606
+      (FullPartName "AD8606B.Normal")
+      (LibraryName "C:\CAINPCB\ECB_BF532\BF532_V2\BF532.OLB")
+      (DeviceIndex "1"))
+    (AD8686A
+      (FullPartName "AD8686A.Normal")
+      (LibraryName "C:\CAINPCB\ECB_BF532\BF532_V2\BF532.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 3X2"
+      (FullPartName "HEADER 3X2.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 4X2"
+      (FullPartName "HEADER 4X2.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (GND_SIGNAL
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (AD1836A
+      (FullPartName "AD1836A.Normal")
+      (LibraryName "C:\CAINPCB\ECB_BF532\BF532_V2\BF532.OLB")
+      (DeviceIndex "0")))
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\audio_board.dsn")
+      (Path "Design Resources" ".\audio_board.dsn" "SCHEMATIC1")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Select "Design Resources" ".\audio_board.dsn" "SCHEMATIC1" "4-BLUETOOTH"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -4 -23 28 339 8 381"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 132 1246 132 484")
+        (Scroll "0 0")
+        (Zoom "144")
+        (Occurrence "/"))
+      (Path "C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "1-CODEC"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 2 3 -1 -1 -4 -23 66 1180 66 418")
+        (Scroll "0 0")
+        (Zoom "100")
+        (Occurrence "/"))
+      (Path "C:\CAINPCB\ECB_BF532\VOICE\BT_CODEC\AUDIO_BOARD.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "4-BLUETOOTH")))
+  (LastUsedLibraryBrowseDirectory "C:\Cadence\SPB_16.2\tools\capture\library")
+  (ISPCBBASICLICENSE "false"))

@@ -1,0 +1,796 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+    bootloaders:u-boot:debugging    [Blackfin Linux Docs]
+  </title>
+
+  <meta name="generator" content="DokuWiki Release rc2009-02-06">
+<meta name="robots" content="noindex,nofollow">
+<meta name="date" content="2009-02-10T15:26:44-0500">
+<meta name="keywords" content="bootloaders,u-boot,debugging">
+<link rel="search" type="application/opensearchdescription+xml" href="http://docs.blackfin.uclinux.org/lib/exe/opensearch.php" title="Blackfin Linux Docs">
+<link rel="start" href="http://docs.blackfin.uclinux.org/">
+<link rel="contents" href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:debugging&amp;do=index" title="Index">
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" href="http://docs.blackfin.uclinux.org/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Current Namespace" href="http://docs.blackfin.uclinux.org/feed.php?mode=list&amp;ns=bootloaders:u-boot">
+<link rel="alternate" type="text/html" title="Plain HTML" href="http://docs.blackfin.uclinux.org/doku.php?do=export_xhtml&amp;id=bootloaders:u-boot:debugging">
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="http://docs.blackfin.uclinux.org/doku.php?do=export_raw&amp;id=bootloaders:u-boot:debugging">
+<link rel="stylesheet" media="all" type="text/css" href="debuggind_u-boot_files/css_002.css">
+<link rel="stylesheet" media="screen" type="text/css" href="debuggind_u-boot_files/css.css">
+<link rel="stylesheet" media="print" type="text/css" href="debuggind_u-boot_files/css_003.css">
+<script type="text/javascript" charset="utf-8" src="debuggind_u-boot_files/js.php"></script><script type="text/javascript" src="debuggind_u-boot_files/helpers.js"></script><script type="text/javascript" src="debuggind_u-boot_files/objectextensions.js"></script><script type="text/javascript" src="debuggind_u-boot_files/functionextensions.js"></script><script type="text/javascript" src="debuggind_u-boot_files/arrayextensions.js"></script><script type="text/javascript" src="debuggind_u-boot_files/domextensions.js"></script>
+
+  <link rel="shortcut icon" href="http://docs.blackfin.uclinux.org/lib/tpl/sidebar/images/favicon.ico">
+
+  <link href="debuggind_u-boot_files/layout.css" type="text/css" rel="stylesheet"><link href="debuggind_u-boot_files/design.css" type="text/css" rel="stylesheet"><script src="debuggind_u-boot_files/template.js" defer="defer" type="text/javascript"></script><script src="debuggind_u-boot_files/followlinkcontent.js" defer="defer" type="text/javascript"></script><script src="debuggind_u-boot_files/ajaxum.js" defer="defer" type="text/javascript"></script></head><body class="sidebar_inside_left">
+<div class="dokuwiki">
+  
+  <div class="stylehead">
+
+    <div class="header">
+      <div class="pagename">
+        [[<a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:debugging&amp;do=backlink" title="Backlinks">bootloaders:u-boot:debugging</a>]]
+      </div>
+      <div class="logo">
+        <a href="http://docs.blackfin.uclinux.org/doku.php" name="dokuwiki__top" id="dokuwiki__top" accesskey="h" title="[ALT+H]">Blackfin Linux Docs</a>      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+    
+    <div class="bar" id="bar__top">
+      <div class="bar-left" id="bar__topleft">
+        <form class="button btn_source" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Show pagesource" class="button" accesskey="v" title="Show pagesource [V]" type="submit"></div></form>        <form class="button btn_revs" method="get" action="/doku.php"><div class="no"><input name="do" value="revisions" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" type="submit"></div></form>        <form class="button btn_index" method="get" action="/doku.php"><div class="no"><input name="do" value="index" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Index" class="button" accesskey="x" title="Index [X]" type="submit"></div></form>        <form class="button btn_login" method="get" action="/doku.php"><div class="no"><input name="do" value="login" type="hidden"><input name="sectok" value="227b7d6221b379c0b8864f870be3203f" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Login" class="button" title="Login" type="submit"></div></form>                
+<!-- no one really cares
+        <a href="/doku.php?do=export_text&amp;id=bootloaders:u-boot:debugging"><img src="/lib/images/fileicons/txt.png" alt="Text Export"></a>
+-->
+        <a href="http://docs.blackfin.uclinux.org/doku.php?do=export_odt&amp;id=bootloaders:u-boot:debugging"><img src="debuggind_u-boot_files/odt.png" alt="ODT Export"></a>
+<!-- pretty spotty ... just use odf and convert manually
+        <a href="/data/pdfex/PDF_bootloaders_u-boot_debugging.pdf"><img src="/lib/images/fileicons/pdf.png" alt="PDF Export"></a>
+-->
+      </div>
+
+      <div class="bar-right" id="bar__topright">
+        <form class="button btn_recent" method="get" action="/doku.php"><div class="no"><input name="do" value="recent" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Recent changes" class="button" accesskey="r" title="Recent changes [R]" type="submit"></div></form>        <form action="/doku.php" accept-charset="utf-8" class="search" id="dw__search"><div class="no"><input name="do" value="search" type="hidden"><input id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]" type="text"><input value="Search" class="button" title="Search" type="submit"><div style="display: none;" id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>&nbsp;
+      </div>
+
+      <div class="clearer"></div>
+    </div>
+
+        <div class="breadcrumbs">
+      <span class="bchead">Trace:</span> <span class="bcsep">»</span> <span class="curid"><a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:debugging" class="breadcrumbs" title="bootloaders:u-boot:debugging">debugging</a></span>          </div>
+    
+    
+  </div>
+  
+  
+  <div class="page">
+    <!-- wikipage start -->
+    <!-- TOC START -->
+<div class="toc">
+<div style="cursor: pointer;" class="tocheader toctoggle" id="toc__header"><span style="cursor: pointer;" class="toc_close" id="toc__toggle"><span>−</span></span>Table of Contents</div>
+<div id="toc__inside">
+
+<ul class="toc">
+<li class="level1"><div class="li"><span class="li"><a href="#debugging_das_u-boot" class="toc">Debugging Das U-Boot</a></span></div>
+<ul class="toc">
+<li class="level2"><div class="li"><span class="li"><a href="#startup_sequence" class="toc">Startup Sequence</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#ldr" class="toc">LDR</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#common" class="toc">Common</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#debug_options" class="toc">Debug Options</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#debug_dump" class="toc">DEBUG_DUMP</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#debug_dump_syms" class="toc">DEBUG_DUMP_SYMS</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#debug_early_serial" class="toc">DEBUG_EARLY_SERIAL</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#debug_null_ptr" class="toc">DEBUG_NULL_PTR</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#panic_hang" class="toc">PANIC_HANG</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#hw_watchdog" class="toc">HW_WATCHDOG</a></span></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><span class="li"><a href="#jtag_loading" class="toc">JTAG Loading</a></span></div>
+<ul class="toc">
+<li class="level3"><div class="li"><span class="li"><a href="#initcode" class="toc">Initcode</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#gdb_load" class="toc">GDB Load</a></span></div></li>
+<li class="level3"><div class="li"><span class="li"><a href="#example" class="toc">Example</a></span></div></li></ul>
+</li></ul>
+</li></ul>
+</div>
+</div>
+<!-- TOC END -->
+
+
+
+<h1><a name="debugging_das_u-boot" id="debugging_das_u-boot">Debugging Das U-Boot</a></h1>
+<div class="level1">
+
+<p>
+In the ideal world, everything should “just work”. In reality, porting
+to new boards is far from that. This page should help give direction in
+such situations.
+</p>
+
+<p>
+First thing to do is check the <a href="http://www.analog.com/static/imported-files/application_notes/EE-281_rev2.pdf" class="interwiki iw_adi" title="http://www.analog.com/static/imported-files/application_notes/EE-281_rev2.pdf">Hardware Design Checklist for the Blackfin® Processors</a>.
+</p>
+
+</div>
+
+<h2><a name="startup_sequence" id="startup_sequence">Startup Sequence</a></h2>
+<div class="level2">
+
+<p>Here we'll explain how things go from power on to command line. The
+very early startup sequence may differ slightly depending on whether
+you're booting an LDR, booting in bypass mode (parallel flash), or
+simply executing a binary via the U-Boot <code>go</code> command.
+</p>
+
+<p>
+Generally speaking, the files in question (in order) are:
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>cpu/blackfin/initcode.c</strong> (first if booting from LDR, second otherwise)</div>
+</li>
+<li class="level1"><div class="li"> <strong>cpu/blackfin/start.S</strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>cpu/blackfin/cpu.c</strong></div>
+</li>
+<li class="level1"><div class="li"> <strong>lib_blackfin/board.c</strong></div>
+</li>
+</ul>
+
+<p>
+One thing to keep in mind is that the Blackfin can make PC-relative
+function calls. That means you can make function calls at any time
+without having yet relocated into the final place in memory. The
+Blackfin startup process takes advantage of this feature many times.
+</p>
+
+<p>
+Some common conventions used by U-Boot:
+</p>
+<ul>
+<li class="level1"><div class="li"> functions that end in <strong>_f</strong> need to be careful about things they do as relocation from flash is not yet finished</div>
+</li>
+<li class="level1"><div class="li"> functions that end in <strong>_r</strong> are used once U-Boot has finished relocating itself and global data structures have generally been initialized</div>
+</li>
+</ul>
+
+<p>However, due to the way the Blackfin processor boots (LDRs), the
+notion of first executing in flash for a while, then relocating, then
+executing in ram does not really apply to the Blackfin port. All code
+is relocated from flash to external memory either by the on-chip Boot
+ROM or by the initial start function (in bypass mode).
+</p>
+
+</div>
+
+<h3><a name="ldr" id="ldr">LDR</a></h3>
+<div class="level3">
+
+<p>Since the LDR format has the ability to execute small pieces of code
+(init blocks), as well as load chunks of code into specific memory
+addresses, the startup sequence process is streamlined nicely. For a
+general overview of the LDR process, please see <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders#overview" class="wikilink1" title="bootloaders">Booting Overview</a>.
+
+</p>
+<ol>
+<li class="level1"><div class="li"> Boot ROM loads and executes LDR init blocks: <strong>cpu/blackfin/initcode.c</strong>:<strong>initcode()</strong></div>
+<ol>
+<li class="level2"><div class="li"> U-Boot programs clock/memory settings (<acronym title="Phase Locked Loop">PLL</acronym>/<acronym title="External Bus Interface Unit">EBIU</acronym>) and interrupt sources (IWR/<acronym title="System Interrupt Controller">SIC</acronym>_IWR)</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Boot ROM loads U-Boot LDR into external memory</div>
+</li>
+<li class="level1"><div class="li"> Boot ROM clears U-Boot BSS section</div>
+</li>
+<li class="level1"><div class="li"> Boot ROM jumps to start of U-Boot: <strong>cpu/blackfin/start.S</strong>:<strong>_start()</strong></div>
+</li>
+<li class="level1"><div class="li"> U-Boot starts up like normal</div>
+</li>
+</ol>
+
+</div>
+
+<h3><a name="common" id="common">Common</a></h3>
+<div class="level3">
+
+<p>
+
+Here we will start at the ELF entry point of U-Boot which is <strong>cpu/blackfin/start.S</strong>:<strong>_start()</strong>.  When booting in bypass mode (parallel flash), or using the U-Boot <code>go</code> command, this is the first thing executed.
+
+</p>
+<ol>
+<li class="level1"><div class="li"> U-Boot starts at ELF entry point: <strong>cpu/blackfin/start.S</strong>:<strong>_start()</strong></div>
+<ol>
+<li class="level2"><div class="li"> Initialize stack to L1 scratch space</div>
+</li>
+<li class="level2"><div class="li"> Initialize hardware watchdog (if enabled)</div>
+</li>
+<li class="level2"><div class="li"> Disable nested interrupts and enable CYCLES (which the udelay() function needs)</div>
+</li>
+<li class="level2"><div class="li"> Initialize minimal C runtime environment</div>
+</li>
+<li class="level2"><div class="li"> Call <strong>cpu/blackfin/initcode.c</strong>:<strong>initcode()</strong> (only in bypass mode)</div>
+<ol>
+<li class="level3"><div class="li"> Program clock/memory settings (<acronym title="Phase Locked Loop">PLL</acronym>/<acronym title="External Bus Interface Unit">EBIU</acronym>) and interrupt sources (IWR/<acronym title="System Interrupt Controller">SIC</acronym>_IWR)</div>
+</li>
+</ol>
+</li>
+<li class="level2"><div class="li"> Relocate U-Boot from point of execution to external memory monitor base</div>
+<ol>
+<li class="level3"><div class="li"> only as needed (according to how U-Boot was started)</div>
+</li>
+<li class="level3"><div class="li"> only copies U-Boot to monitor base -- does not start executing there</div>
+</li>
+</ol>
+</li>
+<li class="level2"><div class="li"> Call memset() to zero BSS</div>
+</li>
+<li class="level2"><div class="li"> Set stack to configured address (default is external memory)</div>
+</li>
+<li class="level2"><div class="li"> Lower self to the lowest Interrupt level (IVG15)</div>
+<ol>
+<li class="level3"><div class="li"> this is when U-Boot starts executing at configured memory monitor base</div>
+</li>
+</ol>
+</li>
+<li class="level2"><div class="li"> Jump to the next step …</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> U-Boot initializes the cpu: <strong>cpu/blackfin/cpu.c</strong>:<strong>cpu_init_f()</strong></div>
+<ol>
+<li class="level2"><div class="li"> Relocate L1 functions/data from external memory into L1 memory (only as needed)</div>
+</li>
+<li class="level2"><div class="li"> Turn on hardware trace buffer (if enabled via debug dumping)</div>
+</li>
+<li class="level2"><div class="li"> Enable reset on double fault (if panic hang is disabled)</div>
+</li>
+<li class="level2"><div class="li"> Jump to the next step …</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> U-Boot initializes important services: <strong>lib_blackfin/board.c</strong>:<strong>board_init_f()</strong></div>
+<ol>
+<li class="level2"><div class="li"> Initialize the Instruction and Data CPLB tables</div>
+</li>
+<li class="level2"><div class="li"> Initialize exception callbacks</div>
+</li>
+<li class="level2"><div class="li"> Turn on Instruction and Data caches (if enabled)</div>
+</li>
+<li class="level2"><div class="li"> Initialize the global and board data structures</div>
+</li>
+<li class="level2"><div class="li"> Initialize <acronym title="Interrupt request">IRQ</acronym> callbacks</div>
+</li>
+<li class="level2"><div class="li"> Initialize the default environment</div>
+</li>
+<li class="level2"><div class="li"> Initialize the console baudrate</div>
+</li>
+<li class="level2"><div class="li"> Initialize the console</div>
+</li>
+<li class="level2"><div class="li"> Call board-specific <strong>checkboard()</strong></div>
+<ol>
+<li class="level3"><div class="li"> Do whatever board-specific very early things</div>
+</li>
+</ol>
+</li>
+<li class="level2"><div class="li"> Initialize the Blackfin on-chip <acronym title="Real Time Clock">RTC</acronym></div>
+</li>
+<li class="level2"><div class="li"> Initialize the core timers</div>
+</li>
+<li class="level2"><div class="li"> Jump to the next step …</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> U-Boot initializes remaining services: <strong>lib_blackfin/board.c</strong>:<strong>board_init_r()</strong></div>
+<ol>
+<li class="level2"><div class="li"> Initialize malloc subsystem</div>
+</li>
+<li class="level2"><div class="li"> Initialize parallel flash (if enabled)</div>
+</li>
+<li class="level2"><div class="li"> Initialize <acronym title="Serial Peripheral Interface">SPI</acronym> flash (if enabled)</div>
+</li>
+<li class="level2"><div class="li"> Initialize NAND flash (if enabled)</div>
+</li>
+<li class="level2"><div class="li"> Relocate saved environment from flash (or wherever configured)</div>
+</li>
+<li class="level2"><div class="li"> Initialize common U-Boot devices</div>
+</li>
+<li class="level2"><div class="li"> Initialize common U-Boot function jumptable</div>
+</li>
+<li class="level2"><div class="li"> Call board-specific <strong>misc_init_r()</strong></div>
+<ol>
+<li class="level3"><div class="li"> Do whatever board-specific misc/late init things</div>
+</li>
+</ol>
+</li>
+<li class="level2"><div class="li"> Initialize the network (if enabled)</div>
+</li>
+<li class="level2"><div class="li"> Initialize <acronym title="Inter-Integrated Circuit">I2C</acronym> (if enabled)</div>
+</li>
+<li class="level2"><div class="li"> Jump to the next step …</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> U-Boot executes common code <strong>main_loop()</strong></div>
+<ol>
+<li class="level2"><div class="li"> See autoboot / U-Boot console / whatever like normal</div>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+
+<h2><a name="debug_options" id="debug_options">Debug Options</a></h2>
+<div class="level2">
+
+<p>
+
+All of these options are placed into your board configuration file.  They require a <em>CONFIG_</em> prefix to be added (it has been omitted here for readability).
+</p>
+
+</div>
+
+<h3><a name="debug_dump" id="debug_dump">DEBUG_DUMP</a></h3>
+<div class="level3">
+
+<p>
+When an unhandled exception or interrupt occurs, the state of the
+processor will be dumped to the console as well as the hardware trace
+buffer. You can use this information to easily locate the code that
+triggered the exception.
+</p>
+
+<p>
+For more in-depth information for how to use the hardware trace effectively as well as some examples, see the <a href="http://docs.blackfin.uclinux.org/doku.php?id=uclinux-dist:debugging_applications" class="wikilink1" title="uclinux-dist:debugging_applications">Debugging Applications</a> document.
+</p>
+
+<p>This option adds little overhead in terms of code size (1 kB) and
+adds no runtime overhead as it is only executed when an unhandled
+exception occurs -- which should never happen in at runtime.
+</p>
+
+</div>
+
+<h3><a name="debug_dump_syms" id="debug_dump_syms">DEBUG_DUMP_SYMS</a></h3>
+<div class="level3">
+
+<p>The normal dump output will only include undecoded addresses. You
+need to translate them by hand to the actual symbols by comparing them
+to the objdump output of the U-Boot ELF. This can get tedious very
+quickly while doing development, so this option will embed the symbol
+table in the U-Boot binary. When a dump occurs, the addresses will be
+translated automatically so the output will include both the address
+and the associated symbol.
+</p>
+
+<p>This option adds quite a bit of overhead in terms of code size (11
+kB) but adds no runtime overhead as it is only executed by the dump
+code mentioned above.
+</p>
+
+</div>
+
+<h3><a name="debug_early_serial" id="debug_early_serial">DEBUG_EARLY_SERIAL</a></h3>
+<div class="level3">
+
+<p>This will turn on serial output as early as possible (almost at
+power on) so that status messages will be constantly written to the <acronym title="universal asynchronous receiver/transmitter">UART</acronym> console.  Additional status messages will also be enabled at significant steps in the booting process.
+</p>
+
+<p>
+The actual early implementation details can be found in the <strong>cpu/blackfin/serial.h</strong> and <strong>cpu/blackfin/serial.c</strong> files.
+</p>
+
+<p>
+This option adds little overhead in terms of code size (2 kB) but adds
+runtime overhead and output that is really only suitable for debugging.
+</p>
+
+</div>
+
+<h3><a name="debug_null_ptr" id="debug_null_ptr">DEBUG_NULL_PTR</a></h3>
+<div class="level3">
+
+<p>If you have code that may be accessing initialized data (or NULL
+pointers), then you can catch them. This will cover the start of memory
+(first 1kB) with two CPLB's. That way, any memory access to that region
+(data or instruction) will cause an exception. Any unhandled exceptions
+will cause a processor dump (see the <em>DEBUG_DUMP</em> options).
+</p>
+
+<p>
+Keep in mind that any valid accesses will also be flagged, so this
+should only be enabled during development. You will be unable to use
+standard U-Boot commands such as memory display, copy, fill, etc… on
+the protected memory region.
+</p>
+
+<p>
+This option adds little overhead (~70 bytes), but prevents the start of memory from being used.
+</p>
+
+</div>
+
+<h3><a name="panic_hang" id="panic_hang">PANIC_HANG</a></h3>
+<div class="level3">
+
+<p>This option is pretty straight forward. Upon a crash that would
+automatically reset the board, the board will instead hang and
+constantly execute the <em>emuexcpt</em> instruction.  If a <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> ICE is hooked up, it will automatically be triggered.
+</p>
+
+</div>
+
+<h3><a name="hw_watchdog" id="hw_watchdog">HW_WATCHDOG</a></h3>
+<div class="level3">
+
+<p>
+While not strictly a debug option, it can be quite useful while
+debugging remotely. This will enable the on-chip Blackfin hardware
+watchdog right after power on, and then common pieces of U-Boot will
+routinely poke it. If some piece of code gets hung up, the watchdog
+will reset the processor.
+</p>
+
+</div>
+
+<h4><a name="hw_watchdog_timeout_initcode" id="hw_watchdog_timeout_initcode">HW_WATCHDOG_TIMEOUT_INITCODE</a></h4>
+<div class="level4">
+
+<p>If you're booting an LDR image, you should use a “largish” timeout
+value here as the processor will not be able to poke the watchdog until
+the LDR has finished completely loading. When booting over the <acronym title="universal asynchronous receiver/transmitter">UART</acronym> or slow <acronym title="Serial Peripheral Interface">SPI</acronym> devices, it can take a few seconds before U-Boot can take over.  The default timeout is set to 20 seconds.
+</p>
+
+</div>
+
+<h4><a name="hw_watchdog_timeout_start" id="hw_watchdog_timeout_start">HW_WATCHDOG_TIMEOUT_START</a></h4>
+<div class="level4">
+
+<p>
+Once U-Boot has started executing (before initialization/relocation),
+the watchdog will be programmed with a 5 second timeout. If your
+initialization process can take a while, increase this timeout as
+needed.
+</p>
+
+</div>
+
+<h2><a name="jtag_loading" id="jtag_loading">JTAG Loading</a></h2>
+<div class="level2">
+
+<p>Sometimes it is useful to load U-Boot directly up into external
+memory and bypass the flash programming process. Here are a few notes
+to show you how with <acronym title="GNU Debugger">GDB</acronym> and a <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> connection.  By themselves, these commands will not work.  You have to connect to a remote jtag target first, so see the <a href="http://docs.blackfin.uclinux.org/doku.php?id=toolchain:debug:gdbproxy" class="wikilink1" title="toolchain:debug:gdbproxy">gdbproxy</a> if you need more information.
+</p>
+
+</div>
+
+<h3><a name="initcode" id="initcode">Initcode</a></h3>
+<div class="level3">
+
+<p>
+
+First, since <acronym title="GNU Debugger">GDB</acronym> will load
+things directly into external memory, we need to make sure external
+memory has been set up properly first. Normally this is handled by the
+Boot ROM calling our initcode, but since we are bypassing the Boot ROM,
+we need to load it by hand.
+</p>
+
+<p>
+Start with a simple piece of code like so (call it <code>init.S</code>):
+
+</p>
+<pre class="code asm">#include &lt;asm<span class="sy0">/</span>blackfin<span class="sy0">.</span>h&gt;
+<span class="sy0">.</span>global __start
+__start<span class="sy0">:</span>
+	<span class="kw3">sp</span><span class="sy0">.</span>l = LO<span class="br0">(</span>L1_SRAM_SCRATCH_END <span class="sy0">-</span> <span class="nu0">20</span><span class="br0">)</span><span class="co1">;</span>
+	<span class="kw3">sp</span><span class="sy0">.</span>h = HI<span class="br0">(</span>L1_SRAM_SCRATCH_END <span class="sy0">-</span> <span class="nu0">20</span><span class="br0">)</span><span class="co1">;</span>
+	<span class="kw1">call</span> _initcode<span class="co1">;</span>
+<span class="nu0">1</span><span class="sy0">:</span>
+	emuexcpt<span class="co1">;</span>
+	jump <span class="nu0">1b</span><span class="co1">;</span>
+<span class="sy0">.</span><span class="kw4">size</span> __start<span class="sy0">,</span> <span class="sy0">.-</span>__start</pre>
+<p>Then just link it against the initcode to produce a standalone ELF
+like so (make sure to replace the -mcpu argument with the appropriate
+value for your board):
+</p>
+<pre class="code">$ bfin-elf-gcc -nostartfiles init.S cpu/blackfin/initcode.o -o init.elf -Iinclude -D__ASSEMBLY__ -mcpu=bf547 
+</pre>
+
+</div>
+
+<h3><a name="gdb_load" id="gdb_load">GDB Load</a></h3>
+<div class="level3">
+
+<p>
+
+Now, armed with these two ELF's (<code>init.elf</code> and <code>u-boot</code>), we can get things running with <acronym title="GNU Debugger">GDB</acronym>.
+</p>
+
+<p>
+The important commands we run are:
+</p>
+<ol>
+<li class="level1"><div class="li"> <code>set remotetimeout 300</code> - do not time out when working with slow <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> devices</div>
+</li>
+<li class="level1"><div class="li"> <code>load init.elf</code> - load the initcode into on-chip memory …</div>
+</li>
+<li class="level1"><div class="li"> <code>continue</code> - … and execute it -- the <code>emuexcpt</code> instruction we used earlier will automatically signal the <acronym title="Joint Test Action Group - low level interface to cpu">JTAG</acronym> when it is done</div>
+</li>
+<li class="level1"><div class="li"> <code>load u-boot</code> - load u-boot into the right place …</div>
+</li>
+<li class="level1"><div class="li"> <code>call memset(&amp;_bss_start, 0, &amp;_bss_end - &amp;_bss_start)</code> - clear the BSS since <acronym title="GNU Debugger">GDB</acronym> will not do it for us …</div>
+</li>
+<li class="level1"><div class="li"> <code>continue</code> - … and start executing U-Boot</div>
+</li>
+</ol>
+
+</div>
+
+<h3><a name="example" id="example">Example</a></h3>
+<div class="level3">
+
+<p>Here is a sample run. Note that the addresses and sizes may be
+significantly different from your setup -- that is perfectly normal!
+</p><pre><font size="+0">
+$ <strong>bfin-elf-gdb ./u-boot</strong>
+(gdb) <strong>set remotetimeout 300</strong>
+
+(gdb) <strong>load init.elf</strong>
+Loading section .text, size 0x32c lma 0xffa00000
+Start address 0xffa0031c, load size 812
+Transfer rate: 1676 bits/sec, 812 bytes/write.
+(gdb) <strong>c</strong>
+Continuing.
+Program received signal SIGTRAP, Trace/breakpoint trap.
+0xffa00328 in ?? ()
+
+(gdb) <strong>load u-boot</strong>
+Loading section .text, size 0xa778 lma 0xfeb00000
+Loading section .rodata, size 0x31e4 lma 0xfeb0a778
+Loading section .data, size 0x2300 lma 0xfeb0d95c
+Loading section .u_boot_cmd, size 0x280 lma 0xfeb0fc5c
+Loading section .text_l1, size 0x40 lma 0xfeb0fedc
+Start address 0xfeb00000, load size 65308
+Transfer rate: 7829 bits/sec, 9329 bytes/write.
+(gdb) <strong>call memset(&amp;_bss_start, 0, &amp;_bss_end - &amp;_bss_start)</strong>
+warning: Unable to restore previously selected frame.
+$6 = 0xfeb0ff1c
+Current language:  auto; currently asm
+(gdb) <strong>c</strong>
+Continuing.
+</font></pre>
+
+
+
+</div>
+
+    <!-- wikipage stop -->
+  </div>
+  <div id="sidebar">
+    <div id="sidebartop"></div>
+    <div id="sidebar_content">
+      
+
+
+
+
+<h2><a name="note" id="note">NOTE</a></h2>
+<div class="level2">
+
+<p>
+This is an extension we are trying out - it will get better with time. If you think it sucks, let us know in the <a href="http://blackfin.uclinux.org/gf/project/bfin-docs/forum/?action=ForumBrowse&amp;forum_id=56" class="interwiki iw_bf" title="http://blackfin.uclinux.org/gf/project/bfin-docs/forum/?action=ForumBrowse&amp;forum_id=56">forums</a>. If you think it is OK - you can tell us that too. :)
+</p>
+
+<p>
+First thing to do is to have not not show up expanded…
+</p>
+
+<p>
+</p><ul class="CmsListMenu CmsListMenuDokuWiki CmsListMenuDokuWikiSimple" id="indexmenu0293918001234282770">
+<li class="CmsMenuItemFolder CmsMenuItemFolderExpanded CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=introduction" class="wikilink1" title="introduction"><span>Introduction</span></a><ul class="">
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=preface" class="wikilink1" title="preface"><span>Preface</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=introduction_to_blackfin.uclinux.org" class="wikilink1" title="introduction_to_blackfin.uclinux.org"><span>Introduction to blackfin.uclinux.org</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=processes" class="wikilink1" title="processes"><span>Processes</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=why_use_uclinux" class="wikilink1" title="why_use_uclinux"><span>Why use uClinux</span></a>?</li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=introduction_to_embedded_systems" class="wikilink1" title="introduction_to_embedded_systems"><span>Introduction to Embedded Systems</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=blackfin_basics" class="wikilink1" title="blackfin_basics"><span>Blackfin Basics</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=components_of_a_development_system" class="wikilink1" title="components_of_a_development_system"><span>Components of a Development System</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=hardware_platform" class="wikilink1" title="hardware_platform"><span>Hardware Platform</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=operating_systems" class="wikilink1" title="operating_systems"><span>Operating Systems</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=editors" class="wikilink1" title="editors"><span>Editors</span></a></li>
+</ul>
+</li>
+<li class="CmsMenuItemFolder CmsMenuItemFolderExpanded CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=setting_up_your_development_host" class="wikilink1" title="setting_up_your_development_host"><span>Setting up your Development Host</span></a><ul class="">
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=installing_linux" class="wikilink1" title="installing_linux"><span>Installing / Configuring Linux</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=colinux" class="wikilink1" title="colinux"><span>Using CoLinux in Windows</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=terminal_programs" class="wikilink1" title="terminal_programs"><span>Terminal Programs</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=toolchain" class="wikilink1" title="toolchain"><span>toolchain</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=emulation:skyeye" class="wikilink1" title="emulation:skyeye"><span>Simulators</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=toolchain:make" class="wikilink1" title="toolchain:make"><span>make</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=debuggers" class="wikilink1" title="debuggers"><span>Debuggers</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=toolchain:urjtag:flashing" class="wikilink1" title="toolchain:urjtag:flashing"><span>flashing</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=version_control_systems" class="wikilink1" title="version_control_systems"><span>Version Control Systems</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=patches_and_diffs" class="wikilink1" title="patches_and_diffs"><span>Patches and Diffs</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=an_introduction_to_quilt_tool" class="wikilink2" title="an_introduction_to_quilt_tool" rel="nofollow"><span>An introduction to quilt tool</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=toolchain:eclipse" class="wikilink1" title="toolchain:eclipse"><span>eclipse</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=developing_with_blackfin_live_sources" class="wikilink1" title="developing_with_blackfin_live_sources"><span>Developing with Blackfin Live Sources</span></a> (instead of using a release)</li>
+</ul>
+</li>
+<li class="CmsMenuItemFolder CmsMenuItemFolderExpanded CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot" class="wikilink1" title="bootloaders:u-boot"><span>Das U-Boot</span></a><ul class="">
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:features" class="wikilink1" title="bootloaders:u-boot:features"><span>Features</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:booting_methods" class="wikilink1" title="bootloaders:u-boot:booting_methods"><span>booting_methods</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:compiling" class="wikilink1" title="bootloaders:u-boot:compiling"><span>compiling</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:loading" class="wikilink1" title="bootloaders:u-boot:loading"><span>loading</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=setting_up_a_tftp_server" class="wikilink1" title="setting_up_a_tftp_server"><span>Setting up a TFTP Server</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=setting_up_a_dhcp_server" class="wikilink1" title="setting_up_a_dhcp_server"><span>Setting up a DHCP Server</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:serial_port_loading_files" class="wikilink1" title="bootloaders:u-boot:serial_port_loading_files"><span>Loading Files via the Serial Port</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=loading_a_compressed_kernel_image" class="wikilink2" title="loading_a_compressed_kernel_image" rel="nofollow"><span>Loading a Compressed Kernel Image</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:upgrading" class="wikilink1" title="bootloaders:u-boot:upgrading"><span>upgrading</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=using_nand_flash_with_u-boot_and_linux_kernel" class="wikilink2" title="using_nand_flash_with_u-boot_and_linux_kernel" rel="nofollow"><span>Using NAND flash with U-Boot and linux kernel</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=using_cf_flash_card_disk_with_u-boot_and_linux_kernel" class="wikilink1" title="using_cf_flash_card_disk_with_u-boot_and_linux_kernel"><span>Using CF flash card "disk" with U-Boot and linux kernel</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:serial-flash" class="wikilink1" title="bootloaders:u-boot:serial-flash"><span>Accessing Serial NOR Flash with U-Boot</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:porting" class="wikilink1" title="bootloaders:u-boot:porting"><span>Porting U-Boot to Your Board</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:testing" class="wikilink1" title="bootloaders:u-boot:testing"><span>testing</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:release-notes" class="wikilink1" title="bootloaders:u-boot:release-notes"><span>release-notes</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=bootloaders:u-boot:faq" class="wikilink1" title="bootloaders:u-boot:faq"><span>Frequently Asked Questions</span></a></li>
+</ul>
+</li>
+<li class="CmsMenuItemFolder CmsMenuItemFolderExpanded CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=uclinux_on_blackfin" class="wikilink1" title="uclinux_on_blackfin"><span>The uClinux distribution on Blackfin</span></a><ul class="">
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=uclinux-dist:features" class="wikilink1" title="uclinux-dist:features"><span>features</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=uclinux-dist:release-notes" class="wikilink1" title="uclinux-dist:release-notes"><span>release-notes</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=target_selection" class="wikilink1" title="target_selection"><span>Target Selection</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=simple_hello_world_application_example" class="wikilink1" title="simple_hello_world_application_example"><span>Simple Hello World Application Example</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=simple_hello_world_application_example_asm" class="wikilink1" title="simple_hello_world_application_example_asm"><span>Simple Hello World Application Example (in assembly)</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=application_development" class="wikilink1" title="application_development"><span>Application Development</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=porting_applications" class="wikilink1" title="porting_applications"><span>Porting Applications</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=uclinux-dist:debugging_applications" class="wikilink1" title="uclinux-dist:debugging_applications"><span>Debugging Applications</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=libraries" class="wikilink1" title="libraries"><span>Libraries</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=memory_allocation_management_user_and_kernel" class="wikilink1" title="memory_allocation_management_user_and_kernel"><span>Memory Allocation/Management (User and Kernel)</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=run_java_application_on_stamp_board" class="wikilink1" title="run_java_application_on_stamp_board"><span>Run java application on stamp board</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=visualdsp:port_program_to_linux" class="wikilink1" title="visualdsp:port_program_to_linux"><span>port_program_to_linux</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=measuring_kernel_performance" class="wikilink1" title="measuring_kernel_performance"><span>Measuring Kernel Performance</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=profiling" class="wikilink1" title="profiling"><span>Profiling</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=optimization" class="wikilink1" title="optimization"><span>Optimization</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=developing_with_blackfin_live_sources" class="wikilink1" title="developing_with_blackfin_live_sources"><span>Developing with Blackfin Live Sources</span></a> (instead of using a release)</li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=uclinux-dist:release_check_list" class="wikilink1" title="uclinux-dist:release_check_list"><span>release_check_list</span></a></li>
+</ul>
+</li>
+<li class="CmsMenuItemFolder CmsMenuItemFolderExpanded CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=the_linux_kernel" class="wikilink2" title="the_linux_kernel" rel="nofollow"><span>The Linux kernel</span></a><ul class="">
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=compiling_the_kernel" class="wikilink1" title="compiling_the_kernel"><span>Compiling the Kernel</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=downloading_to_the_target" class="wikilink1" title="downloading_to_the_target"><span>Downloading the Kernel to the Target</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=linux-kernel:customizing_for_your_board" class="wikilink1" title="linux-kernel:customizing_for_your_board"><span>Porting to your Board</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=kernel_module_development" class="wikilink1" title="kernel_module_development"><span>Kernel Module Development</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=driver_development" class="wikilink1" title="driver_development"><span>Driver Development</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=linux-kernel:drivers" class="wikilink1" title="linux-kernel:drivers"><span>drivers</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=kernel_programming" class="wikilink1" title="kernel_programming"><span>Kernel Programming</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=the_framebuffer_console" class="wikilink1" title="the_framebuffer_console"><span>The Framebuffer Console</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=load_driver_module_into_l1_memory" class="wikilink1" title="load_driver_module_into_l1_memory"><span>Load driver module into L1 memory</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel1 CmsMenuItemEvenLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=linux-kernel:smp-like" class="wikilink1" title="linux-kernel:smp-like"><span>smp-like</span></a></li>
+</ul>
+</li>
+<li class="CmsMenuItemFile CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=auto_generated_kernel_docs:index" class="wikilink1" title="auto_generated_kernel_docs:index"><span>Auto Generated Kernel Documentation</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=quick_start_guide_for_stamp_board" class="wikilink1" title="quick_start_guide_for_stamp_board"><span>Quick Start Guide for STAMP Board</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=projects" class="wikilink1" title="projects"><span>Projects</span></a>       </li>
+<li class="CmsMenuItemFile CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=making_a_product" class="wikilink1" title="making_a_product"><span>Making a Product</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=appendix" class="wikilink1" title="appendix"><span>Appendix</span></a></li>
+<li class="CmsMenuItemFile CmsMenuItemLevel0 CmsMenuItemOddLevel"> <a href="http://docs.blackfin.uclinux.org/doku.php?id=faq" class="wikilink1" title="faq"><span>Frequently Asked Questions</span></a></li>
+</ul>
+              <script type="text/javascript"><!--//--><![CDATA[//><!--
+                 var cms = new CompleteMenuSolution()
+                 cms.initMenu('indexmenu0293918001234282770',{ 'theme': {'name': 'DokuWiki/Simple'}
+                                      ,'themeRootPath' : '/lib/plugins/indexmenu/templates/'
+                                      ,closeSiblings : false
+                                                               ,modifiers : ['ajaxum']
+                        ,ajaxum : {
+                              fetcher : function (s, callback) {
+                                  if ('undefined' == typeof RemoteScript) {
+                                      callback ({'state' : false,
+                                                 'response' : 'Plugin <a href="http://wiki.splitbrain.org/plugin:remotescript" _target="blank">RemoteScript</a> is not available'});
+                                      return;
+                                  }
+                                  
+                                  RemoteScript.query( ['indexmenu','getsubmenu']
+                                                     ,{ 'src'  : s
+                                                       ,'sort' : ''}
+                                                     ,function(js, txt) {
+                                                          callback({'state' : !!js,
+                                                                    'response' : js||txt});
+                                                      }
+                                                     ,true);
+                              }
+                          }
+                                     });
+              //--><!]]></script>
+
+
+
+</div>
+<!-- SECTION "NOTE" [12-] -->    </div>
+  </div>
+
+  <div class="clearer">&nbsp;</div>
+
+  
+  <div class="stylefoot">
+
+    <div class="meta">
+      <div class="user">
+              </div>
+      <div class="doc">
+        bootloaders/u-boot/debugging.txt · Last modified: 2009/02/10 15:26 by vapier      </div>
+    </div>
+
+   
+    <div class="bar" id="bar__bottom">
+      <div class="bar-left" id="bar__bottomleft">
+        <form class="button btn_source" method="post" action="/doku.php"><div class="no"><input name="do" value="edit" type="hidden"><input name="rev" value="" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Show pagesource" class="button" accesskey="v" title="Show pagesource [V]" type="submit"></div></form>        <form class="button btn_revs" method="get" action="/doku.php"><div class="no"><input name="do" value="revisions" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Old revisions" class="button" accesskey="o" title="Old revisions [O]" type="submit"></div></form>      </div>
+      <div class="bar-right" id="bar__bottomright">
+                                <form class="button btn_login" method="get" action="/doku.php"><div class="no"><input name="do" value="login" type="hidden"><input name="sectok" value="227b7d6221b379c0b8864f870be3203f" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Login" class="button" title="Login" type="submit"></div></form>        <form class="button btn_index" method="get" action="/doku.php"><div class="no"><input name="do" value="index" type="hidden"><input name="id" value="bootloaders:u-boot:debugging" type="hidden"><input value="Index" class="button" accesskey="x" title="Index [X]" type="submit"></div></form>        <a class="nolink" href="#dokuwiki__top"><input class="button" value="Back to top" onclick="window.scrollTo(0, 0)" title="Back to top" type="button"></a>&nbsp;
+      </div>
+      <div class="clearer"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footerinc">
+<!--
+  <a  href="/feed.php" title="Recent changes RSS feed"><img src="/lib/tpl/sidebar/images/button-rss.png" width="80" height="15" alt="Recent changes RSS feed" /></a>
+
+  <a  href="http://creativecommons.org/licenses/by-nc-sa/2.0/" rel="license" title="Creative Commons License"><img src="/lib/tpl/sidebar/images/button-cc.gif" width="80" height="15" alt="Creative Commons License" /></a>
+
+  <a  href="http://www.gnu.org/licenses/gpl.html" rel="license" title="GNU General Public License"> <img src="/lib/tpl/sidebar/images/button-gnu.gif" width="80" height="15" alt="GNU General Public License" border="0" /></a>
+
+  <a  href="http://www.php.net" title="Powered by PHP"><img src="/lib/tpl/sidebar/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+
+  <a  href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0"><img src="/lib/tpl/sidebar/images/button-xhtml.png" width="80" height="15" alt="Valid XHTML 1.0" /></a>
+
+  <a  href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3" title="Valid CSS"><img src="/lib/tpl/sidebar/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+
+  <a  href="http://wiki.splitbrain.org/wiki:dokuwiki" title="Driven by DokuWiki"><img src="/lib/tpl/sidebar/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+
+  -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Text" />
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.0/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.0/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+
+
+</div>
+
+<div class="no"><img src="debuggind_u-boot_files/indexer.gif" alt="" height="1" width="1"></div>
+</body></html>

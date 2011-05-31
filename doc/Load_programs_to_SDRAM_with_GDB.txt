@@ -1,0 +1,108 @@
+Hello Knut,
+
+We've talked on the phone, just read about your u-boot problem, replying here, for the benefit of the community :-)
+
+I haven't tried yet to load the init code with an offset, but, assuming you're using the ICEbear, you can just initialize the memory manually, as listed here: http://section5.ch/appnotes#adv_loaduboot
+
+(check the 'set *$EBIU...' statements). You have to determine these values for your board though, either you guess them from an existing board that is similar, or you go through the awkward procedure to calculate everything from the data sheet. Note that these are the bootup values for a not yet configured PLL. If in doubt what settings are current, you can use the 'dump_pll' command from the dump.gdb support script (it's normally in /usr/share/gdbscripts) right after a "monitor reset".
+
+Then the 'load' command should work fine and u-boot should recognize the SDRAM being configured and outputting the boot sequence countdown after a 'continue'. At least that should apply to a 1.1.6 2008R1 release u-boot, I hope nothing has changed there.
+
+Best regards,
+
+
+
+
+
+*********************************************************************************************************************888
+"Advanced" HOWTOs
+1. Loading U-Boot into a virgin flash on BF537 STAMP or EZKIT
+Connect a serial cable to the board and configure your terminal program with 57600 bps, 8N1.
+Make sure the boot mode is set to '0' on SW16.
+Start gdbproxy:
+gdbproxy bfin
+Load u-boot onto the STAMP using GDB (The GDBSCRIPTS variable has to be substituted by the location of your GDB scripts, normally in the subdirectory scripts/ or /usr/share/gdbscripts/ of your ICEbear software distribution).
+
+    target remote :2000
+    source $(GDBSCRIPTS)/mmr.gdb
+    source $(GDBSCRIPTS)/init.gdb
+
+    monitor reset     # initialize memory, can also use 'initmem_ezkit_bf537' (see init.gdb)
+        set *$EBIU_SDGCTL = 0x0091998d
+        set *$EBIU_SDBCTL = 0x0025
+        set *$EBIU_SDRRC  = 0x03a0
+    load u-boot
+
+    # Load u-boot image into memory:
+    restore u-boot.bin binary 0x100000
+
+The last 'restore' command will output something like:
+Restoring binary file u-boot.bin into memory (0x100000 to 0x10e1b4)
+
+For the memory copy command below, you need to know the u boot image size
+in memory IN WORDS! This calculates, for example, as:
+
+(0x101968c - 0x1000000 + 1) / 2
+
+Run u-boot with the 'c' command. You should now get some startup messages
+on the terminal screen.
+Run the following commands in u-boot:
+
+    bf537> protect off all
+    bf537> erase all
+    bf537> cp.w 0x100000 0x20000000 <size of binary file in words>
+
+After successful copying of the image, you can reset the board and it will boot into u-boot from flash.
+
+Note: This is not a practical way for production. You may rather want to flash u-boot.bin directly using the bfloader tools (see Appnote below). However, when porting u-boot to a new board this is the preferrable method to test proper flash support. 
+
+Important: When the SDRAM interface configuration is incorrect, the Blackfin CPU will throw a core fault when running the program after the 'load' command. Make sure you have the proper values configured for the default PLL configuration (see hardware manual of your Blackfin CPU). 
+2. Loading and debugging uClinux with bfin-elf-gdb
+This HOWTO applies to any boards similar to STAMP/EZKIT BF533. It is assumed, that you have knowledge about configuring and compiling uClinux for the Blackfin. For information, see http://blackfin.uclinux.org/.
+You may also want to activate CONFIG_DEBUG_INFO=1 (can be passed as parameter to make) to include all debugging symbols.
+
+First, make sure your SDRAM is properly configured to load uClinux, see also previous HOWTO. Some boards need to be reset manually in order to avoid PLL reconfiguration by software in the flash. Doing a controlled manual Reset within GDB is done by connecting to the target (which enters emulation), pressing the reset button, and executing a 'si' command. That way it is made sure, that no boot code is yet executed and registers are hard-reset.
+
+After successfully compiling a vmlinux executable in the linux-2.6.x/ subdirectory, simply load it using the 'load' command, analogous to u-boot in the previous HOWTO. You may now attach a serial cable to your board's RS232 interface and check for debugging output. Often, the kernel fails before dumping any console output, when porting to a new platform.
+
+There are now several strategies to find out, where the kernel fails to boot or execute, depending on symptoms:
+a) Kernel does not boot or output anything on the console
+Hit Ctrl-C to interrupt execution. Try the 'bt' command to see the stack backtrace. This normally shows you the top level functions within the error happened
+Try using the catch_exc.gdb script found in the ICEbear software directory (scripts/), in case there are hardware or memory access exceptions. Those often do not provide a reliable stack trace, so you will have to look at the RETX register ($retx in GDB) to find the instruction that caused the error
+If this does not help, manually step through the code. You may want to set a breakpoint in start_kernel(), assuming that all the startup code (starting from stext)  works and the memory is properly configured.
+You may want to set a breakpoint in panic(), since this function may be called before console output actually happens. Breaking in printk() is also quite helpful, but slightly more 'verbose'.
+b) Hardware drivers fail, spurious kernel panics occur
+Make sure that peripheral errors are not masked out in the SIC_IMASK register ($SIC_IMASK in GDB). Use the dump_irq and dump_sic functions from the dump.gdb script to find out about the error source.
+Make sure again that the SDRAM is stable. If errors are not reproduceable or happen when running the code, but not when single stepping in emulation, this is most likely a timing issue.
+Try turning off the Blackfin's Cache in the uClinux configuration (and recompile). If the problem goes away, it might be again a timing issue or a silicon revision problem (BF533 revisions < 0.3 and BF537 < 0.1 were found to be problematic, for details see Chip errata at www.analog.com)
+3. Flash programming via GDB script (bfloader)
+
+Note: This information is outdated. Please use the standalone 'bfloader' tool found in the software area. The bfloader scripts are no longer maintained (but still available for demo).
+For first time programming of a uClinux flash image or root filesystem, the boundary scan method (JTAG tools) is often used to initialize the flash with bootloader code such as uBoot. However, this method is slow. Similar to the Visual DSP toolchain, a loader backend can be loaded with GDB and 'remote executed' the same way using a shell and GDB script. This method is not too beautiful, but it certainly gives more control and allows the user to quickly customize the flash programming process to his platform setup.
+The flash loader backend source code is almost identical to the one that can be found in the VDSP distribution, only few modifications need to be made for compilation in gcc. Also, memory allocation is not happening anymore in favor of a static buffer.
+
+First, you may want to download the bfloader scripts here. To customize for your setup, have a look at the 'main' script flashload.sh in one of the platform directories of bfloader (e.g. zbrain/)
+The first variable assignments point to the binary image files to be copied into flash at a specific address. In this example, the configuration was adapted for the ZBrain Blackfin board - it can easily be adjusted for other platforms.
+
+The actual functionality is defined in the .gdbinit script. Since there are a few limitations in GDB scripting when it comes to more complex programming, we need a few workarounds: The data to be written must always be in the file /tmp/flash.dat. The flashload.sh script generates a GDB script which copies the image(s) appropriately and fills in the size fields. In the end it boils down to use the commands from the script welcome message when you run ./flashload.sh:
+
+////////////////////////////////////////////////////////////
+// BFLOADER script v0.1 [ZBrain customized]
+////////////////////////////////////////////////////////////
+
+Available commands:
+
+program_all     - Erase entire Flash and program with image(s)
+program_linux   - Overwrite first partition of flash with linux only
+exit            - Reset target and leave bfloader
+
+Verify is on (AFP_Verify = 1)
+
+(bfloader)
+
+Important: When no boot code is present (virgin flash) the Blackfin may get trapped in a core fault, when it is loading the virgin flash values (0xffff). Therefore, you may have to set the boot mode to something different from '00' when executing bfloader. Only bfloader >= v1.00 can recover from a core fault on a virgin flash boot attempt.
+
+What is left to do for you, when adapting to your own platform:
+Customize the loader backend (C source) to your flash's sizes, mappings (and commands, if necessary). You may want to use existing source code that already works with the VDSP flash loader. Warning: Some loader backends have found to be buggy and not being able to handle odd filesizes correctly (last byte missing)
+Adapt path(s) to image(s) in flashload.sh
+Check in .gdbinit whether calls to erase_blocks match the partitioning scheme (if you have one) of your flash. This for example applies to the above program_linux command.

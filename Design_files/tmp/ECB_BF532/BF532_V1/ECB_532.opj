@@ -1,0 +1,223 @@
+(ExpressProject "STAMP"
+  (ProjectVersion "19981106")
+  (ProjectType "PCB")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File ".\bf532.olb"
+        (Type "Schematic Library")))
+    (NoModify)
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (DRC_Scope "0")
+    (DRC_Action "0")
+    (DRC_Create_Warnings "TRUE")
+    (DRC_Check_Ports "TRUE")
+    (DRC_Check_Off-Page_Connectors "TRUE")
+    (DRC_Identical_References "TRUE")
+    (DRC_Type_Mismatch "TRUE")
+    (DRC_Report_Ports_and_Off-page_Connectors "TRUE")
+    (DRC_SDT_Compatibility "FALSE")
+    (DRC_Report_Off-grid_Objects "TRUE")
+    (DRC_Check_Unconnected_Nets "TRUE")
+    (DRC_Report_Netnames "TRUE")
+    (DRC_View_Output "FALSE")
+    (DRC_Report_File "C:\STAMP\CadenceFiles\STAMP.DRC")
+    (ANNOTATE_Scope "0")
+    (ANNOTATE_Mode "0")
+    (ANNOTATE_Action "1")
+    (ANNOTATE_Reset_References_to_1 "FALSE")
+    (ANNOTATE_No_Page_Number_Change "FALSE")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}{POWER_GROUP}")
+    (Netlist_TAB "3")
+    (OTHER_Part_Value "{Value}")
+    (OTHER_Netlist_File "test.NET")
+    (OTHER_Netlist_File2 "STAMP.CMP")
+    (OTHER_View_Output "TRUE")
+    (OTHER_View_Output2 "FALSE")
+    (OTHER_Formatter "wirelist.dll")
+    (OTHER_PCB_Footprint "{PCB Footprint}")
+    (OTHER_Switch0 "FALSE")
+    (OTHER_Switch1 "TRUE")
+    (OTHER_Switch2 "FALSE")
+    (OTHER_Switch3 "FALSE")
+    (OTHER_Switch4 "FALSE")
+    (OTHER_Switch5 "FALSE")
+    (OTHER_Switch6 "FALSE")
+    ("Create Allegro Netlist" "TRUE")
+    ("Allegro Netlist Directory" "allegro")
+    ("View Allegro Netlist Files" "TRUE")
+    ("Update Allegro Board" "TRUE")
+    ("Allegro Netlist Output Board File" "allegro\stamp.brd")
+    ("Allegro Netlist Remove Etch" "FALSE")
+    ("Allegro Netlist Place Changed Component" "ALWAYS_REPLACE")
+    ("Allegro Netlist Open Board in Allegro" "NEITHER")
+    ("Allegro Setup Configuration File"
+       "C:\Cadence\PSD_14.2\tools\capture\allegro.cfg")
+    ("Allegro Setup Backup Versions" "3")
+    (BOM_Scope "0")
+    (BOM_Mode "1")
+    (BOM_Report_File "C:\STAMP\CadenceFiles\BOM.txt")
+    (BOM_Merge_Include "FALSE")
+    (BOM_Property_Combine_7.0
+       "{Item}\t{Quantity}\t{Reference}\t{Value}\t{PCB Footprint}\t{Manufacture}\t{Part Number}\t{DigiKey Part Number}")
+    (BOM_Header
+       "Item\tQuantity\tReference\tPart\tFootprint\tManufacture\tPart Number\tDigiKey PN")
+    (BOM_Include_File
+       "C:\DOCUMENTS AND SETTINGS\RGETZ\MY DOCUMENTS\STAMP\CADENCE FILES\STAMP.INC")
+    (BOM_Include_File_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_One_Part_Per_Line "FALSE")
+    (BOM_View_Output "TRUE")
+    (Board_sim_option "VHDL_flow")
+    (File ".\ecb_532.dsn"
+      (Type "Schematic Design"))
+    (Annotate_Page_Order "0")
+    (ANNOTATE_IncludeNonPrimitive "FALSE")
+    (LAYOUT_Netlist_File "ECB_532.MNL")
+    (LAYOUT_PCB_Footprint "{PCB Footprint}")
+    (FALSE)
+    (LAYOUT_Units "0")
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE)
+    (TRUE))
+  (Folder "Outputs"
+    (File ".\stamp.drc"
+      (Type "Report"))
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat"))
+    (File ".\bom.txt"
+      (Type "Report"))
+    (File ".\test.net"
+      (Type "Report"))
+    (File ".\ecb_532.mnl"
+      (Type "LAYOUT Netlist File")))
+  (Folder "Referenced Projects")
+  (PartMRUSelector
+    ("HEADER 21x2"
+      (FullPartName "HEADER 21x2.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 22X2"
+      (FullPartName "HEADER 22X2.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 13X2"
+      (FullPartName "HEADER 13X2.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 11X2"
+      (FullPartName "HEADER 11X2.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (LM2596-3.3
+      (FullPartName "LM2596-3.3.Normal")
+      (LibraryName "C:\CAINPCB\ECB_BF532\BF532.OLB")
+      (DeviceIndex "0"))
+    (M25Pxx
+      (FullPartName "M25Pxx.Normal")
+      (LibraryName "C:\CAINPCB\ECB_BF532\BF532.OLB")
+      (DeviceIndex "0"))
+    (TPS3808G25
+      (FullPartName "TPS3808G25.Normal")
+      (LibraryName "C:\CAINPCB\ECB_BF532\BF532.OLB")
+      (DeviceIndex "0"))
+    ("HEADER 7"
+      (FullPartName "HEADER 7.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CONNECTOR.OLB")
+      (DeviceIndex "0"))
+    (1N5814
+      (FullPartName "1N5814.Normal")
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\PSPICE\DIODE.OLB")
+      (DeviceIndex "0"))
+    (OFFPAGELEFT-R
+      (LibraryName "C:\CADENCE\SPB_15.5\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (GND_EARTH
+      (LibraryName "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\IEC\DEVICE.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (Foot
+      (FullPartName "Foot.Normal")
+      (LibraryName "C:\STAMP\LIBRARY\BF533.OLB")
+      (DeviceIndex "0"))
+    (PLATE_HOLE
+      (FullPartName "PLATE_HOLE.Normal")
+      (LibraryName "C:\STAMP\LIBRARY\BF533.OLB")
+      (DeviceIndex "0"))
+    (BATTERY
+      (FullPartName "BATTERY.Normal")
+      (LibraryName "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (POT/SM
+      (FullPartName "POT/SM.Normal")
+      (LibraryName "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (ADM3222
+      (FullPartName "ADM3222.Normal")
+      (LibraryName "C:\STAMP\LIBRARY\BF533.OLB")
+      (DeviceIndex "0"))
+    (ADP3025/TTSOP
+      (FullPartName "ADP3025/TTSOP.Normal")
+      (LibraryName "C:\STAMP\LIBRARY\BF533.OLB")
+      (DeviceIndex "0"))
+    (IRF7811A
+      (FullPartName "IRF7811A.Normal")
+      (LibraryName "C:\STAMP\LIBRARY\BF533.OLB")
+      (DeviceIndex "0"))
+    (IRF7201/SO
+      (FullPartName "IRF7201_SO.Normal")
+      (LibraryName
+         "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\DIGIKEY\DK_TRANSISTOR.OLB")
+      (DeviceIndex "0"))
+    (IRF730S/SM
+      (FullPartName "IRF730S/SM.Normal")
+      (LibraryName
+         "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\DIGIKEY\DK_TRANSISTOR.OLB")
+      (DeviceIndex "0"))
+    (IRF5210S/SM
+      (FullPartName "IRF5210S/SM.Normal")
+      (LibraryName
+         "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\DIGIKEY\DK_TRANSISTOR.OLB")
+      (DeviceIndex "0"))
+    ("DIODE SCHOTTKY31"
+      (FullPartName "DIODE SCHOTTKY31.Normal")
+      (LibraryName "C:\CADENCE\PSD_14.2\TOOLS\CAPTURE\LIBRARY\DISCRETE.OLB")
+      (DeviceIndex "0"))
+    (ADM708
+      (FullPartName "ADM708.Normal")
+      (LibraryName
+         "C:\DOCUMENTS AND SETTINGS\RGETZ\MY DOCUMENTS\STAMP\LIBRARY\BF533.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory "C:\cainPCB\ECB_BF532")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" ".\ecb_532.dsn")
+      (Path "Design Resources" ".\ecb_532.dsn" "SCHEMATIC1")
+      (Path "Design Resources" "Library")
+      (Path "Outputs")
+      (Select "Design Resources" ".\ecb_532.dsn" "SCHEMATIC1"
+         "SERIAL INTERFACES"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 160 639 -4 -30 61 407 35 502"))
+      (Tab 0))))

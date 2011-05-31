@@ -1,0 +1,42 @@
+***** load image kernel ******
+sf probe 2
+loady 0x500000
+----- send vmImage using y-modem
+sf erase 0x30000 0xA0000
+sf write 0x500000 0x30000 0xA0000
+sf read 0x700000 0x30000 0xA0000
+bootm 0x700000
+
+
+
+dd if=rootfs.jffs2 of=/dev/mtd0
+
+
+set sfboot 'sf probe 2; sf read 0x700000 0x30000 0xA0000; bootm 0x700000'
+set bootcmd run sfboot
+
+console=ttyBF0,115200 mem=16M root=/dev/mtdblock2 rw rootdelay=1 rootfstype=jffs2
+rootfs=jffs2
+
+***** load rootfs image ******
+loady 0x500000
+----- send rootfs.jffs2 using y-modem
+sf erase 0x100000 0x300000
+sf write 0x500000 0x100000 0x250000
+
+
+
+dd if=/dev/zero of=/dev/ram0 count=1024 bs=1024
+mount -t ramfs /dev/ram0  /mnt/ramdisk/
+
+****load u-boot****
+load u-boot.bin using srv_cain
+
+loady 0x500000
+// sent u.boot.ldr
+sf probe 2
+sf erase 0x00 0x00020000
+sf write 0x500000 0x00  0x00016000
+
+
+

@@ -1,0 +1,771 @@
+
+<!-- saved from url=(0046)http://www.johanforrer.net/BLACKFIN/index.html -->
+<HTML xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><HEAD><META http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<META name="ProgId" content="Word.Document">
+<META name="Generator" content="Microsoft Word 9">
+<META name="Originator" content="Microsoft Word 9">
+<LINK rel="File-List" href="http://www.johanforrer.net/BLACKFIN/Building_GCC_APPs_files/filelist.xml">
+<TITLE>Building Free-Standing GCC-based Applications for the Blackfin</TITLE>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Johan Forrer</o:Author>
+  <o:LastAuthor>Johan Forrer</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>136</o:TotalTime>
+  <o:LastPrinted>2006-04-10T18:32:00Z</o:LastPrinted>
+  <o:Created>2006-04-18T19:11:00Z</o:Created>
+  <o:LastSaved>2006-04-18T19:11:00Z</o:LastSaved>
+  <o:Pages>7</o:Pages>
+  <o:Words>2056</o:Words>
+  <o:Characters>11724</o:Characters>
+  <o:Company>Oregon Hardware-Software Factory</o:Company>
+  <o:Lines>97</o:Lines>
+  <o:Paragraphs>23</o:Paragraphs>
+  <o:CharactersWithSpaces>14397</o:CharactersWithSpaces>
+  <o:Version>9.2720</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<STYLE>
+<!--
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:0pt;
+	text-decoration:underline;
+	text-underline:single;}
+h2
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:13.0pt;
+	font-family:Arial;}
+h4
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Times New Roman";}
+h5
+	{mso-style-next:Normal;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	mso-layout-grid-align:none;
+	text-autospace:none;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	font-style:italic;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</STYLE>
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<SCRIPT>window["_GOOG_TRANS_EXT_VER"] = "1";</SCRIPT></HEAD><BODY lang="EN-US" style="tab-interval:.5in">
+
+<DIV class="Section1">
+
+<H1>Building Free-Standing GCC-based Applications for the P1 </H1>
+
+<H2><SPAN style="font-size:14.0pt;mso-bidi-font-size:12.0pt">&nbsp;<O:P></O:P></SPAN></H2>
+
+<P class="MsoNormal">1). Ensure that you are using the <B><I>bfin-elf</I></B>
+toolchain. That was built and linked against <B><I>newlib</I></B> which is
+intended for free-standing, embedded applications.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">2). C programs should include &lt;asm/mach-bf533/cdefBF532.h&gt;</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">3). Assembly programs should include
+&lt;asm/mach-bf533/defBF532.h&gt;, and &lt;asm/macros.h&gt;. The latter is to
+handle LO( ) and HI( ) macros.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">4). Note there are quite a few essential command-line
+switches for bfin-elf-gcc.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">5). For simple applications, on the bfin-elf-ld command
+line, specify both <B><I>–Ttext &lt;start address&gt;</I></B> as well as the
+entry point <B><I>–e &lt;entry point&gt;. </I></B>Note that this will be using
+the linker’s standard rules for placing objects into the target. For more
+complex applications, a linker script file is more appropriate. See “<B>Building
+Complex Free-Standing Applications</B>.”</P>
+
+<P class="MsoNormal"><B><I>&nbsp;<O:P></O:P></I></B></P>
+
+<P class="MsoNormal">6). For making a <B><I>serial bootable image</I></B>, the
+resulting <B><I>.bin</I></B> file needs to be converted to a <B><I>.ldr</I></B>
+format. A utility program<B><I>, bin2ldr </I></B>as found in the<B><I>
+u-boot/tools/bin2ldr </I></B>directory is used to do this. However, before
+doing that, please read the details of “<B><I>Making bin2ldr work for a BF532
+target</I></B>”, also “<B><I>Using bin2ldr to create bootable .LDR images</I></B>”
+below regarding alternate start address for the loaded image.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<H3>Making bin2ldr work for a BF532 target</H3>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">It is assumed you have installed and built u-boot as per
+uClinux docs. For the P1, it needs to be built for a board type “<B><I>serial_stamp_config</I></B>”.
+This step is necessary because that will allow you to use <B><I>bin2ldr</I></B>
+and you’ll have all set up properly. </P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal"><B><I>bin2ldr</I></B> takes your <B><I>application’s .bin</I></B>
+file, adds a bit of startup code (<B><I>init_sdram.bin</I></B>), and the
+execution transfer code (<B><I>jump.bin</I></B>) to build a proper .<B><I>ldr</I></B>
+image that can be flashed into serial PROM.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">Take a look in <B><I>bin2ldr.c</I></B> and note that it
+takes the final load address for the application from <B>APP_ENTRY</B> which is
+set in <B><I>bin2ldr.h</I></B>. <B><I>Be sure to set your preferred start
+address in bin2ldr.h</I></B>. Next have a look where the Block 1, <B><I>init</I></B>
+block is created. <B><I>Change the target address from 0xFFA00000 to 0xFFA08000
+because thats the start address for L1 SRAM for a BF532</I></B>. The same
+change is needed for Block 1, <B><I>jump</I></B> block. Also, note that #define
+RESVECT should set to 0x0000000 for the BF532.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">Another bit of detail is that <B><I>init_sdram.S</I></B>
+should be replaced by the SOC-supplied startup code <B><I>P1_startup.asm</I></B>
+found on the <B><I>SOC Machines CD\P1 Blackfin Boot Monitor</I></B> directory.
+That will ensure SDRAM for the P1 is initialized per SOC Machines
+recommendations.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">Ensure <B><I>bin2ldr</I></B> is fresh by doing a <B><I>make
+clean</I></B>, <B><I>make</I></B> in the <B><I>u-boot/tools/bin2ldr</I></B>
+directory. Next do <B><I>./runme.sh</I></B> to build <B><I>init_sdram.bin</I></B>
+and <B>jump.bin</B> for a BF532 and your chosen startup location. Copy these
+two <B><I>.bin</I></B> files over to where you are building your embedded
+application code. These will be used when building .ldr images.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<H3>Using bin2ldr to create bootable .LDR images</H3>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">Copy your application .bin file over to a file named <B><I>app.bin</I></B>.
+Now you can run <B><I>bin2ldr</I></B> which will use <B><I>app.bin,
+init_sdram.bin, and jump.bin</I></B> to build the <B><I>.ldr</I></B> image. The
+result will be named <B><I>app.ldr</I></B>. Rename that to match your own
+application’s needs. </P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">If you are using a serial downloader like SOC’s <B><I>sfprog.exe</I></B>,
+you will need an <B><I>Intel Hex format</I></B> for the .ldr file. That is
+created with the <B><I>bin-elf-objcopy –I binary –O ihex</I></B> utility. You
+can down load that with the sfprog utility that communicates with the AVR side.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">Example<B><I>: sfprog –cCOM2 –dhello.hex</I></B><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>This assumes that at least<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>P1 rev 1.1 hardware level and<SPAN style="mso-spacerun: yes">&nbsp; </SPAN><B><I>AVRmon085 </I></B>is installed in the
+AVR processor .</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<H2><SPAN style="font-size:14.0pt;mso-bidi-font-size:12.0pt">Analysis of the
+.LDR<O:P></O:P></SPAN></H2>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">The Blackfin bootloader boots from serial (SPI) Flash from
+files stored in .LDR format. LDR format is described in EE-240.</P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">Blackfin bootloader boots from multi-EXE blocks. One reason
+is that the bootloader can load a bit of code, execute it, and then continue
+loading/executing blocks as it goes. This is how one can start up DRAM, setup
+wait states for external access, set up SPI speed, and initialize other
+peripherals before they are involved. </P>
+
+<P class="MsoNormal">&nbsp;<O:P></O:P></P>
+
+<P class="MsoNormal">Typically, the first block is made to execute from L1
+on-chip RAM. One objective is to ready SDRAM so that the next payload of bytes
+can be loaded there.<SPAN style="mso-bidi-font-size:10.0pt"> This bit of
+startup code is included into the very first block of the .LDR file. The .LDR
+has the FLAG field bit 3 set indicating that the ROM bootloader must first
+execute the block of startup code before continuing the boot process. This
+makes sense as here we initialize the processor, SPI, and SDRAM. <O:P></O:P></SPAN></P>
+
+<P class="MsoNormal"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal"><SPAN style="mso-bidi-font-size:10.0pt">For an example of
+such startup code, see <B><I>Init_Sdram.S</I></B>.<SPAN style="mso-spacerun:
+yes">&nbsp; </SPAN><O:P></O:P></SPAN></P>
+
+<P class="MsoNormal"><B><U><SPAN style="mso-bidi-font-size:10.0pt">Note the use
+of an RTS at the end</SPAN></U></B><SPAN style="mso-bidi-font-size:10.0pt">. <O:P></O:P></SPAN></P>
+
+<P class="MsoNormal"><SPAN style="mso-bidi-font-size:10.0pt">This is how control
+gets back to the Blackfin bootloader. <O:P></O:P></SPAN></P>
+
+<P class="MsoNormal"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">This bit of startup code is not build and
+linked into our application proper. Dont make that part of the application
+linking. It is built as part of UBOOT as an independent, .BIN file. You would
+need to build a UBOOT for the appropriate target first. <O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">When we build our application, as the final
+step, we build the<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>.LDR file for
+execution by the Blackfin on-chip bootloader. The .LDR is built by the <B><I>bin2ldr</I></B>
+utility found in UBOOOT/tools. This utility sticks the startup module into the
+first block of the .LDR file and<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>sets
+the INIT flag in that boot block. After that sequence, <B><I>bin2ldr</I></B>
+adds our application<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>into the .LDR to
+complete building the .LDR. <O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">Incidentally, <B><I>bin2ldr</I></B> does not
+know where our application is in memory It finds this out by adding another bit
+of startup code into the .LDR which is simply a JUMP main() to where the
+address of main is hard-coded See the <B><I>bin2ldr.h</I></B> for the
+hard-coded address. So, we can build our application at say 0x1000 and make
+sure the JUMP header takes us there. See <B><I>jump.S/bin2ldr.h</I></B> for a
+code example.<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">Below is a detailed analysis of a .LDR file,
+hello.hex.<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<TABLE border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;
+ border:none;mso-border-alt:double windowtext 1.5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt">
+ <TBODY><TR>
+  <TD width="590" valign="top" style="width:6.15in;border:double windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <H2 style="mso-pagination:none;mso-layout-grid-align:none;text-autospace:
+  none"><SPAN style="mso-bidi-font-size:10.0pt;font-family:&quot;Courier New&quot;">Analysis
+  of a .LDR File<O:P></O:P></SPAN></H2>
+  </TD>
+ </TR>
+ <TR>
+  <TD width="590" valign="top" style="width:6.15in;border:double windowtext 1.5pt;
+  border-top:none;mso-border-top-alt:double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:10
+  0000 00 400080FF<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>04000000 1200 <B>D6
+  00 00 00 <I>00 00 </I></B>45<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>target addr:FF800040 byte cnt:00000004
+  flag=0012<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>--- ignore block<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:10
+  0010 00 <B><I>0000</I></B>A0FF CC000000 0A00 <B><I>66 01 67 01 40 05 C0 04</I></B>
+  93<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>target addr:FFA00000 byte cnt:000000CC
+  flag=000A<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>--- init, BF533<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100020
+  00 5001510152015301580159015A015B011C<SPAN style="mso-spacerun: yes">&nbsp;
+  </SPAN>---- <B>startup code</B><O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100030
+  00 54015501560157015C015D015E015F01EC<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100040
+  00 48E1C0FF08E1100080E10003008A2400BD<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100050
+  00 08E1000048E1C0FF80E1001C32002400FC<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100060
+  00 00972000420048E1C0FF08E10C00009525<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100070
+  00 2849FA1308E1040048E1C0FF80E10300C9<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100080
+  00 0097240008E1180A48E1C0FF80E1170842<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100090
+  00 0097240008E1140A48E1C0FF80E1130042<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:1000A0
+  00 0097240008E1100A48E1C0FF40E19100F8<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:1000B0
+  00 00E18D99009324001F011E011D011C0108<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:1000C0
+  00 17011601150114011B011A01190118016C<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:1000D0
+  00 13011201110110018004000527012601FE<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:1000E0
+  00 10000000 <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;</SPAN><O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>400080FF 04000000 1200 <B>68 07 </B>BC<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>target addr:FF800040 byte cnt:00000004
+  flag:0012 --- ignore block<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:10
+  00F0 00 <B>00 00 </B>0000A0FF 0C000000 0200 <B>08 E1 00 10 </B>5A<SPAN style="mso-spacerun: yes">&nbsp; </SPAN><B>JUMP main().</B><O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>target addr:FFFA00000 byte cnt:000000C
+  flag:0002 --- non-init, BF533<SPAN style="mso-spacerun: yes">&nbsp; </SPAN><O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:10
+  0100 00 <B>48 E1 00 00 50 00 00 00 <O:P></O:P></B></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><B><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></SPAN></B><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">00100000 48070000 17<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:10
+  <B>0110 00 0280</B> <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>target address: 00001000 <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>byte cnt:<SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>00000748 <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>flag: 8002<SPAN style="mso-spacerun:
+  yes">&nbsp; </SPAN>--- last block, BF533<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>08E1082048E1E0FF00E1F21040E1
+  40<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>--- <B>Application data bytes</B><O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100120000000009200E1F41040E1000000920092
+  13<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:1001300000E1F01040E10000009200E1001140E1
+  18<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100140000000009200E1061140E10000009200E1
+  91<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100150000C1140E10000009200E1121140E10000AA<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:10016000009200E1181140E10000009200E11E1130<O:P></O:P></SPAN></P>
+  <DIV style="border:none;border-bottom:solid windowtext .75pt;padding:0in 0in 1.0pt 0in">
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none;
+  border:none;mso-border-bottom-alt:solid windowtext .75pt;padding:0in;
+  mso-padding-alt:0in 0in 1.0pt 0in"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+  </DIV>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:10082000036082C608C082C60BC68B528B091A06AB<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:1008300082C608C0C04310000000436865636B2196<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:100840000A0D000000000D0A48656C6C6F20426CB8<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:0A08500061636B66696E0D0A00001B<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">:00000001FF<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+  <SPAN style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+  mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+  EN-US;mso-bidi-language:AR-SA"><BR clear="all" style="mso-special-character:
+  line-break;page-break-before:always">
+  </SPAN>
+  <P class="MsoNormal" style="mso-pagination:none;mso-layout-grid-align:none;
+  text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><O:P></O:P></SPAN></P>
+  </TD>
+ </TR>
+</TBODY></TABLE>
+
+<H3><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></H3>
+
+<H3>Building Complex, Free-Standing Applicatio<SPAN style="mso-bidi-font-size:
+10.0pt">ns<O:P></O:P></SPAN></H3>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">One of the features of the Blackfin is the
+speed of the L1 code and data space. These spaces are typically used as cache
+memory for speeding up certain parts of code. For our fee-standing
+applications, we want to use these spaces for DSP code like, for example FIR
+filters that need to executed as fast as possible.<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">For these kinds of applications, most of the
+application code will be run from SDRAM, and a few routines will reside in
+L1code RAM. L1code is located at 0xFFA08000 for the BF532 and SDRAM beginning
+at 0x00000000. Problem is that when the HEX image is created from the binary
+(elf format) file, this diverse spread in code represent a huge address range.
+Using <B><I>objdump</I></B>, which is not smart enough to figure out that the
+code is actually very sparse, will attempt to emit one huge monolithic output
+file. It usually exits in error due to file size. So, some scheme needs to be
+devised to get around this issue.<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">We know that <B><I>bin2ldr</I></B> creates
+three blocks:<SPAN style="mso-spacerun: yes">&nbsp; </SPAN><B><I>pre-initialise
+startup, jump, and user application</I></B>. What we have to do is remove the
+L1code-related code from the user application and merge that into the <B><I>jump</I></B>
+block. It also is expected that L1code would contain addresses that need to be
+resolved when building the user application.<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">The resolution is to use a loader script
+file. An example is shown below. The loader script file ensure that the
+different code and data segments gets placed in the correct target spaces. <O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">Proceed to include DSP code in the body of
+the <B><I>jump.S</I></B> routine, making sure all needed <B><I>entry points are
+declared global</I></B>. The free-standing version of <B><I>jump.bin</I></B> is
+build as usual. Then when we link the user application code, note that we
+include<SPAN style="mso-spacerun: yes">&nbsp; </SPAN><B><I>jump.o</I></B> to resolve
+addresses related DSP routines residing <B><I>jump.S</I></B>. After the <B><I>ld</I></B>
+step, <B><I>objcopy</I></B> is then instructed to <B><I>exclude jump.o</I></B>
+from the object. This way, user applications only contains SDRAM code and there
+is no problem converting that to a HEX file. During the <B><I>bin2ldr</I></B>
+step to build the .LDR-format file, <B><I>jump</I></B> will be loaded in L1code
+space and the DSP code would be resolvable and accessible from the user
+application side.<O:P></O:P></SPAN></P>
+
+<SPAN style="font-size:12.0pt;mso-bidi-font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA"><BR clear="all" style="mso-special-character:line-break;
+page-break-before:always">
+</SPAN>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">&nbsp;<SPAN style="mso-bidi-font-size:10.0pt"><O:P></O:P></SPAN></P>
+
+<TABLE border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;
+ border:none;mso-border-alt:double windowtext 1.5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt">
+ <TBODY><TR>
+  <TD width="590" valign="top" style="width:6.15in;border:double windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <H4>Loader Script File</H4>
+  </TD>
+ </TR>
+ <TR>
+  <TD width="590" valign="top" style="width:6.15in;border:double windowtext 1.5pt;
+  border-top:none;mso-border-top-alt:double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">/* Customized linker
+  script for P1 Pirana */ <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">OUTPUT_FORMAT("elf32-bfin",
+  "elf32-bfin",<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </SPAN>"elf32-bfin")<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">OUTPUT_ARCH(bfin)<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">ENTRY(start)<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">SEARCH_DIR("/usr/local/bfin-elf/lib");<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">/* Do we need any of these
+  for elf?<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp; </SPAN>__DYNAMIC = 0;<SPAN style="mso-spacerun: yes">&nbsp; </SPAN><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;</SPAN>*/<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">/* This is specific for
+  the P1 BF532 */<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">/* Note: For .LDR files
+  where code is loaded to L1,<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp; </SPAN>we must leave space for JUMP at the bottom of L1 */<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">MEMORY<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">{<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>l1code(rwx)<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>: ORIGIN
+  = 0xffa08000, LENGTH = 0x00008000<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>l1data(rwx)<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>: ORIGIN
+  = 0xff804000, LENGTH = 0x00004000<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-tab-count:
+  1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>ram(rwx)<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>: ORIGIN
+  = 0x00001000, LENGTH = 0x02000000<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">}<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">SECTIONS<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">{ <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp; </SPAN>.l1code<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>: {
+  jump.o (.text) } &gt; l1code<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp; </SPAN>.text<SPAN style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>: { *(EXCLUDE_FILE (jump.o) .text)
+  *.(text)<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>} &gt; ram<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp; </SPAN>.rodata<SPAN style="mso-tab-count:1">&nbsp; </SPAN><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>: { *.(rodata) } &gt; ram<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp; </SPAN>.data<SPAN style="mso-tab-count:1">&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>: { *.(data) } &gt; ram<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN><O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp; </SPAN>.bss<SPAN style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><SPAN style="mso-spacerun: yes">&nbsp; </SPAN>: { *.(bss)<SPAN style="mso-spacerun:
+  yes">&nbsp; </SPAN>*(COMMON) } &gt; l1data <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;&nbsp; </SPAN>/DISCARD/<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>: {
+  *.(comment) }<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">}<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">&nbsp;<SPAN style="mso-bidi-font-size:10.0pt"><O:P></O:P></SPAN></P>
+  </TD>
+ </TR>
+</TBODY></TABLE>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+
+<TABLE border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;
+ border:none;mso-border-alt:double windowtext 1.5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt">
+ <TBODY><TR>
+  <TD width="590" valign="top" style="width:6.15in;border:double windowtext 1.5pt;
+  padding:0in 5.4pt 0in 5.4pt">
+  <H5><SPAN style="font-style:normal">Example Build Script<O:P></O:P></SPAN></H5>
+  </TD>
+ </TR>
+ <TR>
+  <TD width="590" valign="top" style="width:6.15in;border:double windowtext 1.5pt;
+  border-top:none;mso-border-top-alt:double windowtext 1.5pt;padding:0in 5.4pt 0in 5.4pt">
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># Note we use bfin-elf
+  toolchain. That was linked against newlib, which<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># is intended for
+  free-standing applications.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -----------------------------------------------------------------------<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># Options, Includes, and
+  Library<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -g<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>... debug info.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -Os<SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </SPAN>... Optimize for size, -O0 ... no
+  optimization.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -fno_builtin<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>... explicity define built-in functions
+  with leading "__".<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -ffreestanding<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>... no stdlib or main() available. implies
+  -fno_builtin.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -nostdinc<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>... nosearching for C libraries.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -ffixed-P5<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>... leave register P5 alone. Do not use it
+  for code generation.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -isystem<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>... search includes here after all -I have
+  been searched.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -pipe<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>... uses pipes instead of temp
+  directories. <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -Dxxxxx<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>... Parameters passed into GCC/GASM/LD<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -Wall<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>... Report all warnings<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -Wstrict-prototypes ...
+  strict on prototypes<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -c<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>... compile only, no linker<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#
+  -xassembler-with-cpp<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>... Assembly with
+  pre-processing, otherwise it will not honor #defines.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>... thought that .S extension meant that,
+  but apparently not.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># -save-temps ... keep
+  intermediate files (.i .s) so we can peek at generated assembly.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># NB. Use the -s option on
+  ld command line to reduce size and extra stuff in .bin<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Want to see disassembled code, use:<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>bfin-elf-objdump -d delay.o .... example
+  for delay.o<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>Want to see where code is loaded, use:<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>bfin-elf-objdump --debugging -d -h hello
+  &gt; hello.lst<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># clean out<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">rm -f *.o *.i<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">rm hello hello.bin
+  jump.bin init_sdram.bin<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">rm hello.hex<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">rm hello.ldr<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">rm hello.map<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># We need to set
+  application start address in bin2ldr.h<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">gcc -o bin2ldr bin2ldr.c<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-elf-gcc -O0<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>-ffixed-P5 -D__KERNEL__<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>-I/opt/uClinux/bfin-uclinux/bfin-uclinux/include
+  -fno-builtin -ffreestanding -nostdinc -D__BLACKFIN__ -mno-underscore
+  -DCONFIG_BLACKFIN -D__blackfin__<SPAN style="mso-spacerun: yes">&nbsp;
+  </SPAN>-D__ADSPLPBLACKFIN__ -Wall -Wstrict-prototypes -save-temps -c hello.c
+  Init.c ISR.c utils.c<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># Building auxilliary
+  assembly routines (delay etc ..)<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-elf-gcc
+  -xassembler-with-cpp -O0<SPAN style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN>-ffixed-P5
+  -D__KERNEL__ -I/opt/uClinux/bfin-uclinux/bfin-uclinux/include
+  -D__KERNEL__<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>-fno-builtin
+  -ffreestanding -nostdinc -D__BLACKFIN__ -mno-underscore -DCONFIG_BLACKFIN
+  -D__blackfin__ -D__ADSPLPBLACKFIN__ -Wall -Wstrict-prototypes -c led.S crt0.S
+  exc_handler.S jump.S init_sdram.S<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># Build a free-standing
+  binary image of jump &amp; init_sdram<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># for inclusion into the
+  .LDR file blocks<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-uclinux-ld -o
+  init_sdram init_sdram.o -e 0x00000000<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-elf-objcopy -O binary
+  init_sdram init_sdram.bin<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-uclinux-ld -o jump
+  jump.o<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>-e 0x00000000<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-elf-objcopy -O binary
+  jump jump.bin<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#Link step.<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># Note that although
+  jump.o was made into a free-standing module<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># above, we link jump.o in
+  here too so that linker can resolve any<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># RAM calls to adresses in
+  L1CODE. The actual L1CODE in the final<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># binary will be stripped
+  out in the objcopy step below. This is <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># because bin2ldr will
+  place this l1code (jump.bin) section as a <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># seperate .DXE in the
+  .LDR<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-uclinux-ld -s -TP1loader.ld
+  \<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;</SPAN>-o hello -e start crt0.o hello.o led.o Init.o ISR.o utils.o
+  jump.o\<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;</SPAN>-L/opt/uClinux/bfin-uclinux/lib/gcc/bfin-uclinux/3.4.4 -lgcc \<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"><SPAN style="mso-spacerun:
+  yes">&nbsp;</SPAN>-Map hello.map<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">#Create BIN outputs<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># Note that L1CODE is
+  excluded here. BIN2LDR will inlcude L1CODE <O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># as a separate .DXE when
+  building the .LDR<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-elf-objcopy
+  --remove-section=.l1code -O binary hello hello.bin 2&gt;/dev/null<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># Build the LDR file now<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">cp hello.bin app.bin<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">./bin2ldr<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-elf-objcopy -I binary
+  -O ihex app.ldr hello.hex<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">cp app.ldr hello.ldr<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">rm -f app.bin<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">rm -f app.ldr<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;"># For diagnostic
+  information<O:P></O:P></SPAN></P>
+  <P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">bfin-elf-objdump
+  --debugging -d -h hello &gt; hello.lst<O:P></O:P></SPAN></P>
+  </TD>
+ </TR>
+</TBODY></TABLE>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="font-size:10.0pt;font-family:&quot;Courier New&quot;">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt">&nbsp;<O:P></O:P></SPAN></P>
+
+<P class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none"><SPAN style="mso-bidi-font-size:10.0pt"><SPAN style="mso-spacerun: yes">&nbsp;</SPAN><O:P></O:P></SPAN></P>
+
+</DIV>
+
+<BR><BR>
+<A href="http://www.johanforrer.net/index.html">To my Home Page</A>
+
+
+
+
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><SCRIPT language="JavaScript" src="./Building Free-Standing GCC-based Applications for the Blackfin_files/whv2_001.js"></SCRIPT><SCRIPT language="javascript">geovisit();</SCRIPT><IMG border="0" style="display:none" src="./Building Free-Standing GCC-based Applications for the Blackfin_files/visit.gif">
+<NOSCRIPT></NOSCRIPT></BODY><STYLE type="text/css">embed[type*="application/x-shockwave-flash"],embed[src*=".swf"],object[type*="application/x-shockwave-flash"],object[codetype*="application/x-shockwave-flash"],object[src*=".swf"],object[codebase*="swflash.cab"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"],object[classid*="d27cdb6e-ae6d-11cf-96b8-444553540000"],object[classid*="D27CDB6E-AE6D-11cf-96B8-444553540000"]{	display: none !important;}</STYLE></HTML>
